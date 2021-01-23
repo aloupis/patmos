@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "patmos",
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "ui/admin",
+    "ui/site",
+    "services/*"
+  ],
+  "scripts": {
+    "server": "cd services/server && npm start",
+    "site": "cd ui/site && npm start",
+    "admin": "cd ui/admin && npm start",
+    "docker": "cd infra/setup && docker-compose -f docker-compose.yaml up",
+    "services": "concurrently -k -p '[{name}]' -n 'SERVER' -c 'bgMagenta.bold' 'cd services/server && npm run watch' ",
+    "reset-infra": "cd infra/setup && docker-compose down && docker volume prune -f"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
