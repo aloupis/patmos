@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Cookies from "js-cookie";
+import LoginForm from "./LoginForm";
+import Routes from "./Routes";
+import { ApolloProvider } from "react-apollo";
+import { getApolloClient } from "./apollo";
+import { AuthContext } from "./AuthContext";
 
-function App() {
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const login = () => {
+    setIsAuthenticated(true);
+  };
+  const logout = () => {
+    //to be revisited (it is not actually removed!)
+    Cookies.remove("jwt", {
+      path: "/",
+      domain: "localhost",
+      httpOnly: true,
+      secure: false,
+    });
+    setIsAuthenticated(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={getApolloClient()}>
+      <AuthContext.Provider
+        value={{
+          isAuthenticated,
+          login,
+          logout,
+        }}
+      >
+        <BrowserRouter>
+          {isAuthenticated ? <Routes /> : <LoginForm />}
+        </BrowserRouter>
+      </AuthContext.Provider>
+    </ApolloProvider>
   );
-}
+};
 
 export default App;

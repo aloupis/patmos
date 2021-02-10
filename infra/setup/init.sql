@@ -35,5 +35,5 @@ INSERT INTO usr(username, email, password)
 VALUES 
   (
     'a_loop_is', 'manos.aloupis@gmail.com', 
-    '1234'
+    '$2b$10$ahs7h0hNH8ffAVg6PwgovO3AVzn1izNFHn.su9gcJnUWUzb2Rcb2W' -- = ssseeeecrreeet
   );
