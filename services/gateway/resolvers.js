@@ -1,29 +1,30 @@
-const { AuthenticationError } = require("apollo-server");
-const jwt = require("jsonwebtoken");
-const { SECRET_KEY, PG_CONNECTION_STRING } = process.env;
-
-const pg = require("knex")({
-  client: "pg",
-  connection: PG_CONNECTION_STRING,
-});
+const { authenticate } = require("./auth");
+const db = require("./db");
 
 const resolvers = {
   Query: {
-    hello: async (_, args, { token }) => {
-      if (!token) {
-        throw new AuthenticationError(
-          "Authentication token is invalid, please log in"
-        );
-      }
+    posts: async (_, args) => {
       try {
-        const { id, email } = jwt.verify(token, SECRET_KEY);
-      } catch (e) {
-        throw new AuthenticationError(
-          "Authentication token is invalid, please log in"
-        );
+        const posts = await db.select("post");
+        return posts;
+      } catch (err) {
+        console.log({ err });
+        throw err;
       }
+    },
+  },
+  Mutation: {
+    insert_post: async (_, { title, content }, { token }) => {
+      const userId = authenticate(token);
+      const [user] = await db.select("usr", { id: userId });
 
-      return "hello";
+      const [post] = await db.insert("post", {
+        title,
+        content,
+        author_id: user.id,
+        created_at: new Date(),
+      });
+      return post;
     },
   },
 };

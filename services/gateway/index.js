@@ -6,12 +6,9 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const app = express();
+const db = require("./db");
 
-const { SECRET_KEY, HOST, PORT, PG_CONNECTION_STRING } = process.env;
-const pg = require("knex")({
-  client: "pg",
-  connection: PG_CONNECTION_STRING,
-});
+const { SECRET_KEY, HOST, PORT } = process.env;
 
 const corsOptions = {
   origin: "http://localhost:3000", //change with your own client URL
@@ -28,7 +25,7 @@ app.use(
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const [user] = await pg("usr").where({ email });
+  const [user] = await db.select("usr", { email });
   if (!user) {
     res.status(404).send({
       success: false,

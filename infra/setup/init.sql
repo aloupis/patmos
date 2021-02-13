@@ -10,9 +10,9 @@ CREATE TABLE post(
   title VARCHAR(255) NOT NULL, 
   content TEXT, 
   created_at TIMESTAMP NOT NULL, 
-  updated_at TIMESTAMP NOT NULL, 
+  updated_at TIMESTAMP , 
   author_id INTEGER NOT NULL, 
-  editor_id INTEGER NOT NULL, 
+  editor_id INTEGER, 
   FOREIGN KEY (author_id) REFERENCES usr (id), 
   FOREIGN KEY (editor_id) REFERENCES usr (id)
 );
