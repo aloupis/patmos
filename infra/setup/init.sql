@@ -7,8 +7,10 @@ CREATE TABLE usr(
 );
 CREATE TABLE post(
   id serial PRIMARY KEY, 
-  title VARCHAR(255) NOT NULL, 
-  content TEXT, 
+  title_gr VARCHAR(255) NOT NULL, 
+  title_en VARCHAR(255) NOT NULL, 
+  content_gr TEXT, 
+  content_en TEXT, 
   created_at TIMESTAMP NOT NULL, 
   updated_at TIMESTAMP , 
   author_id INTEGER NOT NULL, 
@@ -27,8 +29,10 @@ CREATE TABLE file(
 );
 CREATE TABLE service(
   id serial PRIMARY KEY, 
-  name VARCHAR(255) NOT NULL, 
-  content TEXT, 
+  name_gr VARCHAR(255) NOT NULL, 
+  name_en VARCHAR(255) NOT NULL, 
+  content_gr TEXT, 
+  content_en TEXT, 
   price DECIMAL
 );
 INSERT INTO usr(username, email, password) 

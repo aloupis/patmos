@@ -7,8 +7,10 @@ const typeDefs = gql`
   }
   type Post {
     id: ID!
-    title: String!
-    content: String!
+    title_gr: String!
+    title_en: String!
+    content_gr: String!
+    content_en: String!
     created_at: String!
     updated_at: String
     author: User
@@ -24,8 +26,10 @@ const typeDefs = gql`
   }
   type Service {
     id: ID!
-    name: String!
-    content: String
+    name_gr: String!
+    name_en: String!
+    content_gr: String
+    content_en: String
     price: Float!
   }
   type Query {
@@ -37,7 +41,12 @@ const typeDefs = gql`
     service(id: ID!): Service
   }
   type Mutation {
-    insert_post(title: String!, content: String!): Post!
+    insert_post(
+      title_en: String!
+      title_gr: String!
+      content_en: String!
+      content_gr: String!
+    ): Post!
     update_post(id: ID!, title: String, content: String): Post!
     delete_post(id: ID!): Boolean!
   }

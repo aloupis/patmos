@@ -14,16 +14,23 @@ const resolvers = {
     },
   },
   Mutation: {
-    insert_post: async (_, { title, content }, { token }) => {
-      const userId = authenticate(token);
-      const [user] = await db.select("usr", { id: userId });
+    insert_post: async (
+      _,
+      { title_gr, title_en, content_gr, content_en },
+      { token }
+    ) => {
+      // const userId = authenticate(token);
+      // const [user] = await db.select("usr", { id: userId });
 
       const [post] = await db.insert("post", {
-        title,
-        content,
-        author_id: user.id,
+        title_gr,
+        title_en,
+        content_gr,
+        content_en,
+        author_id: 1, //user.id,
         created_at: new Date(),
       });
+      console.log({ post });
       return post;
     },
   },

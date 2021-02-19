@@ -73,7 +73,8 @@ const LoginForm = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // document.cookie = "isAuthenticated=true";
+          document.cookie = "isAuthenticated=true";
+          localStorage.setItem("isAuthenticated", true);
           authContext.login();
           history.push("/");
         }
