@@ -1,12 +1,22 @@
 const { authenticate } = require("./auth");
 const db = require("./db");
+const { postColumns, usrColumns } = require("./model");
+const { transformEntity } = require("./utils");
 
 const resolvers = {
   Query: {
     posts: async (_, args) => {
       try {
-        const posts = await db.select("post");
-        return posts;
+        const posts = await db.selectWithJoin(
+          "post",
+          postColumns,
+          "author_id",
+          "usr",
+          usrColumns
+        );
+        return posts.map((post) =>
+          transformEntity(post, "post", "usr", "author")
+        );
       } catch (err) {
         console.log({ err });
         throw err;
@@ -19,19 +29,27 @@ const resolvers = {
       { title_gr, title_en, content_gr, content_en },
       { token }
     ) => {
-      // const userId = authenticate(token);
-      // const [user] = await db.select("usr", { id: userId });
+      const userId = authenticate(token);
+      const [user] = await db.select("usr", { id: userId });
 
-      const [post] = await db.insert("post", {
+      const [insertedPost] = await db.insert("post", {
         title_gr,
         title_en,
         content_gr,
         content_en,
-        author_id: 1, //user.id,
+        author_id: user.id,
         created_at: new Date(),
       });
-      console.log({ post });
-      return post;
+
+      const [post] = await db.selectWithJoin(
+        "post",
+        postColumns,
+        "author_id",
+        "usr",
+        usrColumns,
+        { "post.id": insertedPost.id }
+      );
+      return transformEntity(post, "post", "usr", "author");
     },
   },
 };
