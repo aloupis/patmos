@@ -1,22 +1,22 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import PageWrapper from "../../common/PageWrapper";
-import { useQuery } from "react-apollo";
-import { POSTS_QUERY } from "./model";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import { useQuery } from 'react-apollo';
+import PageWrapper from '../../common/PageWrapper';
+import { POSTS_QUERY } from './model';
 
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
   bold: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });
 
@@ -34,7 +34,7 @@ const PostsList = () => {
 
   const posts = data.posts || [];
   return (
-    <PageWrapper title={"Posts"} newPath="/posts/new">
+    <PageWrapper title="Posts" newPath="/posts/new">
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>

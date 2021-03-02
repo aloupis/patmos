@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { red, grey, green } from "@material-ui/core/colors";
-import Cookies from "js-cookie";
-import LoginForm from "./LoginForm";
-import Routes from "./Routes";
-import { ApolloProvider } from "react-apollo";
-import { getApolloClient } from "./apollo";
-import { AuthContext } from "./AuthContext";
-import "typeface-roboto";
-import "typeface-inter";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { red, grey, green } from '@material-ui/core/colors';
+import { ApolloProvider } from 'react-apollo';
+import LoginForm from './LoginForm';
+import Routes from './Routes';
+import { getApolloClient } from './apollo';
+import { UserContext } from './UserContext';
+import useFindUser from './useFindUser';
+import Loading from './common/Loading';
+import 'typeface-roboto';
+import 'typeface-inter';
 
-import "./index.css";
+import './index.css';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#007ac2",
-      light: "#4da2d4",
-      dark: "#0067b4",
+      main: '#007ac2',
+      light: '#4da2d4',
+      dark: '#0067b4',
     },
     secondary: { light: green[400], main: green[600], dark: green[800] },
     error: { main: red[500] },
@@ -29,10 +30,10 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: ["Inter var"].join(","),
+    fontFamily: ['Inter var'].join(','),
     useNextVariants: true,
     body2: {
-      whiteSpace: "pre-wrap",
+      whiteSpace: 'pre-wrap',
     },
   },
   drawer: {
@@ -43,40 +44,33 @@ const theme = createMuiTheme({
 });
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    Cookies.get("isAuthenticated")
-  );
+  const { user, setUser, isLoading, setUserContext } = useFindUser();
+  const [initialized, setInitialized] = useState(false);
 
-  const login = () => {
-    setIsAuthenticated(true);
-  };
-  const logout = () => {
-    //to be revisited (it is not actually removed!)
-    Cookies.remove("jwt", {
-      path: "/",
-      domain: "localhost",
-      httpOnly: true,
-      secure: false,
-    });
-    setIsAuthenticated(false);
-  };
+  useEffect(() => {
+    const initializeUserContext = async () => {
+      await setUserContext();
+      setInitialized(true);
+    };
+    initializeUserContext();
+  }, [setUserContext]);
+
+  if (!initialized) {
+    return <Loading />;
+  }
 
   return (
-    <ApolloProvider client={getApolloClient()}>
-      <AuthContext.Provider
-        value={{
-          isAuthenticated,
-          login,
-          logout,
-        }}
-      >
-        <BrowserRouter>
-          <MuiThemeProvider theme={theme}>
-            {isAuthenticated ? <Routes /> : <LoginForm />}
-          </MuiThemeProvider>
-        </BrowserRouter>
-      </AuthContext.Provider>
-    </ApolloProvider>
+    <React.Suspense fallback={<Loading />}>
+      <ApolloProvider client={getApolloClient()}>
+        <UserContext.Provider value={{ user, setUser, isLoading }}>
+          <BrowserRouter>
+            <MuiThemeProvider theme={theme}>
+              {user ? <Routes /> : <LoginForm />}
+            </MuiThemeProvider>
+          </BrowserRouter>
+        </UserContext.Provider>
+      </ApolloProvider>
+    </React.Suspense>
   );
 };
 

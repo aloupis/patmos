@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "watch": "nodemon ./index.js"
+    "watch": "nodemon ./index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "apollo-server": "^2.19.2",
     "apollo-server-express": "^2.19.2",
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -24,17 +27,6 @@
     "pg": "^8.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-config-wesbos": "0.0.20",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.0.5",
-    "prettier": "^2.2.1"
+    "nodemon": "^2.0.7"
   }
 }

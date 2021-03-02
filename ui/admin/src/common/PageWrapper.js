@@ -1,23 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Fab, Grid, Typography } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
-import { makeStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
-import { Link, withRouter } from "react-router-dom";
-import Tooltip from "@material-ui/core/Tooltip";
-import Container from "@material-ui/core/Container";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Fab, Grid, Typography } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import { Link, withRouter } from 'react-router-dom';
+import Tooltip from '@material-ui/core/Tooltip';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(() => ({
   fabBtn: {
-    float: "right",
-    height: "42px",
+    float: 'right',
+    height: '42px',
   },
   backBtn: {
-    float: "left",
-    marginRight: "10px",
-    padding: "10px",
+    float: 'left',
+    marginRight: '10px',
+    padding: '10px',
   },
   container: {
     paddingLeft: 0,
@@ -34,11 +34,11 @@ const PageWrapper = (props) => {
       {title && (
         <Grid item xs={6}>
           {goBackBtn && (
-            <Tooltip title={"Move to list"} aria-label={"Move to list"}>
+            <Tooltip title="Move to list" aria-label="Move to list">
               <IconButton
                 color="primary"
                 className={classes.backBtn}
-                aria-label={"Move to list"}
+                aria-label="Move to list"
                 onClick={() => history.push(goBackBtn)}
               >
                 <KeyboardBackspaceIcon />
@@ -83,7 +83,6 @@ PageWrapper.propTypes = {
   goBackBtn: PropTypes.string,
   history: PropTypes.object,
   maxWidth: PropTypes.string,
-  onImport: PropTypes.func,
 };
 
 export default withRouter(PageWrapper);

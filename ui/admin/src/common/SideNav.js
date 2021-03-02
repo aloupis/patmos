@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import DescriptionIcon from "@material-ui/icons/Description";
-import DirectionsBoatIcon from "@material-ui/icons/DirectionsBoat";
-import SettingsIcon from "@material-ui/icons/Settings";
-import PhotoIcon from "@material-ui/icons/Photo";
-import Divider from "@material-ui/core/Divider";
-import Drawer from "@material-ui/core/Drawer";
-import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import TimelineIcon from "@material-ui/icons/Timeline";
-import LayoutStyles from "./LayoutStyles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import DescriptionIcon from '@material-ui/icons/Description';
+import DirectionsBoatIcon from '@material-ui/icons/DirectionsBoat';
+import SettingsIcon from '@material-ui/icons/Settings';
+import PhotoIcon from '@material-ui/icons/Photo';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import LayoutStyles from './LayoutStyles';
 
 const useStyles = makeStyles(LayoutStyles);
 
@@ -36,7 +36,7 @@ const SideNav = ({ drawerIsOpen, closeDrawer }) => {
     >
       <div className={classes.drawerHeader}>
         <IconButton onClick={closeDrawer}>
-          {theme.direction === "ltr" ? (
+          {theme.direction === 'ltr' ? (
             <ChevronLeftIcon />
           ) : (
             <ChevronRightIcon />

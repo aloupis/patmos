@@ -1,7 +1,8 @@
-require("dotenv").config();
-const { SECRET_KEY, HOST, PORT, PG_CONNECTION_STRING } = process.env;
-const pg = require("knex")({
-  client: "pg",
+require('dotenv').config();
+
+const { PG_CONNECTION_STRING } = process.env;
+const pg = require('knex')({
+  client: 'pg',
   connection: PG_CONNECTION_STRING,
 });
 
@@ -27,6 +28,6 @@ const selectWithJoin = async (
     .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
     .where(args || true);
 
-const insert = async (table, args) => pg(table).insert(args).returning("*");
+const insert = async (table, args) => pg(table).insert(args).returning('*');
 
 module.exports = { select, insert, selectWithJoin };

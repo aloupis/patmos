@@ -1,25 +1,27 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
-import { AuthContext } from "../AuthContext";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import useAuth from '../useAuth';
 
-import LayoutStyles from "./LayoutStyles";
+import LayoutStyles from './LayoutStyles';
 
 const useStyles = makeStyles(LayoutStyles);
 
 const TopBar = ({ drawerIsOpen, openDrawer }) => {
-  const authContext = useContext(AuthContext);
+  const { logoutUser, error } = useAuth();
   const classes = useStyles();
 
-  const logoutHandler = () => {
-    authContext.logout();
+  const logoutHandler = async () => {
+    // authContext.logout();
+    await logoutUser();
+    window.location.reload(); // TO-DO fix somehow
   };
 
   return (
@@ -52,7 +54,7 @@ const TopBar = ({ drawerIsOpen, openDrawer }) => {
 
 TopBar.propTypes = {
   drawerIsOpen: PropTypes.bool,
-  closeDrawer: PropTypes.func,
+  openDrawer: PropTypes.func,
 };
 
 export default TopBar;
