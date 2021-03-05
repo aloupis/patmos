@@ -28,6 +28,9 @@ const selectWithJoin = async (
     .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
     .where(args || true);
 
-const insert = async (table, args) => pg(table).insert(args).returning('*');
+const insert = (table, args) => pg(table).insert(args).returning('*');
 
-module.exports = { select, insert, selectWithJoin };
+const update = (table, args, id) =>
+  pg(table).update(args).where('id', '=', id).returning('*');
+
+module.exports = { select, insert, update, selectWithJoin };

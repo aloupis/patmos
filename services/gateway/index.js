@@ -75,7 +75,6 @@ app.post('/logout', async (req, res) => {
 });
 
 app.get('/user', async (req, res) => {
-  console.log('IN USER');
   let currentUser;
   if (req.cookies && req.cookies.jwt) {
     const token = req.cookies.jwt;
@@ -85,7 +84,6 @@ app.get('/user', async (req, res) => {
   } else {
     currentUser = null;
   }
-  // console.log(currentUser && currentUser.id);
   res.status(200).send(currentUser ? { currentUser } : null);
 });
 

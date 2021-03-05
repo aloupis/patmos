@@ -6,34 +6,38 @@ const { transformEntity } = require('./utils');
 const resolvers = {
   Query: {
     posts: async (_, args) => {
-      try {
-        const posts = await db.selectWithJoin(
-          'post',
-          postColumns,
-          'author_id',
-          'usr',
-          usrColumns
-        );
-        return posts.map((post) =>
-          transformEntity(post, 'post', 'usr', 'author')
-        );
-      } catch (err) {
-        console.log({ err });
-        throw err;
-      }
+      const posts = await db.selectWithJoin(
+        'post',
+        postColumns,
+        'author_id',
+        'usr',
+        usrColumns
+      );
+      return posts.map((post) =>
+        transformEntity(post, 'post', 'usr', 'author')
+      );
+    },
+
+    post_by_pk: async (_, { id }) => {
+      const [post] = await db.selectWithJoin(
+        'post',
+        postColumns,
+        'author_id',
+        'usr',
+        usrColumns,
+        { 'post.id': id }
+      );
+
+      return transformEntity(post, 'post', 'usr', 'author');
     },
   },
   Mutation: {
-    insert_post: async (
-      _,
-      { title_gr, title_en, content_gr, content_en },
-      { token }
-    ) => {
-      console.log({ token });
+    insert_post: async (_, { input }, { token }) => {
+      // eslint-disable-next-line camelcase
+      const { title_gr, title_en, content_gr, content_en } = input;
       const userId = authenticate(token);
-      console.log({ token, userId });
       const [user] = await db.select('usr', { id: +userId });
-      console.log({ content_en });
+
       const [insertedPost] = await db.insert('post', {
         title_gr,
         title_en,
@@ -50,6 +54,30 @@ const resolvers = {
         'usr',
         usrColumns,
         { 'post.id': insertedPost.id }
+      );
+      return transformEntity(post, 'post', 'usr', 'author');
+    },
+    update_post: async (_, { set, id }, { token }) => {
+      const userId = authenticate(token);
+      const [user] = await db.select('usr', { id: +userId });
+
+      await db.update(
+        'post',
+        {
+          ...set,
+          editor_id: user.id,
+          updated_at: new Date(),
+        },
+        id
+      );
+
+      const [post] = await db.selectWithJoin(
+        'post',
+        postColumns,
+        'author_id',
+        'usr',
+        usrColumns,
+        { 'post.id': id }
       );
       return transformEntity(post, 'post', 'usr', 'author');
     },

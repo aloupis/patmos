@@ -57,12 +57,19 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
   );
 
   const { values, handleChange, handleBaseChange } = useForm({
-    initialValues: {
-      title_en: '',
-      title_gr: '',
-      content_en: '',
-      content_gr: '',
-    },
+    initialValues: post
+      ? {
+          title_en: post.title_en,
+          title_gr: post.title_gr,
+          content_en: post.content_en,
+          content_gr: post.content_gr,
+        }
+      : {
+          title_en: '',
+          title_gr: '',
+          content_en: '',
+          content_gr: '',
+        },
   });
 
   const handleSubmit = async (e) => {
@@ -85,6 +92,7 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
             variant="outlined"
             onChange={handleChange}
             fullWidth
+            value={values.title_en || ''}
           />
 
           <div>
@@ -96,7 +104,7 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
               modules={modules}
               formats={formats}
               onChange={(value) => handleBaseChange('content_en', value)}
-              // value={post?.content_en}
+              value={values.content_en || ''}
             />
           </div>
         </Grid>
@@ -112,6 +120,7 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
             variant="outlined"
             onChange={handleChange}
             fullWidth
+            value={values.title_gr || ''}
           />
 
           <div>
@@ -123,7 +132,7 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
               modules={modules}
               formats={formats}
               onChange={(value) => handleBaseChange('content_gr', value)}
-              // value={post?.content_gr || ""}
+              value={values.content_gr || ''}
             />
           </div>
         </Grid>
@@ -147,10 +156,10 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
 
 PostForm.propTypes = {
   post: PropTypes.object,
-  onSave: PropTypes.func.isRequired,
+  onSave: PropTypes.func,
   onDelete: PropTypes.func,
   onError: PropTypes.func,
-  history: PropTypes.object.isRequired,
+  history: PropTypes.any,
 };
 
 export default PostForm;

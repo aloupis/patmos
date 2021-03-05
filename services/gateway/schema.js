@@ -1,6 +1,18 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  input PostInput {
+    title_en: String!
+    title_gr: String!
+    content_en: String!
+    content_gr: String!
+  }
+  input PostSet {
+    title_en: String
+    title_gr: String
+    content_en: String
+    content_gr: String
+  }
   type User {
     id: ID!
     username: String!
@@ -35,20 +47,15 @@ const typeDefs = gql`
   }
   type Query {
     posts: [Post]
+    post_by_pk(id: Int!): Post
     files: [File]
     services: [Service]
-    post(id: ID!): Post
     file(id: ID!): File
     service(id: ID!): Service
   }
   type Mutation {
-    insert_post(
-      title_en: String!
-      title_gr: String!
-      content_en: String!
-      content_gr: String!
-    ): Post!
-    update_post(id: ID!, title: String, content: String): Post!
+    insert_post(input: PostInput!): Post!
+    update_post(id: Int!, set: PostSet!): Post!
     delete_post(id: ID!): Boolean!
   }
 `;

@@ -9,6 +9,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { useQuery } from 'react-apollo';
 import PageWrapper from '../../common/PageWrapper';
+import RouterLink from '../../common/RouterLink';
+import Loading from '../../common/Loading';
+
 import { POSTS_QUERY } from './model';
 
 const useStyles = makeStyles({
@@ -26,7 +29,7 @@ const PostsList = () => {
   const { data, loading, error } = useQuery(POSTS_QUERY);
 
   if (loading) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
   if (error) {
     console.log({ error });
@@ -61,7 +64,7 @@ const PostsList = () => {
             {posts.map((post) => (
               <TableRow key={post.id}>
                 <TableCell component="th" scope="row">
-                  {post.id}
+                  <RouterLink to={`/posts/${post.id}`}>{post.id}</RouterLink>
                 </TableCell>
                 <TableCell align="right">{post.title_en}</TableCell>
                 <TableCell align="right">{post.title_gr}</TableCell>
