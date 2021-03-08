@@ -5,17 +5,26 @@ const { transformEntity } = require('./utils');
 
 const resolvers = {
   Query: {
-    posts: async (_, args) => {
+    posts: async (_, { offset, limit, orderBy }) => {
       const posts = await db.selectWithJoin(
         'post',
         postColumns,
         'author_id',
         'usr',
-        usrColumns
+        usrColumns,
+        null,
+        offset,
+        limit,
+        orderBy && orderBy.field ? orderBy.field : 'post.id',
+        orderBy && orderBy.direction ? orderBy.direction : 'desc'
       );
       return posts.map((post) =>
         transformEntity(post, 'post', 'usr', 'author')
       );
+    },
+    posts_count: async (_, args) => {
+      const total = await db.count('post', 'id');
+      return total ? total.count : 0;
     },
 
     post_by_pk: async (_, { id }) => {

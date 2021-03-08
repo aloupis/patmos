@@ -18,6 +18,10 @@ const typeDefs = gql`
     username: String!
     email: String!
   }
+  input OrderBy {
+    field: String!
+    direction: String!
+  }
   type Post {
     id: ID!
     title_gr: String!
@@ -46,8 +50,9 @@ const typeDefs = gql`
     price: Float!
   }
   type Query {
-    posts: [Post]
+    posts(offset: Int!, limit: Int!, orderBy: OrderBy): [Post]
     post_by_pk(id: Int!): Post
+    posts_count: Int!
     files: [File]
     services: [Service]
     file(id: ID!): File

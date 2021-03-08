@@ -1,32 +1,23 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import React, { useState } from 'react';
 import { useQuery } from 'react-apollo';
 import PageWrapper from '../../common/PageWrapper';
-import RouterLink from '../../common/RouterLink';
 import Loading from '../../common/Loading';
-
+import GenericTable from '../../common/GenericTable';
 import { POSTS_QUERY } from './model';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
-});
-
 const PostsList = () => {
-  const classes = useStyles();
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [page, setPage] = useState(0);
+  const [orderByField, setOrderByField] = useState('post.id');
+  const [orderByDirection, setOrderByDirection] = useState('desc');
 
-  const { data, loading, error } = useQuery(POSTS_QUERY);
+  const { data, loading, error } = useQuery(POSTS_QUERY, {
+    variables: {
+      offset: page * rowsPerPage,
+      limit: rowsPerPage,
+      orderBy: { field: orderByField, direction: orderByDirection },
+    },
+  });
 
   if (loading) {
     return <Loading />;
@@ -36,46 +27,58 @@ const PostsList = () => {
   }
 
   const posts = data.posts || [];
+  const totalRows = data.posts_count || posts.length;
+  const fields = [
+    {
+      systemName: 'id',
+      displayName: 'ID',
+      isKey: true,
+      link: '/posts',
+      type: 'number',
+    },
+    {
+      systemName: 'title_en',
+      displayName: 'English Title',
+      type: 'string',
+    },
+    {
+      systemName: 'title_gr',
+      displayName: 'Greek Title',
+      type: 'string',
+    },
+    {
+      systemName: 'created_at',
+      displayName: 'Created At',
+      type: 'datetime',
+    },
+    {
+      systemName: 'updated_at',
+      displayName: 'Updated At',
+      type: 'datetime',
+    },
+    {
+      systemName: 'author',
+      displayName: 'Author',
+      type: 'ref',
+      field: 'username',
+    },
+  ];
   return (
     <PageWrapper title="Posts" newPath="/posts/new">
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell className={classes.bold}>ID</TableCell>
-              <TableCell className={classes.bold} align="right">
-                Title EN
-              </TableCell>
-              <TableCell className={classes.bold} align="right">
-                Title GR
-              </TableCell>
-              <TableCell className={classes.bold} align="right">
-                Created at
-              </TableCell>
-              <TableCell className={classes.bold} align="right">
-                Updated at
-              </TableCell>
-              <TableCell className={classes.bold} align="right">
-                Author
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {posts.map((post) => (
-              <TableRow key={post.id}>
-                <TableCell component="th" scope="row">
-                  <RouterLink to={`/posts/${post.id}`}>{post.id}</RouterLink>
-                </TableCell>
-                <TableCell align="right">{post.title_en}</TableCell>
-                <TableCell align="right">{post.title_gr}</TableCell>
-                <TableCell align="right">{post.created_at}</TableCell>
-                <TableCell align="right">{post.updated_at}</TableCell>
-                <TableCell align="right">{post?.author?.username}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <GenericTable
+        entity="post"
+        fields={fields}
+        rows={posts}
+        totalRows={totalRows}
+        page={page}
+        setPage={setPage}
+        rowsPerPage={rowsPerPage}
+        setRowsPerPage={setRowsPerPage}
+        orderByField={orderByField}
+        setOrderByField={setOrderByField}
+        orderByDirection={orderByDirection}
+        setOrderByDirection={setOrderByDirection}
+      />
     </PageWrapper>
   );
 };

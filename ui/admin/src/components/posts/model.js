@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const POSTS_QUERY = gql`
-  query POSTS_QUERY {
-    posts {
+  query POSTS_QUERY($offset: Int!, $limit: Int!, $orderBy: OrderBy) {
+    posts(offset: $offset, limit: $limit, orderBy: $orderBy) {
       id
       title_en
       title_gr
@@ -13,6 +13,7 @@ const POSTS_QUERY = gql`
         username
       }
     }
+    posts_count
   }
 `;
 
