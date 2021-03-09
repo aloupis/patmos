@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import fromUnixTime from 'date-fns/fromUnixTime';
+import { format } from 'date-fns';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -67,10 +69,57 @@ const GenericTable = ({
       setOrderByDirection('desc');
     }
   };
+
+  const renderCell = (field, index, row) => {
+    if (field.isKey) {
+      return (
+        <TableCell key={index} component="th" scope="row">
+          <RouterLink to={`${field.link}/${row[`${field.systemName}`]}`}>
+            {row[`${field.systemName}`]}
+          </RouterLink>
+        </TableCell>
+      );
+    }
+    switch (field.type) {
+      case 'ref':
+        return (
+          <TableCell key={index}>
+            {row[`${field.systemName}`][`${field.field}`]}
+          </TableCell>
+        );
+      case 'date': {
+        return (
+          <TableCell key={index}>
+            {row[`${field.systemName}`]
+              ? format(
+                  fromUnixTime(row[`${field.systemName}`] / 1000),
+                  'dd/MM/yyyy'
+                )
+              : '-'}
+          </TableCell>
+        );
+      }
+      case 'datetime': {
+        return (
+          <TableCell key={index}>
+            {row[`${field.systemName}`]
+              ? format(
+                  fromUnixTime(row[`${field.systemName}`] / 1000),
+                  'dd/MM/yyyy HH:mm:ss'
+                )
+              : '-'}
+          </TableCell>
+        );
+      }
+      default:
+        return <TableCell key={index}>{row[`${field.systemName}`]}</TableCell>;
+    }
+  };
+
   return (
     <Paper>
       <TableContainer>
-        <Table className={classes.table} aria-label="simple table">
+        <Table className={classes.table}>
           <TableHead>
             <TableRow>
               {fields.map((field, index) => (
@@ -107,23 +156,7 @@ const GenericTable = ({
               <TableRow
                 key={row[`${fields.find((field) => field.isKey).systemName}`]}
               >
-                {fields.map((field, index) =>
-                  field.isKey ? (
-                    <TableCell key={index} component="th" scope="row">
-                      <RouterLink
-                        to={`${field.link}/${row[`${field.systemName}`]}`}
-                      >
-                        {row[`${field.systemName}`]}
-                      </RouterLink>
-                    </TableCell>
-                  ) : (
-                    <TableCell key={index} align="left">
-                      {field.type === 'ref'
-                        ? row[`${field.systemName}`][`${field.field}`]
-                        : row[`${field.systemName}`]}
-                    </TableCell>
-                  )
-                )}
+                {fields.map((field, index) => renderCell(field, index, row))}
               </TableRow>
             ))}
           </TableBody>
