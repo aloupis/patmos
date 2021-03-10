@@ -23,7 +23,6 @@ const NewPost = (props) => {
           content_gr: post.content_gr,
         },
       },
-      refetchQueries: [`POSTS_QUERY`],
     });
 
     // return history.push(`/master-data/suppliers/${result.id}`, {

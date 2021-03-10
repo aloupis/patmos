@@ -17,6 +17,7 @@ const PostsList = () => {
       limit: rowsPerPage,
       orderBy: { field: orderByField, direction: orderByDirection },
     },
+    fetchPolicy: 'cache-and-network',
   });
 
   if (loading) {
