@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { red, grey, green } from '@material-ui/core/colors';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from '@apollo/client';
 import LoginForm from './LoginForm';
 import Routes from './Routes';
 import { getApolloClient } from './apollo';

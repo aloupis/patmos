@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useMutation } from 'react-apollo';
+import { useMutation } from '@apollo/client';
 import PageWrapper from '../../common/PageWrapper';
 import PostForm from './PostForm';
 import { CREATE_POST_MUTATION } from './model';

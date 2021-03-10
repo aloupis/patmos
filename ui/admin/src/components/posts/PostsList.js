@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import PageWrapper from '../../common/PageWrapper';
 import Loading from '../../common/Loading';
 import GenericTable from '../../common/GenericTable';

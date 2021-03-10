@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useQuery, useMutation } from 'react-apollo';
+import { useQuery, useMutation } from '@apollo/client';
 import PageWrapper from '../../common/PageWrapper';
 import PostForm from './PostForm';
 import Loading from '../../common/Loading';

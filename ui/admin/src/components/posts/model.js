@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const POSTS_QUERY = gql`
   query POSTS_QUERY($offset: Int!, $limit: Int!, $orderBy: OrderBy) {
