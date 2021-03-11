@@ -1,4 +1,14 @@
-### revert: dummy change for changelog check (HEAD -> master)
+### docs: basic readme (HEAD -> master)
+>Thu, 11 Mar 2021 19:36:34 +0200
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### revert: dummy change for changelog check (origin/master)
 >Thu, 11 Mar 2021 19:26:37 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### test (origin/master)
+### test
 >Thu, 11 Mar 2021 19:24:16 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
