@@ -49,6 +49,10 @@ const typeDefs = gql`
     content_en: String
     price: Float!
   }
+  type MutationResult {
+    success: Boolean!
+    message: String
+  }
   type Query {
     posts(offset: Int!, limit: Int!, orderBy: OrderBy): [Post]
     post_by_pk(id: Int!): Post
@@ -61,7 +65,7 @@ const typeDefs = gql`
   type Mutation {
     insert_post(input: PostInput!): Post!
     update_post(id: Int!, set: PostSet!): Post!
-    delete_post(id: ID!): Boolean!
+    delete_post(id: Int!): MutationResult!
   }
 `;
 

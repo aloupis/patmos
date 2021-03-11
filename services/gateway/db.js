@@ -62,4 +62,13 @@ const update = (table, args, id) =>
 
 const count = (table, column) => pg(table).count(column).first();
 
-module.exports = { select, insert, update, selectWithJoin, count };
+const deleteRecords = (table, args) => pg(table).where(args).del();
+
+module.exports = {
+  select,
+  insert,
+  update,
+  selectWithJoin,
+  count,
+  deleteRecords,
+};

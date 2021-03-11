@@ -33,7 +33,7 @@ const NewPost = (props) => {
 
   return (
     <PageWrapper title="New Post" maxWidth="lg" goBackBtn="/posts">
-      <PostForm onSave={handleSave} />
+      <PostForm onSave={handleSave} history={history} />
     </PageWrapper>
   );
 };

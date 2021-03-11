@@ -67,9 +67,19 @@ const POST_BY_PK_QUERY = gql`
   }
 `;
 
+const DELETE_POST_MUTATION = gql`
+  mutation DELETE_POST_MUTATION($id: Int!) {
+    delete_post(id: $id) {
+      success
+      message
+    }
+  }
+`;
+
 export {
   POSTS_QUERY,
   CREATE_POST_MUTATION,
   UPDATE_POST_MUTATION,
   POST_BY_PK_QUERY,
+  DELETE_POST_MUTATION,
 };

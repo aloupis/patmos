@@ -90,6 +90,20 @@ const resolvers = {
       );
       return transformEntity(post, 'post', 'usr', 'author');
     },
+    delete_post: async (_, { id }, { token }) => {
+      try {
+        authenticate(token);
+        await db.deleteRecords('post', { id });
+        return {
+          success: true,
+        };
+      } catch (err) {
+        return {
+          success: false,
+          message: err,
+        };
+      }
+    },
   },
 };
 

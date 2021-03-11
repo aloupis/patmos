@@ -39,7 +39,7 @@ const formats = [
   'mention',
 ];
 
-const PostForm = ({ post, onSave, onDelete, onError, history }) => {
+const PostForm = ({ post, onSave, onError, history }) => {
   const classes = useStyles();
 
   const modules = useMemo(
@@ -143,7 +143,7 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
         <ActionFormButtons>
           <Box flexGrow={1} />
           <Box>
-            <CancelBtn onClick={() => console.log('cancel')}>Cancel</CancelBtn>
+            <CancelBtn onClick={() => history.push(`/posts`)}>Cancel</CancelBtn>
             <Button color="primary" variant="contained" type="submit">
               Save
             </Button>
@@ -157,7 +157,6 @@ const PostForm = ({ post, onSave, onDelete, onError, history }) => {
 PostForm.propTypes = {
   post: PropTypes.object,
   onSave: PropTypes.func,
-  onDelete: PropTypes.func,
   onError: PropTypes.func,
   history: PropTypes.any,
 };
