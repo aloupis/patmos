@@ -1,4 +1,14 @@
-### test (HEAD -> master)
+### revert: dummy change for changelog check (HEAD -> master)
+>Thu, 11 Mar 2021 19:26:37 +0200
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### test (origin/master)
 >Thu, 11 Mar 2021 19:24:16 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix: delete .eslintcache (origin/master)
+### fix: delete .eslintcache
 >Thu, 11 Mar 2021 18:57:59 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)

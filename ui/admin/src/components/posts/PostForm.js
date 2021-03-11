@@ -137,7 +137,7 @@ const PostForm = ({ post, onSave, onError, history }) => {
           </div>
         </Grid>
       </Grid>
-      dd
+
       <div style={{ marginTop: '100px' }}>
         <Divider />
         <ActionFormButtons>
