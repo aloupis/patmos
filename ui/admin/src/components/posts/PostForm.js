@@ -91,6 +91,7 @@ const PostForm = ({ post, onSave, onError, history }) => {
             label="Title"
             variant="outlined"
             onChange={handleChange}
+            required
             fullWidth
             value={values.title_en || ''}
           />
@@ -120,6 +121,7 @@ const PostForm = ({ post, onSave, onError, history }) => {
             variant="outlined"
             onChange={handleChange}
             fullWidth
+            required
             value={values.title_gr || ''}
           />
 

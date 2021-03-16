@@ -1,4 +1,14 @@
-### feat: snackbar context for messages (HEAD -> master)
+### fix: title fields in post are required (HEAD -> master)
+>Tue, 16 Mar 2021 17:38:00 +0200
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### feat: snackbar context for messages (origin/master)
 >Tue, 16 Mar 2021 13:27:30 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### docs: basic readme (origin/master)
+### docs: basic readme
 >Thu, 11 Mar 2021 19:36:34 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
