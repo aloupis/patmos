@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import * as Sentry from '@sentry/react';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { red, grey, green } from '@material-ui/core/colors';
@@ -61,17 +62,19 @@ const App = () => {
 
   return (
     <React.Suspense fallback={<Loading />}>
-      <SnackbarProvider>
-        <ApolloProvider client={getApolloClient()}>
-          <UserContext.Provider value={{ user, setUser, isLoading }}>
-            <BrowserRouter>
-              <MuiThemeProvider theme={theme}>
-                {user ? <Routes /> : <LoginForm />}
-              </MuiThemeProvider>
-            </BrowserRouter>
-          </UserContext.Provider>
-        </ApolloProvider>
-      </SnackbarProvider>
+      <Sentry.ErrorBoundary fallback="An error has occurred">
+        <SnackbarProvider>
+          <ApolloProvider client={getApolloClient()}>
+            <UserContext.Provider value={{ user, setUser, isLoading }}>
+              <BrowserRouter>
+                <MuiThemeProvider theme={theme}>
+                  {user ? <Routes /> : <LoginForm />}
+                </MuiThemeProvider>
+              </BrowserRouter>
+            </UserContext.Provider>
+          </ApolloProvider>
+        </SnackbarProvider>
+      </Sentry.ErrorBoundary>
     </React.Suspense>
   );
 };

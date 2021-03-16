@@ -1,4 +1,14 @@
-### fix: title fields in post are required (HEAD -> master)
+### feat: initial sentry setup (HEAD -> master)
+>Tue, 16 Mar 2021 18:26:11 +0200
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix: title fields in post are required (origin/master)
 >Tue, 16 Mar 2021 17:38:00 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### feat: snackbar context for messages (origin/master)
+### feat: snackbar context for messages
 >Tue, 16 Mar 2021 13:27:30 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
