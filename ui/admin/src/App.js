@@ -7,11 +7,11 @@ import LoginForm from './LoginForm';
 import Routes from './Routes';
 import { getApolloClient } from './apollo';
 import { UserContext } from './UserContext';
+import { SnackbarProvider } from './SnackbarContext';
 import useFindUser from './useFindUser';
 import Loading from './common/Loading';
 import 'typeface-roboto';
 import 'typeface-inter';
-
 import './index.css';
 
 const theme = createMuiTheme({
@@ -61,15 +61,17 @@ const App = () => {
 
   return (
     <React.Suspense fallback={<Loading />}>
-      <ApolloProvider client={getApolloClient()}>
-        <UserContext.Provider value={{ user, setUser, isLoading }}>
-          <BrowserRouter>
-            <MuiThemeProvider theme={theme}>
-              {user ? <Routes /> : <LoginForm />}
-            </MuiThemeProvider>
-          </BrowserRouter>
-        </UserContext.Provider>
-      </ApolloProvider>
+      <SnackbarProvider>
+        <ApolloProvider client={getApolloClient()}>
+          <UserContext.Provider value={{ user, setUser, isLoading }}>
+            <BrowserRouter>
+              <MuiThemeProvider theme={theme}>
+                {user ? <Routes /> : <LoginForm />}
+              </MuiThemeProvider>
+            </BrowserRouter>
+          </UserContext.Provider>
+        </ApolloProvider>
+      </SnackbarProvider>
     </React.Suspense>
   );
 };
