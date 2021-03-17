@@ -1,4 +1,14 @@
-### feat: initial sentry setup (HEAD -> master)
+### refactor: order by in knex db abstraction (HEAD -> master)
+>Wed, 17 Mar 2021 19:15:05 +0200
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### feat: initial sentry setup (origin/master)
 >Tue, 16 Mar 2021 18:26:11 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix: title fields in post are required (origin/master)
+### fix: title fields in post are required
 >Tue, 16 Mar 2021 17:38:00 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)

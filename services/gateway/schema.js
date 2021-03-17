@@ -20,7 +20,7 @@ const typeDefs = gql`
   }
   input OrderBy {
     field: String!
-    direction: String!
+    direction: String
   }
   type Post {
     id: ID!
