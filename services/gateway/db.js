@@ -6,15 +6,18 @@ const pg = require('knex')({
   connection: PG_CONNECTION_STRING,
 });
 
-const select = async (table, args, offset, limit) =>
-  args
-    ? pg(table)
-        .where(args)
-        .offset(offset || 0)
-        .limit(limit || null)
-    : pg(table)
-        .offset(offset || 0)
-        .limit(limit || null);
+const withOrderBy = async (args, orderBy, orderDir) =>
+  orderBy ? args.orderBy(orderBy, orderDir || 'desc') : args;
+
+const select = async (table, args, offset, limit, orderBy, orderDir) =>
+  withOrderBy(
+    pg(table)
+      .where(args || true)
+      .offset(offset || 0)
+      .limit(limit || null),
+    orderBy,
+    orderDir
+  );
 
 const selectWithJoin = async (
   table,
@@ -28,32 +31,22 @@ const selectWithJoin = async (
   orderBy,
   orderDir
 ) =>
-  orderBy
-    ? pg
-        .select([
-          ...tableColumns.map((col) => `${table}.${col} as ${table}.${col} `),
-          ...joinedTableColumns.map(
-            (col) => `${joinedTable}.${col} as ${joinedTable}.${col}`
-          ),
-        ])
-        .from(table)
-        .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
-        .where(args || true)
-        .offset(offset || 0)
-        .limit(limit || null)
-        .orderBy(orderBy, orderDir)
-    : pg
-        .select([
-          ...tableColumns.map((col) => `${table}.${col} as ${table}.${col} `),
-          ...joinedTableColumns.map(
-            (col) => `${joinedTable}.${col} as ${joinedTable}.${col}`
-          ),
-        ])
-        .from(table)
-        .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
-        .where(args || true)
-        .offset(offset || 0)
-        .limit(limit || null);
+  withOrderBy(
+    pg
+      .select([
+        ...tableColumns.map((col) => `${table}.${col} as ${table}.${col} `),
+        ...joinedTableColumns.map(
+          (col) => `${joinedTable}.${col} as ${joinedTable}.${col}`
+        ),
+      ])
+      .from(table)
+      .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
+      .where(args || true)
+      .offset(offset || 0)
+      .limit(limit || null),
+    orderBy,
+    orderDir
+  );
 
 const insert = (table, args) => pg(table).insert(args).returning('*');
 
