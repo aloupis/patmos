@@ -6,6 +6,7 @@ services:
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "751c3760-1a28-4c6f-b219-dbd8dc57b6f1" | docker login -u "-" --password-stdin registry.heroku.com
 
 script:
   - docker build -t $DOCKER_USERNAME/patmos-nginx ./nginx
@@ -18,9 +19,7 @@ script:
   - docker tag $DOCKER_USERNAME/patmos-admin registry.heroku.com/$HEROKU_APP_ADMIN/web;
 
 deploy:
-  provider: heroku
-  api_key:
-    secure: "751c3760-1a28-4c6f-b219-dbd8dc57b6f1"
+  provider: script
   skip_cleanup: true
   script: 
     # push to dockerhub & heroku 
