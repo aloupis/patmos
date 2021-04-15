@@ -18,8 +18,9 @@ script:
   - docker tag $DOCKER_USERNAME/patmos-admin registry.heroku.com/$HEROKU_APP_ADMIN/web;
 
 deploy:
+  provider: heroku
   api_key:
-    secure: "$HEROKU_API_KEY"
+    secure: "751c3760-1a28-4c6f-b219-dbd8dc57b6f1"
   skip_cleanup: true
   provider: script
   script: 
