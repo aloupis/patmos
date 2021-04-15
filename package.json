@@ -11,7 +11,7 @@
   "scripts": {
     "site": "cd ui/site && npm start",
     "admin": "cd ui/admin && npm start",
-    "docker": "cd infra/setup && docker-compose -f docker-compose.yaml up",
+    "docker": "docker-compose up",
     "services": "concurrently -k -p '[{name}]' -n 'GATEWAY' -c 'bgGreen.bold' 'cd services/gateway && npm run watch'",
     "reset-infra": "cd infra/setup && docker-compose down && docker volume prune -f"
   },
