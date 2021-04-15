@@ -53,8 +53,11 @@ const App = () => {
       await setUserContext();
       setInitialized(true);
     };
-    initializeUserContext();
-  }, [setUserContext]);
+
+    if (!initialized) {
+      initializeUserContext();
+    }
+  }, [setUserContext, initialized]);
 
   if (!initialized) {
     return <Loading />;
