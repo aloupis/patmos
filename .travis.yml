@@ -18,6 +18,7 @@ script:
   - docker tag $DOCKER_USERNAME/patmos-admin registry.heroku.com/$HEROKU_APP_ADMIN/web;
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: 
     # push to dockerhub & heroku 
