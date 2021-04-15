@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-const AUTH_SERVICE_BASE_URL = 'http://localhost:7000';
+const AUTH_SERVICE_BASE_URL = '/gateway';
 
 export default function useFindUser() {
   const history = useHistory();

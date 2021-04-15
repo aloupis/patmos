@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from './UserContext';
 
-const AUTH_SERVICE_BASE_URL = 'http://localhost:7000';
+const AUTH_SERVICE_BASE_URL = '/gateway';
 
 export default function useAuth() {
   const history = useHistory();

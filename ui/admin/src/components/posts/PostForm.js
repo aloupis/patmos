@@ -52,7 +52,6 @@ const PostForm = ({ post, onSave, onError, history }) => {
       ],
     }),
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [] // TODO: fix eslint error somehow
   );
 

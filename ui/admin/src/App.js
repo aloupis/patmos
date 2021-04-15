@@ -53,8 +53,11 @@ const App = () => {
       await setUserContext();
       setInitialized(true);
     };
-    initializeUserContext();
-  }, [setUserContext]);
+
+    if (!initialized) {
+      initializeUserContext();
+    }
+  }, [setUserContext, initialized]);
 
   if (!initialized) {
     return <Loading />;
@@ -66,7 +69,7 @@ const App = () => {
         <SnackbarProvider>
           <ApolloProvider client={getApolloClient()}>
             <UserContext.Provider value={{ user, setUser, isLoading }}>
-              <BrowserRouter>
+              <BrowserRouter basename={'/admin'}>
                 <MuiThemeProvider theme={theme}>
                   {user ? <Routes /> : <LoginForm />}
                 </MuiThemeProvider>
