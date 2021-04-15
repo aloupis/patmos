@@ -15,7 +15,7 @@ const db = require('./db');
 const { SECRET_KEY, HOST, PORT } = process.env;
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // change with your own client URL
+  origin: 'http://localhost:3050', // change with your own client URL
   credentials: true,
 };
 
