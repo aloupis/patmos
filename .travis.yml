@@ -22,7 +22,6 @@ deploy:
   api_key:
     secure: "751c3760-1a28-4c6f-b219-dbd8dc57b6f1"
   skip_cleanup: true
-  provider: script
   script: 
     # push to dockerhub & heroku 
     docker push $DOCKER_USERNAME/patmos-nginx;
