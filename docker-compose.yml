@@ -1,0 +1,69 @@
+version: "3.3"
+
+services:
+  psql:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - 5432:5432
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: postgres -c max_locks_per_transaction=2000
+    networks:
+      - patmos
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
+    networks:
+      - patmos
+  gateway:
+    build:
+      dockerfile: Dockerfile.dev
+      context: "./services/gateway"
+    volumes:
+      - /app/node_modules
+      - ./services/gateway:/app
+    environment:
+      - HOST=localhost
+      - PORT=7000
+      - SECRET_KEY=secret!
+      - PG_CONNECTION_STRING=postgres://postgres:123456@psql:5432/postgres
+      - SENTRY_DSN=https://7367430a6fe54c318164d32beb55d7a9@o511333.ingest.sentry.io/5679498
+    depends_on: 
+      - nginx
+      - psql
+    networks:
+      - patmos
+  admin:
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ui/admin
+    volumes:
+      - /app/node_modules
+      - ./ui/admin:/app
+    depends_on: 
+      - nginx
+    networks:
+      - patmos
+  site:
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ui/site
+    volumes:
+      - /app/node_modules
+      - ./ui/site:/app
+    depends_on: 
+      - nginx
+    networks:
+      - patmos
+networks:
+    patmos:
+volumes:
+  db_data:
