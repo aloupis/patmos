@@ -1,4 +1,14 @@
-### add heroku postgres init script (HEAD -> master)
+### admin in root (HEAD -> master)
+>Mon, 19 Apr 2021 19:07:15 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add heroku postgres init script
 >Mon, 19 Apr 2021 18:56:21 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

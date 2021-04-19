@@ -69,7 +69,7 @@ const App = () => {
         <SnackbarProvider>
           <ApolloProvider client={getApolloClient()}>
             <UserContext.Provider value={{ user, setUser, isLoading }}>
-              <BrowserRouter basename={'/admin'}>
+              <BrowserRouter>
                 <MuiThemeProvider theme={theme}>
                   {user ? <Routes /> : <LoginForm />}
                 </MuiThemeProvider>
