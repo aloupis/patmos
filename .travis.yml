@@ -9,23 +9,20 @@ before_install:
   - echo "751c3760-1a28-4c6f-b219-dbd8dc57b6f1" | docker login -u "-" --password-stdin registry.heroku.com
 
 script:
-  - docker build -t $DOCKER_USERNAME/patmos-nginx ./nginx
-  - docker tag $DOCKER_USERNAME/patmos-nginx registry.heroku.com/$HEROKU_APP_NGINX/web;
   - docker build -t $DOCKER_USERNAME/patmos-gateway ./services/gateway
   - docker tag $DOCKER_USERNAME/patmos-gateway registry.heroku.com/$HEROKU_APP_GATEWAY/web;
   - docker build -t $DOCKER_USERNAME/patmos-site ./ui/site
   - docker tag $DOCKER_USERNAME/patmos-site registry.heroku.com/$HEROKU_APP_SITE/web;
   - docker build -t $DOCKER_USERNAME/patmos-admin ./ui/admin
   - docker tag $DOCKER_USERNAME/patmos-admin registry.heroku.com/$HEROKU_APP_ADMIN/web;
+  - docker build -t $DOCKER_USERNAME/patmos-nginx ./nginx
+  - docker tag $DOCKER_USERNAME/patmos-nginx registry.heroku.com/$HEROKU_APP_NGINX/web;
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: 
-    # push to dockerhub & heroku 
-    docker push $DOCKER_USERNAME/patmos-nginx;
-    docker push registry.heroku.com/$HEROKU_APP_NGINX/web;
-    heroku container:release web --app $HEROKU_APP_NGINX;
+  script:
+    # push to dockerhub & heroku
     docker push $DOCKER_USERNAME/patmos-gateway;
     docker push registry.heroku.com/$HEROKU_APP_GATEWAY/web;
     heroku container:release web --app $HEROKU_APP_GATEWAY;
@@ -35,5 +32,8 @@ deploy:
     docker push $DOCKER_USERNAME/patmos-admin;
     docker push registry.heroku.com/$HEROKU_APP_ADMIN/web;
     heroku container:release web --app $HEROKU_APP_ADMIN;
-  on: 
-    branch: master 
+    docker push $DOCKER_USERNAME/patmos-nginx;
+    docker push registry.heroku.com/$HEROKU_APP_NGINX/web;
+    heroku container:release web --app $HEROKU_APP_NGINX;
+  on:
+    branch: master

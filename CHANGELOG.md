@@ -1,4 +1,14 @@
-### fix nginx (HEAD -> master)
+### dummy commit (HEAD -> master)
+>Mon, 19 Apr 2021 16:43:24 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix nginx (origin/master)
 >Mon, 19 Apr 2021 16:16:53 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### try different cofig in dockerfile for admin (origin/master)
+### try different cofig in dockerfile for admin
 >Mon, 19 Apr 2021 15:56:08 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
