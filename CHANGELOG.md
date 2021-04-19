@@ -1,4 +1,14 @@
-### dummy commit (HEAD -> master)
+### trying removing admin (HEAD -> master)
+>Mon, 19 Apr 2021 16:56:49 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### dummy commit (origin/master)
 >Mon, 19 Apr 2021 16:43:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix nginx (origin/master)
+### fix nginx
 >Mon, 19 Apr 2021 16:16:53 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
