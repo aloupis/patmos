@@ -1,4 +1,14 @@
-### fix: import react in site and add react-scripts in dev dockerfiles (HEAD -> master)
+### fix: add port as env variable forsite nginx (HEAD -> master)
+>Mon, 19 Apr 2021 15:23:13 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix: import react in site and add react-scripts in dev dockerfiles
 >Mon, 19 Apr 2021 15:22:35 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
