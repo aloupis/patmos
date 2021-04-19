@@ -1,9 +1,9 @@
 require('dotenv').config();
 
-const { PG_CONNECTION_STRING } = process.env;
+const { DATABASE_URL } = process.env;
 const pg = require('knex')({
   client: 'pg',
-  connection: PG_CONNECTION_STRING,
+  connection: DATABASE_URL,
 });
 
 const withOrderBy = async (args, orderBy, orderDir) =>

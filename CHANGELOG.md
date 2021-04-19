@@ -1,4 +1,14 @@
-### add html titles (HEAD -> master)
+### renaming in db url env variable (HEAD -> master)
+>Mon, 19 Apr 2021 18:22:49 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add html titles (origin/master)
 >Mon, 19 Apr 2021 18:10:50 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add admin nginx config back (origin/master)
+### add admin nginx config back
 >Mon, 19 Apr 2021 17:48:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
