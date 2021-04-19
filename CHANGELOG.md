@@ -1,3 +1,173 @@
+### fix: import react in site and add react-scripts in dev dockerfiles (HEAD -> master)
+>Mon, 19 Apr 2021 15:22:35 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try port 80 (origin/master)
+>Thu, 15 Apr 2021 19:40:03 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### fix nginx dockerfile
+>Thu, 15 Apr 2021 19:20:36 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### using different credentials
+>Thu, 15 Apr 2021 18:53:27 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### removing script provider
+>Thu, 15 Apr 2021 18:42:56 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### try with heroku provider
+>Thu, 15 Apr 2021 18:37:23 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### removing heroku login once again
+>Thu, 15 Apr 2021 18:13:52 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### introduce heroku api key
+>Thu, 15 Apr 2021 18:06:34 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### adding legacy peer deps in admin dockerfile
+>Thu, 15 Apr 2021 17:28:01 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### remove heroku login from travis.yml
+>Thu, 15 Apr 2021 17:12:38 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### fix travis.yml
+>Thu, 15 Apr 2021 17:07:35 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### dockerize app (origin/dockerize-app)
+>Thu, 15 Apr 2021 16:54:11 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### update react version in ui
+>Thu, 15 Apr 2021 11:48:42 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### temp cors orgin change
+>Thu, 15 Apr 2021 11:47:48 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### replace gateway localhost paths with container name
+>Thu, 15 Apr 2021 11:47:04 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### remove eslint messages that caused problems with docker
+>Thu, 15 Apr 2021 11:45:40 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### fix infinite user call
+>Thu, 15 Apr 2021 11:43:50 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
 ### refactor: order by in knex db abstraction
 >Mon, 22 Mar 2021 13:59:45 +0200
 
@@ -8,7 +178,7 @@
 
 
 
-### refactor: order by in knex db abstraction (origin/master)
+### refactor: order by in knex db abstraction
 >Wed, 17 Mar 2021 19:15:05 +0200
 
 >Author: aloupis (manos.aloupis@gmail.com)
