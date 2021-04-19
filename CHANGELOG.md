@@ -1,4 +1,14 @@
-### trying removing admin (HEAD -> master)
+### add admin nginx config back (HEAD -> master)
+>Mon, 19 Apr 2021 17:48:41 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### trying removing admin (origin/master)
 >Mon, 19 Apr 2021 16:56:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### dummy commit (origin/master)
+### dummy commit
 >Mon, 19 Apr 2021 16:43:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
