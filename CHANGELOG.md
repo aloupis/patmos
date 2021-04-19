@@ -1,4 +1,14 @@
-### renaming in db url env variable (HEAD -> master)
+### try modifying homepage in admin (HEAD -> master)
+>Mon, 19 Apr 2021 18:44:43 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### renaming in db url env variable (origin/master)
 >Mon, 19 Apr 2021 18:22:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add html titles (origin/master)
+### add html titles
 >Mon, 19 Apr 2021 18:10:50 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
