@@ -1,4 +1,14 @@
-### fix: add port as env variable forsite nginx (HEAD -> master)
+### try different cofig in dockerfile for site (HEAD -> master)
+>Mon, 19 Apr 2021 15:44:08 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix: add port as env variable forsite nginx (origin/master)
 >Mon, 19 Apr 2021 15:23:13 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -18,7 +28,7 @@
 
 
 
-### try port 80 (origin/master)
+### try port 80
 >Thu, 15 Apr 2021 19:40:03 +0300
 
 >Author: Manos Aloupis (e.aloupis@covis.de)
