@@ -1,4 +1,14 @@
-### try modifying homepage in admin (HEAD -> master)
+### add heroku postgres init script (HEAD -> master)
+>Mon, 19 Apr 2021 18:56:21 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try modifying homepage in admin (origin/master)
 >Mon, 19 Apr 2021 18:44:43 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### renaming in db url env variable (origin/master)
+### renaming in db url env variable
 >Mon, 19 Apr 2021 18:22:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
