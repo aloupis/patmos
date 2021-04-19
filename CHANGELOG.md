@@ -1,4 +1,14 @@
-### add admin nginx config back (HEAD -> master)
+### add html titles (HEAD -> master)
+>Mon, 19 Apr 2021 18:10:50 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add admin nginx config back (origin/master)
 >Mon, 19 Apr 2021 17:48:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### trying removing admin (origin/master)
+### trying removing admin
 >Mon, 19 Apr 2021 16:56:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
