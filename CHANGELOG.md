@@ -1,4 +1,14 @@
-### try different cofig in dockerfile for site (HEAD -> master)
+### try different cofig in dockerfile for admin (HEAD -> master)
+>Mon, 19 Apr 2021 15:56:08 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try different cofig in dockerfile for site (origin/master)
 >Mon, 19 Apr 2021 15:44:08 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix: add port as env variable forsite nginx (origin/master)
+### fix: add port as env variable forsite nginx
 >Mon, 19 Apr 2021 15:23:13 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
