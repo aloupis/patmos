@@ -1,8 +1,9 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+console.log('aaa', process.env.REACT_APP_GATEWAY);
 export const getApolloClient = () =>
   new ApolloClient({
-    uri: '/gateway/graphql',
+    uri: `${process.env.REACT_APP_GATEWAY}/graphql`,
     credentials: 'include',
     cache: new InMemoryCache(),
   });

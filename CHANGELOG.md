@@ -1,4 +1,14 @@
-### config cors for multiple domains (HEAD -> master)
+### add env variables and remove admin from nginx (HEAD -> master)
+>Tue, 20 Apr 2021 18:51:47 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### config cors for multiple domains
 >Tue, 20 Apr 2021 18:50:20 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

@@ -3,12 +3,12 @@ version: "3.3"
 services:
   psql:
     image: postgres
-    environment:
-      POSTGRES_PASSWORD: 123456
     ports:
       - 5432:5432
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_PASSWORD: 123456
     command: postgres -c max_locks_per_transaction=2000
     networks:
       - patmos
@@ -34,6 +34,8 @@ services:
       - SECRET_KEY=secret!
       - DATABASE_URL=postgres://postgres:123456@psql:5432/postgres
       - SENTRY_DSN=https://7367430a6fe54c318164d32beb55d7a9@o511333.ingest.sentry.io/5679498
+      - NGINX_HOST=http://localhost:3050
+      - ADMIN_HOST=http://localhost:3036
     depends_on:
       - nginx
       - psql
@@ -44,11 +46,15 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./ui/admin
+    ports:
+      - "3036:3000"
     volumes:
       - /app/node_modules
       - ./ui/admin:/app
     depends_on:
-      - nginx
+      - psql
+    environment:
+      - REACT_APP_GATEWAY=http://localhost:3050/gateway
     networks:
       - patmos
   site:
@@ -65,5 +71,3 @@ services:
       - patmos
 networks:
   patmos:
-volumes:
-  db_data:

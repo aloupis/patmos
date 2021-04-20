@@ -5,5 +5,5 @@ RUN npm install --legacy-peer-deps
 RUN npm install react-scripts@3.4.1 -g --silent
 
 COPY . .
-EXPOSE 3036    
-CMD ["npm", "start", "--port", "3036"]
+EXPOSE 3000   
+CMD ["npm", "start"]

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from './UserContext';
 
-const AUTH_SERVICE_BASE_URL = '/gateway';
+const AUTH_SERVICE_BASE_URL = process.env.REACT_APP_GATEWAY;
 
 export default function useAuth() {
   const history = useHistory();
