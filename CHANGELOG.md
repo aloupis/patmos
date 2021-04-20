@@ -1,4 +1,14 @@
-### try hardcoded gateway url (HEAD -> master)
+### fix url (HEAD -> master)
+>Tue, 20 Apr 2021 19:18:26 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try hardcoded gateway url (origin/master)
 >Tue, 20 Apr 2021 19:09:31 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add env variables and remove admin from nginx (origin/master)
+### add env variables and remove admin from nginx
 >Tue, 20 Apr 2021 18:51:47 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
