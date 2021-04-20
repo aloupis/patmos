@@ -1,4 +1,14 @@
-### admin in root (HEAD -> master)
+### config cors for multiple domains (HEAD -> master)
+>Tue, 20 Apr 2021 18:50:20 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### admin in root (origin/master)
 >Mon, 19 Apr 2021 19:07:15 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -18,7 +28,7 @@
 
 
 
-### try modifying homepage in admin (origin/master)
+### try modifying homepage in admin
 >Mon, 19 Apr 2021 18:44:43 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
