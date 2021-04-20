@@ -15,10 +15,11 @@ const db = require('./db');
 const { SECRET_KEY, HOST, PORT, NGINX_HOST, ADMIN_HOST } = process.env;
 
 const ALLOWED_DOMAINS = [NGINX_HOST, ADMIN_HOST];
-console.log({ ALLOWED_DOMAINS });
+
 app.use(
   cors({
     origin(origin, callback) {
+      console.log({ ALLOWED_DOMAINS });
       // bypass the requests with no origin (like curl requests, mobile apps, etc )
       if (!origin) return callback(null, true);
       console.log({ origin, ALLOWED_DOMAINS });

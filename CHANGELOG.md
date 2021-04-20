@@ -1,4 +1,14 @@
-### add log (HEAD -> master)
+### test (HEAD -> master)
+>Tue, 20 Apr 2021 20:01:43 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add log (origin/master)
 >Tue, 20 Apr 2021 19:50:58 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### try passing env variables in nginx (origin/master)
+### try passing env variables in nginx
 >Tue, 20 Apr 2021 19:50:15 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
