@@ -1,4 +1,14 @@
-### fix url (HEAD -> master)
+### removing admin from prod nginx default.conf (HEAD -> master)
+>Tue, 20 Apr 2021 19:33:06 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix url (origin/master)
 >Tue, 20 Apr 2021 19:18:26 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### try hardcoded gateway url (origin/master)
+### try hardcoded gateway url
 >Tue, 20 Apr 2021 19:09:31 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
