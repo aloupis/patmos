@@ -36,6 +36,7 @@ services:
       - SENTRY_DSN=https://7367430a6fe54c318164d32beb55d7a9@o511333.ingest.sentry.io/5679498
       - NGINX_HOST=http://localhost:3050
       - ADMIN_HOST=http://localhost:3036
+      - USE_SSL= false
     depends_on:
       - nginx
       - psql
