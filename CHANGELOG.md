@@ -1,4 +1,14 @@
-### try passing env variables in nginx (HEAD -> master)
+### add log (HEAD -> master)
+>Tue, 20 Apr 2021 19:50:58 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try passing env variables in nginx (origin/master)
 >Tue, 20 Apr 2021 19:50:15 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### removing admin from prod nginx default.conf (origin/master)
+### removing admin from prod nginx default.conf
 >Tue, 20 Apr 2021 19:33:06 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
