@@ -1,4 +1,14 @@
-### add use ssl in nginx (HEAD -> master)
+### hardcode ssl (HEAD -> master)
+>Tue, 20 Apr 2021 20:37:59 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add use ssl in nginx (origin/master)
 >Tue, 20 Apr 2021 20:26:04 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add use ssl env variable (origin/master)
+### add use ssl env variable
 >Tue, 20 Apr 2021 20:24:11 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
