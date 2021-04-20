@@ -1,4 +1,14 @@
-### hardcode ssl (HEAD -> master)
+### trying once more (HEAD -> master)
+>Tue, 20 Apr 2021 20:45:30 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### hardcode ssl (origin/master)
 >Tue, 20 Apr 2021 20:37:59 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add use ssl in nginx (origin/master)
+### add use ssl in nginx
 >Tue, 20 Apr 2021 20:26:04 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
