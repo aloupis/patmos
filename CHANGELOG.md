@@ -1,4 +1,14 @@
-### modifying knex connection and hardcoding secure in jwt (HEAD -> master)
+### trying hardcoding domain (HEAD -> master)
+>Wed, 21 Apr 2021 18:07:16 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### modifying knex connection and hardcoding secure in jwt (origin/master)
 >Wed, 21 Apr 2021 17:50:43 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### trying once more (origin/master)
+### trying once more
 >Tue, 20 Apr 2021 20:45:30 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

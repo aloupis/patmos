@@ -69,7 +69,7 @@ app.post('/login', async (req, res) => {
     httpOnly: true,
     expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
     secure: true,
-    domain: HOST,
+    domain: 'patmos-admin.herokuapp.com',
   });
 
   res.status(200).json({
