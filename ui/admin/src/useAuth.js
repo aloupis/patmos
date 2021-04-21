@@ -16,10 +16,12 @@ export default function useAuth() {
     axios
       .get(`${AUTH_SERVICE_BASE_URL}/user`)
       .then((res) => {
+        console.log({ res });
         setUser(res.data.currentUser);
         history.push('/');
       })
       .catch((err) => {
+        console.log({ err });
         setError(err.response.data);
       });
 

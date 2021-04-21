@@ -1,4 +1,14 @@
-### add logging and revert test (HEAD -> master)
+### enhance logging (HEAD -> master)
+>Wed, 21 Apr 2021 19:04:11 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add logging and revert test (origin/master)
 >Wed, 21 Apr 2021 18:47:13 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### try with no authentication (origin/master)
+### try with no authentication
 >Wed, 21 Apr 2021 18:22:23 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

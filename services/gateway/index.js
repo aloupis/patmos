@@ -46,6 +46,8 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     console.log({ email, password });
     const [user] = await db.select('usr', { email });
+
+    console.log({ user });
     if (!user) {
       res.status(404).send({
         success: false,
@@ -66,14 +68,28 @@ app.post('/login', async (req, res) => {
 
     const token = jwt.sign({ email: user.email, id: user.id }, SECRET_KEY);
     const date = new Date();
+    console.log({ token });
     // cookie settings
+
+    console.log('res.cookie', {
+      httpOnly: true,
+      expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
+      secure: true,
+      domain: 'patmos-admin.herokuapp.com',
+    });
     res.cookie('jwt', token, {
       httpOnly: true,
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: true,
       domain: 'patmos-admin.herokuapp.com',
     });
-
+    console.log('res.status', {
+      success: true,
+      token,
+      data: {
+        user,
+      },
+    });
     res.status(200).json({
       success: true,
       token,
