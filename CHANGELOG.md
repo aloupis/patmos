@@ -1,4 +1,14 @@
-### try with no authentication (HEAD -> master)
+### add logging and revert test (HEAD -> master)
+>Wed, 21 Apr 2021 18:47:13 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try with no authentication (origin/master)
 >Wed, 21 Apr 2021 18:22:23 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### trying hardcoding domain (origin/master)
+### trying hardcoding domain
 >Wed, 21 Apr 2021 18:07:16 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

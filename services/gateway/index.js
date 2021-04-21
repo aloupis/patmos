@@ -42,43 +42,48 @@ app.use(
 );
 
 app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const [user] = await db.select('usr', { email });
-  if (!user) {
-    res.status(404).send({
-      success: false,
-      message: `Could not find account: ${email}`,
+  try {
+    const { email, password } = req.body;
+    console.log({ email, password });
+    const [user] = await db.select('usr', { email });
+    if (!user) {
+      res.status(404).send({
+        success: false,
+        message: `Could not find account: ${email}`,
+      });
+      return;
+    }
+
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      // return error to user to let them know the password is incorrect
+      res.status(401).send({
+        success: false,
+        message: 'Incorrect credentials',
+      });
+      return;
+    }
+
+    const token = jwt.sign({ email: user.email, id: user.id }, SECRET_KEY);
+    const date = new Date();
+    // cookie settings
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
+      secure: true,
+      domain: 'patmos-admin.herokuapp.com',
     });
-    return;
-  }
 
-  const match = await bcrypt.compare(password, user.password);
-  if (!match) {
-    // return error to user to let them know the password is incorrect
-    res.status(401).send({
-      success: false,
-      message: 'Incorrect credentials',
+    res.status(200).json({
+      success: true,
+      token,
+      data: {
+        user,
+      },
     });
-    return;
+  } catch (err) {
+    console.log({ err });
   }
-
-  const token = jwt.sign({ email: user.email, id: user.id }, SECRET_KEY);
-  const date = new Date();
-  // cookie settings
-  res.cookie('jwt', token, {
-    httpOnly: true,
-    expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
-    secure: true,
-    domain: 'patmos-admin.herokuapp.com',
-  });
-
-  res.status(200).json({
-    success: true,
-    token,
-    data: {
-      user,
-    },
-  });
 });
 
 app.post('/logout', async (req, res) => {
@@ -87,16 +92,21 @@ app.post('/logout', async (req, res) => {
 });
 
 app.get('/user', async (req, res) => {
-  let currentUser;
-  if (req.cookies && req.cookies.jwt) {
-    const token = req.cookies.jwt;
-    const decoded = await promisify(jwt.verify)(token, SECRET_KEY);
-    const [user] = await db.select('usr', { id: decoded.id });
-    currentUser = user;
-  } else {
-    currentUser = null;
+  try {
+    let currentUser;
+    console.log({ 'req.cookies': req.cookies });
+    if (req.cookies && req.cookies.jwt) {
+      const token = req.cookies.jwt;
+      const decoded = await promisify(jwt.verify)(token, SECRET_KEY);
+      const [user] = await db.select('usr', { id: decoded.id });
+      currentUser = user;
+    } else {
+      currentUser = null;
+    }
+    res.status(200).send(currentUser ? { currentUser } : null);
+  } catch (err) {
+    console.log({ err });
   }
-  res.status(200).send(currentUser ? { currentUser } : null);
 });
 
 const { typeDefs } = require('./schema');

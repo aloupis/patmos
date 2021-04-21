@@ -71,8 +71,7 @@ const App = () => {
             <UserContext.Provider value={{ user, setUser, isLoading }}>
               <BrowserRouter>
                 <MuiThemeProvider theme={theme}>
-                  {/* {user ? <Routes /> : <LoginForm />} */}
-                  <Routes />
+                  {user ? <Routes /> : <LoginForm />}
                 </MuiThemeProvider>
               </BrowserRouter>
             </UserContext.Provider>
