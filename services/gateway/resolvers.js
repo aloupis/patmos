@@ -60,7 +60,9 @@ const resolvers = {
       try {
         // eslint-disable-next-line camelcase
         const { title_gr, title_en, content_gr, content_en } = input;
-        const userId = authenticate(token);
+        // const userId = authenticate(token);
+        const userId = 1;
+
         const [user] = await db.select('usr', { id: +userId });
 
         const [insertedPost] = await db.insert('post', {
