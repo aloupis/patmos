@@ -12,17 +12,23 @@ const app = express();
 const { promisify } = require('util');
 const db = require('./db');
 
-const { SECRET_KEY, HOST, PORT, NGINX_HOST, ADMIN_HOST } = process.env;
+const {
+  SECRET_KEY,
+  HOST,
+  PORT,
+  NGINX_HOST,
+  HTTP_ONLY,
+  ADMIN_HOST,
+  USE_SSL,
+} = process.env;
 
 const ALLOWED_DOMAINS = [NGINX_HOST, ADMIN_HOST];
 
 app.use(
   cors({
     origin(origin, callback) {
-      console.log({ ALLOWED_DOMAINS });
       // bypass the requests with no origin (like curl requests, mobile apps, etc )
       if (!origin) return callback(null, true);
-      console.log({ origin, ALLOWED_DOMAINS });
       if (!ALLOWED_DOMAINS.includes(origin)) {
         const msg = `This site ${origin} does not have an access. Only specific domains are allowed to access it.`;
         return callback(new Error(msg), false);
@@ -70,18 +76,12 @@ app.post('/login', async (req, res) => {
     const date = new Date();
     console.log({ token });
     // cookie settings
-
-    console.log('res.cookie', {
-      httpOnly: true,
-      expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
-      secure: true,
-      domain: 'patmos-admin.herokuapp.com',
-    });
+    console.log({ HTTP_ONLY, HOST });
     res.cookie('jwt', token, {
-      httpOnly: true,
+      httpOnly: HTTP_ONLY === 'true',
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
-      secure: true,
-      domain: 'patmos-admin.herokuapp.com',
+      secure: USE_SSL === 'true',
+      domain: HOST,
     });
     console.log('res.status', {
       success: true,

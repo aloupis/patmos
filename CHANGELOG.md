@@ -1,4 +1,14 @@
-### enhance logging (HEAD -> master)
+### add env variables (HEAD -> master)
+>Wed, 21 Apr 2021 20:23:41 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### enhance logging (origin/master)
 >Wed, 21 Apr 2021 19:04:11 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add logging and revert test (origin/master)
+### add logging and revert test
 >Wed, 21 Apr 2021 18:47:13 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
