@@ -68,7 +68,7 @@ app.post('/login', async (req, res) => {
   res.cookie('jwt', token, {
     httpOnly: true,
     expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
-    // secure: true, //on HTTPS
+    secure: true,
     domain: HOST,
   });
 
