@@ -1,5 +1,4 @@
 require('dotenv').config();
-const { shouldSendSameSiteNone } = require('should-send-same-site-none');
 const { ApolloServer } = require('apollo-server-express');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -47,8 +46,6 @@ app.use(
   })
 );
 
-app.use(shouldSendSameSiteNone);
-
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -84,7 +81,6 @@ app.post('/login', async (req, res) => {
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
       sameSite: 'none',
-      domain: HOST,
     });
     console.log('res.status', {
       success: true,
