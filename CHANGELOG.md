@@ -1,4 +1,14 @@
-### add same site config in cookie (HEAD -> master)
+### try shouldSendSameSiteNone (HEAD -> master)
+>Thu, 22 Apr 2021 10:43:24 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add same site config in cookie (origin/master)
 >Thu, 22 Apr 2021 10:22:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### log login (origin/master)
+### log login
 >Thu, 22 Apr 2021 09:58:30 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

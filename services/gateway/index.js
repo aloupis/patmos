@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const { shouldSendSameSiteNone } = require('should-send-same-site-none');
 const { ApolloServer } = require('apollo-server-express');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -46,6 +46,8 @@ app.use(
     extended: true,
   })
 );
+
+app.use(shouldSendSameSiteNone);
 
 app.post('/login', async (req, res) => {
   try {
