@@ -81,6 +81,7 @@ app.post('/login', async (req, res) => {
       httpOnly: HTTP_ONLY === 'true',
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
+      sameSite: 'none',
       domain: HOST,
     });
     console.log('res.status', {

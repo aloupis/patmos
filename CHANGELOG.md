@@ -1,4 +1,14 @@
-### log login (HEAD -> master)
+### add same site config in cookie (HEAD -> master)
+>Thu, 22 Apr 2021 10:22:24 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### log login (origin/master)
 >Thu, 22 Apr 2021 09:58:30 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add env variables (origin/master)
+### add env variables
 >Wed, 21 Apr 2021 20:23:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
