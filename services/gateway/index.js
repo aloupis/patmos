@@ -11,14 +11,7 @@ const app = express();
 const { promisify } = require('util');
 const db = require('./db');
 
-const {
-  SECRET_KEY,
-  HOST,
-  PORT,
-  NGINX_HOST,
-  ADMIN_HOST,
-  USE_SSL,
-} = process.env;
+const { SECRET_KEY, HOST, PORT, NGINX_HOST, ADMIN_HOST, USE_SSL } = process.env;
 
 const ALLOWED_DOMAINS = [NGINX_HOST, ADMIN_HOST];
 
@@ -76,7 +69,7 @@ app.post('/login', async (req, res) => {
       httpOnly: true,
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
-      sameSite: USE_SSL === 'true'?'none':'lax',
+      sameSite: USE_SSL === 'true' ? 'none' : 'lax',
     });
 
     res.status(200).json({
@@ -92,8 +85,12 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/logout', async (req, res) => {
-  res.clearCookie('jwt');
-  return res.status(200).redirect();
+  try {
+    res.clearCookie('jwt');
+    return res.status(200).redirect(HOST);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get('/user', async (req, res) => {

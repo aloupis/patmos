@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-console.log('process.env.REACT_APP_GATEWAY',process.env.REACT_APP_GATEWAY);
-// const AUTH_SERVICE_BASE_URL = process.env.REACT_APP_GATEWAY;
-const AUTH_SERVICE_BASE_URL = process.env.REACT_APP_GATEWAY || 'https://patmos-gateway.herokuapp.com';
+
+const AUTH_SERVICE_BASE_URL =
+  process.env.REACT_APP_GATEWAY || 'https://patmos-gateway.herokuapp.com';
 
 export default function useFindUser() {
   const history = useHistory();

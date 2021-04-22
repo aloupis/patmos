@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from './UserContext';
 
-// const AUTH_SERVICE_BASE_URL = process.env.REACT_APP_GATEWAY;
-const AUTH_SERVICE_BASE_URL = process.env.REACT_APP_GATEWAY || 'https://patmos-gateway.herokuapp.com';
+const AUTH_SERVICE_BASE_URL =
+  process.env.REACT_APP_GATEWAY || 'https://patmos-gateway.herokuapp.com';
 
 export default function useAuth() {
   const history = useHistory();

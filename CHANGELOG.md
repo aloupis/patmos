@@ -1,4 +1,64 @@
-### try another auth service base url (HEAD -> master)
+### trying fixing logout (HEAD -> master)
+>Thu, 22 Apr 2021 17:34:07 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix env variables for admin (origin/master)
+>Thu, 22 Apr 2021 17:03:48 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### clean up
+>Thu, 22 Apr 2021 16:44:07 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### yet another try
+>Thu, 22 Apr 2021 16:20:30 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### fix typo
+>Thu, 22 Apr 2021 15:53:44 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### trying with no domain
+>Thu, 22 Apr 2021 15:30:58 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### try another auth service base url
 >Thu, 22 Apr 2021 12:08:27 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +68,7 @@
 
 
 
-### try shouldSendSameSiteNone (origin/master)
+### try shouldSendSameSiteNone
 >Thu, 22 Apr 2021 10:43:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
