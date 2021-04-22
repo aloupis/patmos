@@ -16,7 +16,6 @@ export default function useAuth() {
     axios
       .get(`${AUTH_SERVICE_BASE_URL}/user`)
       .then((res) => {
-        console.log({ res });
         setUser(res.data.currentUser);
         history.push('/');
       })
@@ -39,11 +38,10 @@ export default function useAuth() {
         { withCredentials: true }
       )
       .then(async (res) => {
-        console.log('login res', res);
         setUserContext();
       })
       .catch((err) => {
-        console.log('login err', err);
+        console.log(err);
         // setError(err.response.data);
       });
   };

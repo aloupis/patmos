@@ -16,7 +16,6 @@ const {
   HOST,
   PORT,
   NGINX_HOST,
-  HTTP_ONLY,
   ADMIN_HOST,
   USE_SSL,
 } = process.env;
@@ -49,10 +48,8 @@ app.use(
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log({ email, password });
     const [user] = await db.select('usr', { email });
 
-    console.log({ user });
     if (!user) {
       res.status(404).send({
         success: false,
@@ -73,22 +70,15 @@ app.post('/login', async (req, res) => {
 
     const token = jwt.sign({ email: user.email, id: user.id }, SECRET_KEY);
     const date = new Date();
-    console.log({ token });
+
     // cookie settings
-    console.log({ HTTP_ONLY, HOST });
     res.cookie('jwt', token, {
-      httpOnly: HTTP_ONLY === 'true',
+      httpOnly: true,
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
-      sameSite: 'none',
+      sameSite: USE_SSL === 'true'?'none':'lax',
     });
-    console.log('res.status', {
-      success: true,
-      token,
-      data: {
-        user,
-      },
-    });
+
     res.status(200).json({
       success: true,
       token,
@@ -109,7 +99,7 @@ app.post('/logout', async (req, res) => {
 app.get('/user', async (req, res) => {
   try {
     let currentUser;
-    console.log({ 'req.cookies': req.cookies });
+
     if (req.cookies && req.cookies.jwt) {
       const token = req.cookies.jwt;
       const decoded = await promisify(jwt.verify)(token, SECRET_KEY);

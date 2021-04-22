@@ -37,7 +37,6 @@ services:
       - NGINX_HOST=http://localhost:3050
       - ADMIN_HOST=http://localhost:3036
       - USE_SSL= false
-      - HTTP_ONLY= true
     depends_on:
       - nginx
       - psql

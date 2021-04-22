@@ -15,7 +15,6 @@ export default function useFindUser() {
     axios
       .get(`${AUTH_SERVICE_BASE_URL}/user`)
       .then((res) => {
-        console.log({ res });
         if (res.data.currentUser) {
           setUser(res.data.currentUser);
         }
@@ -30,7 +29,6 @@ export default function useFindUser() {
           withCredentials: true,
         })
         .then((res) => {
-          console.log({ res });
           setUser(res.data.currentUser);
           setLoading(false);
         })

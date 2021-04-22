@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const { DATABASE_URL, USE_SSL } = process.env;
-console.log({ USE_SSL });
+
 const pg = require('knex')({
   client: 'pg',
   connection: DATABASE_URL,
