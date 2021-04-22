@@ -1,4 +1,14 @@
-### try shouldSendSameSiteNone (HEAD -> master)
+### try another auth service base url (HEAD -> master)
+>Thu, 22 Apr 2021 12:08:27 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try shouldSendSameSiteNone (origin/master)
 >Thu, 22 Apr 2021 10:43:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add same site config in cookie (origin/master)
+### add same site config in cookie
 >Thu, 22 Apr 2021 10:22:24 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
