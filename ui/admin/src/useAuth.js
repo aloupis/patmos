@@ -38,8 +38,12 @@ export default function useAuth() {
         },
         { withCredentials: true }
       )
-      .then(async () => setUserContext())
+      .then(async (res) => {
+        console.log('login res', res);
+        setUserContext();
+      })
       .catch((err) => {
+        console.log('login err', err);
         // setError(err.response.data);
       });
   };
