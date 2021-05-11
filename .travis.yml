@@ -17,6 +17,8 @@ script:
   - docker tag $DOCKER_USERNAME/patmos-admin registry.heroku.com/$HEROKU_APP_ADMIN/web;
   - docker build -t $DOCKER_USERNAME/patmos-nginx ./nginx
   - docker tag $DOCKER_USERNAME/patmos-nginx registry.heroku.com/$HEROKU_APP_NGINX/web;
+  - docker build -t $DOCKER_USERNAME/patmos-media ./services/media
+  - docker tag $DOCKER_USERNAME/patmos-media registry.heroku.com/$HEROKU_APP_MEDIA/web;
 
 deploy:
   provider: script
@@ -35,5 +37,8 @@ deploy:
     docker push $DOCKER_USERNAME/patmos-nginx;
     docker push registry.heroku.com/$HEROKU_APP_NGINX/web;
     heroku container:release web --app $HEROKU_APP_NGINX;
+    docker push $DOCKER_USERNAME/patmos-media;
+    docker push registry.heroku.com/$HEROKU_APP_MEDIA/web;
+    heroku container:release web --app $HEROKU_APP_MEDIA;
   on:
     branch: master

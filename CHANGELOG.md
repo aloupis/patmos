@@ -1,4 +1,14 @@
-### initial media service (HEAD -> cloudinary-integration)
+### update travis (HEAD -> cloudinary-integration)
+>Tue, 11 May 2021 18:19:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### initial media service
 >Tue, 11 May 2021 18:17:56 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
