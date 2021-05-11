@@ -1,4 +1,14 @@
-### trying fixing logout (HEAD -> master)
+### initial media service (HEAD -> cloudinary-integration)
+>Tue, 11 May 2021 18:17:56 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### trying fixing logout (origin/master, master)
 >Thu, 22 Apr 2021 17:34:07 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix env variables for admin (origin/master)
+### fix env variables for admin
 >Thu, 22 Apr 2021 17:03:48 +0300
 
 >Author: Manos Aloupis (e.aloupis@covis.de)
