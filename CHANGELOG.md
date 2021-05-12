@@ -1,4 +1,14 @@
-### update travis (HEAD -> cloudinary-integration)
+### add go config files (HEAD -> cloudinary-integration)
+>Wed, 12 May 2021 18:49:17 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### update travis (origin/cloudinary-integration)
 >Tue, 11 May 2021 18:19:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
