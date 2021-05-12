@@ -1,4 +1,14 @@
-### add go config files (HEAD -> cloudinary-integration)
+### retrieve port from heroku (HEAD -> master)
+>Wed, 12 May 2021 19:25:46 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add go config files (origin/cloudinary-integration, cloudinary-integration)
 >Wed, 12 May 2021 18:49:17 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### update travis (origin/cloudinary-integration)
+### update travis
 >Tue, 11 May 2021 18:19:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -28,7 +38,7 @@
 
 
 
-### trying fixing logout (origin/master, master)
+### trying fixing logout
 >Thu, 22 Apr 2021 17:34:07 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

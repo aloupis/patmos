@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/cloudinary/cloudinary-go"
@@ -127,9 +128,15 @@ func deleteHandler(c *gin.Context) {
 }
 
 func main() {
-	// os.Setenv("CLOUDINARY_URL", "cloudinary://173739189595347:KgK2ijnNqRf13vGo397ddiRG8gU@devaloupis")
+	port := os.Getenv("PORT")
+	os.Setenv("CLOUDINARY_URL", "cloudinary://173739189595347:KgK2ijnNqRf13vGo397ddiRG8gU@devaloupis")
 	r := gin.Default()
 
+	if port == "" {
+		port = "9000"
+	}
+	fmt.Println("port")
+	fmt.Println(port)
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:3050"},
 		AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},
@@ -142,5 +149,5 @@ func main() {
 	r.POST("/files", listFilesHandler)
 	r.PUT("/upload", uploadHandler)
 	r.POST("/delete", deleteHandler)
-	r.Run(":9000")
+	r.Run(port)
 }
