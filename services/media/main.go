@@ -149,5 +149,5 @@ func main() {
 	r.POST("/files", listFilesHandler)
 	r.PUT("/upload", uploadHandler)
 	r.POST("/delete", deleteHandler)
-	r.Run(port)
+	r.Run(":" + port)
 }
