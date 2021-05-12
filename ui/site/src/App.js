@@ -5,6 +5,7 @@ import axios from 'axios'
 function App() {
   const inputRef = useRef(null);
 const [media,setMedia] = useState([])
+const url ='https://patmos-media.herokuapp.com'
 
 
 console.log({media})
@@ -19,7 +20,7 @@ Array.from(evt.target.files).forEach((x) => {
 formData.append('path','/images/1')
 
             const { data } = await axios({
-              url: 'http://localhost:9000/upload',
+              url: `${url}/upload`,
               method: 'put',
               data: formData,
               headers:{"Content-Type" :"multipart/form-data" }
@@ -32,7 +33,7 @@ formData.append('path','/images/1')
         const formData = new FormData();
         formData.append('key','images/1')
                     const { data } = await axios({
-                      url: 'http://localhost:9000/delete',
+                      url: `${url}/delete`,
                       method: 'post',
                       data: formData,
                     });
@@ -43,7 +44,7 @@ formData.append('path','/images/1')
     const formData = new FormData();
     formData.append('folder','images/1')
                     const { data } = await axios({
-                      url: 'http://localhost:9000/files',
+                      url: `${url}/files`,
                       method: 'post',
                       data: formData,
                     });

@@ -138,7 +138,7 @@ func main() {
 	fmt.Println("port")
 	fmt.Println(port)
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3050"},
+		AllowOrigins:     []string{"https://patmos-nginx.herokuapp.com/"},
 		AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},
 		AllowHeaders:     []string{"pragma", "authorization", "Access-Control-Allow-Headers", "Origin", "Accept", "X-Requested-With", "Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Access-Control-Allow-Origin"},
 		ExposeHeaders:    []string{"Content-Length"},

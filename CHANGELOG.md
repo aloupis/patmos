@@ -1,4 +1,14 @@
-### add semicolon (HEAD -> master)
+### update cors and try heroku urls in site (HEAD -> master)
+>Wed, 12 May 2021 19:55:22 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add semicolon (origin/master)
 >Wed, 12 May 2021 19:39:45 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### retrieve port from heroku (origin/master)
+### retrieve port from heroku
 >Wed, 12 May 2021 19:25:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
