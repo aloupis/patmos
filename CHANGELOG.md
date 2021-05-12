@@ -1,4 +1,34 @@
-### trying fixing logout (HEAD -> master)
+### add go config files (HEAD -> cloudinary-integration)
+>Wed, 12 May 2021 18:49:17 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### update travis (origin/cloudinary-integration)
+>Tue, 11 May 2021 18:19:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### initial media service
+>Tue, 11 May 2021 18:17:56 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### trying fixing logout (origin/master, master)
 >Thu, 22 Apr 2021 17:34:07 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +38,7 @@
 
 
 
-### fix env variables for admin (origin/master)
+### fix env variables for admin
 >Thu, 22 Apr 2021 17:03:48 +0300
 
 >Author: Manos Aloupis (e.aloupis@covis.de)

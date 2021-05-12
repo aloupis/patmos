@@ -70,5 +70,19 @@ services:
       - nginx
     networks:
       - patmos
+  media:
+    restart: always
+    stdin_open: true
+    build:
+      dockerfile: Dockerfile
+      context: ./services/media
+    ports:
+      - "9000:9000"
+    depends_on:
+      - nginx
+    environment:
+      - CLOUDINARY_URL=cloudinary://173739189595347:KgK2ijnNqRf13vGo397ddiRG8gU@devaloupis
+    networks:
+      - patmos
 networks:
   patmos:
