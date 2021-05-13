@@ -1,4 +1,14 @@
-### test (HEAD -> master)
+### trying different origins (HEAD -> master)
+>Thu, 13 May 2021 11:15:41 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### test (origin/master)
 >Wed, 12 May 2021 20:08:04 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### update cors and try heroku urls in site (origin/master)
+### update cors and try heroku urls in site
 >Wed, 12 May 2021 19:55:22 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
