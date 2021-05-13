@@ -1,4 +1,14 @@
-### trying different origins (HEAD -> master)
+### check with func (HEAD -> master)
+>Thu, 13 May 2021 11:47:26 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### trying different origins (origin/master)
 >Thu, 13 May 2021 11:15:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### test (origin/master)
+### test
 >Wed, 12 May 2021 20:08:04 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
