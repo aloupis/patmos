@@ -1,4 +1,14 @@
-### check with func (HEAD -> master)
+### try with no cors (HEAD -> master)
+>Thu, 13 May 2021 12:23:33 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### check with func (origin/master)
 >Thu, 13 May 2021 11:47:26 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### trying different origins (origin/master)
+### trying different origins
 >Thu, 13 May 2021 11:15:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
