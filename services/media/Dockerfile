@@ -31,6 +31,7 @@ RUN cp /build/main .
 
 # Build a small image
 FROM scratch
+COPY --from=builder etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 COPY --from=builder /dist/main /
 

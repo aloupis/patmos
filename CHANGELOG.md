@@ -1,4 +1,14 @@
-### try with no cors (HEAD -> master)
+### add certificate in media dockerfile (HEAD -> master)
+>Fri, 14 May 2021 16:14:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try with no cors (origin/master)
 >Thu, 13 May 2021 12:23:33 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### check with func (origin/master)
+### check with func
 >Thu, 13 May 2021 11:47:26 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
