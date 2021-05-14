@@ -80,6 +80,7 @@ services:
       - nginx
     environment:
       - CLOUDINARY_URL=cloudinary://173739189595347:KgK2ijnNqRf13vGo397ddiRG8gU@devaloupis
+      - PORT=9000
     networks:
       - patmos
 networks:

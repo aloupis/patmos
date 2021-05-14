@@ -129,14 +129,9 @@ func deleteHandler(c *gin.Context) {
 
 func main() {
 	port := os.Getenv("PORT")
-	os.Setenv("CLOUDINARY_URL", "cloudinary://173739189595347:KgK2ijnNqRf13vGo397ddiRG8gU@devaloupis")
+	os.Setenv("CLOUDINARY_URL", os.Getenv("CLOUDINARY_URL"))
 	r := gin.Default()
 
-	if port == "" {
-		port = "9000"
-	}
-	fmt.Println("port")
-	fmt.Println(port)
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},

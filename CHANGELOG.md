@@ -1,4 +1,14 @@
-### putting media service in nginx (HEAD -> master)
+### clean up (HEAD -> master)
+>Fri, 14 May 2021 18:04:49 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### putting media service in nginx (origin/master)
 >Fri, 14 May 2021 17:38:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### try with cors (origin/master)
+### try with cors
 >Fri, 14 May 2021 17:00:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
