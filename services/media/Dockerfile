@@ -31,6 +31,8 @@ RUN cp /build/main .
 
 # Build a small image
 FROM scratch
+
+# Add certificate
 COPY --from=builder etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 COPY --from=builder /dist/main /
@@ -38,4 +40,3 @@ COPY --from=builder /dist/main /
 # Command to run
 ENTRYPOINT ["/main"]
 
-EXPOSE 9000

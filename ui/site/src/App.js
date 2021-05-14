@@ -5,7 +5,8 @@ import axios from 'axios'
 function App() {
   const inputRef = useRef(null);
 const [media,setMedia] = useState([])
-const url ='https://patmos-media.herokuapp.com'
+// const url ='http://localhost:9000'
+const url ='/media'
 
 
 console.log({media})

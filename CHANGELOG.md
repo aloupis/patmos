@@ -1,4 +1,14 @@
-### try with cors (HEAD -> master)
+### putting media service in nginx (HEAD -> master)
+>Fri, 14 May 2021 17:38:46 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### try with cors (origin/master)
 >Fri, 14 May 2021 17:00:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add certificate in media dockerfile (origin/master)
+### add certificate in media dockerfile
 >Fri, 14 May 2021 16:14:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
