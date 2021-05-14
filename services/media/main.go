@@ -14,6 +14,7 @@ import (
 	"github.com/cloudinary/cloudinary-go/api/admin"
 	"github.com/cloudinary/cloudinary-go/api/admin/search"
 	"github.com/cloudinary/cloudinary-go/api/uploader"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -136,13 +137,13 @@ func main() {
 	}
 	fmt.Println("port")
 	fmt.Println(port)
-	// r.Use(cors.New(cors.Config{
-	// 	AllowOrigins:     []string{"https://patmos-nginx.herokuapp.com", "https://patmos-site.herokuapp.com", "http://patmos-nginx.herokuapp.com", "http://patmos-site.herokuapp.com", "patmos-nginx.herokuapp.com", "patmos-site.herokuapp.com"},
-	// 	AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},
-	// 	AllowHeaders:     []string{"pragma", "authorization", "Access-Control-Allow-Headers", "Origin", "Accept", "X-Requested-With", "Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Access-Control-Allow-Origin"},
-	// 	ExposeHeaders:    []string{"Content-Length"},
-	// 	AllowCredentials: true,
-	// }))
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},
+		AllowHeaders:     []string{"pragma", "authorization", "Access-Control-Allow-Headers", "Origin", "Accept", "X-Requested-With", "Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Access-Control-Allow-Origin"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
 
 	// CORS for https://foo.com and https://github.com origins, allowing:
 	// - PUT and PATCH methods
