@@ -1,4 +1,14 @@
-### clean up (HEAD -> master)
+### fix eslint and cleaning up (HEAD -> master)
+>Sat, 15 May 2021 13:46:12 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### clean up (origin/master)
 >Fri, 14 May 2021 18:04:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### putting media service in nginx (origin/master)
+### putting media service in nginx
 >Fri, 14 May 2021 17:38:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

@@ -10,20 +10,18 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4",
-    "prettier": "^2.2.1"
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "browserslist": {
     "production": [
