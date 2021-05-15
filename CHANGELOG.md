@@ -1,4 +1,14 @@
-### fix eslint and cleaning up (HEAD -> master)
+### remove monorepo try (HEAD -> master)
+>Sat, 15 May 2021 13:47:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix eslint and cleaning up
 >Sat, 15 May 2021 13:46:12 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
