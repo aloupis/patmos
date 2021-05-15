@@ -10,5 +10,6 @@ package-lock.json
 size-snapshot.json
 .eslintcache
 **/.eslintcache
+main
 
 ui/admin/.eslintcache
