@@ -4,21 +4,17 @@
 
 ## Getting started
 
-- `npm i -g yarn`
 - clone this repo
 
 ## Firing it up
 
-- `npm run docker`
-- `npm run services`
-- `npm run admin` for admin
-- `npm run site` for site
+- `docker-compose up --build`
 
 ## Resetting
 
 ### Reset docker completely incl. volumes
 
-- `npm run reset-infra`
+- `docker-compose down && docker volume prune -f`
 
 ## Notes
 

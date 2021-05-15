@@ -1,4 +1,14 @@
-### remove monorepo try (HEAD -> master)
+### update readme.md (HEAD -> master)
+>Sat, 15 May 2021 13:52:05 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### remove monorepo try
 >Sat, 15 May 2021 13:47:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
