@@ -1,4 +1,14 @@
-### update readme.md (HEAD -> master)
+### enhance loggingfor insert post mutation (HEAD -> master)
+>Sat, 15 May 2021 14:24:09 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### update readme.md (origin/master)
 >Sat, 15 May 2021 13:52:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -28,7 +38,7 @@
 
 
 
-### clean up (origin/master)
+### clean up
 >Fri, 14 May 2021 18:04:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
