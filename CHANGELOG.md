@@ -1,4 +1,14 @@
-### enhance logging (again!) (HEAD -> master)
+### debugging (HEAD -> master)
+>Sun, 16 May 2021 14:48:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### enhance logging (again!) (origin/master)
 >Sun, 16 May 2021 14:28:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add go executable on gitignore (origin/master)
+### add go executable on gitignore
 >Sat, 15 May 2021 14:27:45 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

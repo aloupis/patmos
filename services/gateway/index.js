@@ -63,7 +63,7 @@ app.post('/login', async (req, res) => {
 
     const token = jwt.sign({ email: user.email, id: user.id }, SECRET_KEY);
     const date = new Date();
-
+console.log('inlogin',{token})
     // cookie settings
     res.cookie('jwt', token, {
       httpOnly: true,
@@ -116,6 +116,7 @@ const { resolvers } = require('./resolvers');
 
 const context = ({ req }) => {
   const token = req.cookies.jwt || '';
+  console.log('context',token)
   return { token };
 };
 

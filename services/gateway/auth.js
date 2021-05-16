@@ -5,7 +5,7 @@ const { SECRET_KEY } = process.env;
 
 const authenticate = (token) => {
   if (!token) {
-    console.log(1);
+    console.log(1,token,SECRET_KEY);
     throw new AuthenticationError(
       'Authentication token is invalid, please log in'
     );
