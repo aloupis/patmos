@@ -1,4 +1,14 @@
-### add go executable on gitignore (HEAD -> master)
+### enhance logging (again!) (HEAD -> master)
+>Sun, 16 May 2021 14:28:46 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add go executable on gitignore (origin/master)
 >Sat, 15 May 2021 14:27:45 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### remove main (origin/master)
+### remove main
 >Sat, 15 May 2021 14:26:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
