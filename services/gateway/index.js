@@ -1,15 +1,15 @@
-require("dotenv").config();
-const { ApolloServer } = require("apollo-server-express");
-const cookieParser = require("cookie-parser");
-const express = require("express");
-const cors = require("cors");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const bodyParser = require("body-parser");
+require('dotenv').config();
+const { ApolloServer } = require('apollo-server-express');
+const cookieParser = require('cookie-parser');
+const express = require('express');
+const cors = require('cors');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
 
 const app = express();
-const { promisify } = require("util");
-const db = require("./db");
+const { promisify } = require('util');
+const db = require('./db');
 
 const { SECRET_KEY, HOST, PORT, NGINX_HOST, ADMIN_HOST, USE_SSL } = process.env;
 
@@ -38,10 +38,10 @@ app.use(
   })
 );
 
-app.post("/login", async (req, res) => {
+app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    const [user] = await db.select("usr", { email });
+    const [user] = await db.select('usr', { email });
 
     if (!user) {
       res.status(404).send({
@@ -56,7 +56,7 @@ app.post("/login", async (req, res) => {
       // return error to user to let them know the password is incorrect
       res.status(401).send({
         success: false,
-        message: "Incorrect credentials",
+        message: 'Incorrect credentials',
       });
       return;
     }
@@ -65,12 +65,12 @@ app.post("/login", async (req, res) => {
     const date = new Date();
 
     // cookie settings
-    res.cookie("jwt", token, {
+    res.cookie('jwt', token, {
       httpOnly: true,
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
-      secure: USE_SSL === "true",
-      sameSite: USE_SSL === "true" ? "none" : "lax",
-      path: "/",
+      secure: USE_SSL === 'true',
+      sameSite: USE_SSL === 'true' ? 'none' : 'lax',
+      path: '/',
     });
 
     res.status(200).json({
@@ -85,23 +85,23 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/logout", async (req, res) => {
+app.post('/logout', async (req, res) => {
   try {
-    res.clearCookie("jwt");
+    res.clearCookie('jwt');
     return res.status(200).redirect(HOST);
   } catch (err) {
     console.log(err);
   }
 });
 
-app.get("/user", async (req, res) => {
+app.get('/user', async (req, res) => {
   try {
     let currentUser;
 
     if (req.cookies && req.cookies.jwt) {
       const token = req.cookies.jwt;
       const decoded = await promisify(jwt.verify)(token, SECRET_KEY);
-      const [user] = await db.select("usr", { id: decoded.id });
+      const [user] = await db.select('usr', { id: decoded.id });
       currentUser = user;
     } else {
       currentUser = null;
@@ -112,13 +112,13 @@ app.get("/user", async (req, res) => {
   }
 });
 
-const { typeDefs } = require("./schema");
-const { resolvers } = require("./resolvers");
+const { typeDefs } = require('./schema');
+const { resolvers } = require('./resolvers');
 
 const context = ({ req }) => {
   // const token = req.cookies.jwt || '';
   const token = req.headers.authorization
-    ? req.headers.authorization.split(" ").pop().replace(/\"/g, "")
+    ? req.headers.authorization.split(' ').pop().replace(/\"/g, '')
     : null;
   return { token };
 };
