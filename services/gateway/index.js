@@ -68,6 +68,7 @@ console.log('inlogin',{token},{
   expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
   secure: USE_SSL === 'true',
   sameSite: USE_SSL === 'true' ? 'none' : 'lax',
+  domain: ADMIN_HOST,
 })
     // cookie settings
     res.cookie('jwt', token, {
@@ -75,6 +76,7 @@ console.log('inlogin',{token},{
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
       sameSite: USE_SSL === 'true' ? 'none' : 'lax',
+      domain: ADMIN_HOST,
     });
 
     res.status(200).json({
