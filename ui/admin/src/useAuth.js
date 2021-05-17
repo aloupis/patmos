@@ -38,7 +38,7 @@ export default function useAuth() {
         { withCredentials: true }
       )
       .then(async (res) => {
-        console.log('aaa',{res})
+        localStorage.setItem('token', JSON.stringify(res.data.token));
         setUserContext();
       })
       .catch((err) => {

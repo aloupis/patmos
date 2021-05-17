@@ -1,4 +1,14 @@
-### revert and log (HEAD -> master)
+### add path and add token to local storage (HEAD -> master)
+>Mon, 17 May 2021 12:48:13 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### revert and log (origin/master)
 >Mon, 17 May 2021 12:21:53 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### check with gateway (origin/master)
+### check with gateway
 >Mon, 17 May 2021 12:07:01 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
