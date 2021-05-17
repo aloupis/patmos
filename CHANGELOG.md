@@ -1,4 +1,14 @@
-### trying with no https (HEAD -> master)
+### check with gateway (HEAD -> master)
+>Mon, 17 May 2021 12:07:01 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### trying with no https (origin/master)
 >Mon, 17 May 2021 11:53:38 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### adding admin host in domain (origin/master)
+### adding admin host in domain
 >Mon, 17 May 2021 11:38:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
