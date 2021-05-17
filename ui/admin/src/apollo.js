@@ -2,8 +2,9 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: process.env.REACT_APP_GATEWAY ? 
-  `${process.env.REACT_APP_GATEWAY}/graphql` : `https://patmos-nginx.herokuapp.com/gateway/graphql`,
+  uri: process.env.REACT_APP_GATEWAY
+    ? `${process.env.REACT_APP_GATEWAY}/graphql`
+    : `https://patmos-nginx.herokuapp.com/gateway/graphql`,
 });
 
 const authLink = setContext(async (_, { headers }) => {
@@ -23,5 +24,4 @@ export const getApolloClient = () =>
     link: authLink.concat(httpLink),
     credentials: 'include',
     cache: new InMemoryCache(),
-
   });

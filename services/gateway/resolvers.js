@@ -60,7 +60,6 @@ const resolvers = {
       try {
         // eslint-disable-next-line camelcase
         const { title_gr, title_en, content_gr, content_en } = input;
-        console.log({token})
         const userId = authenticate(token);
         const [user] = await db.select('usr', { id: +userId });
 
@@ -72,8 +71,6 @@ const resolvers = {
           author_id: user.id,
           created_at: new Date(),
         });
-        console.log({insertedPost,postColumns,usrColumns})
-
         const [post] = await db.selectWithJoin(
           'post',
           postColumns,
@@ -82,11 +79,10 @@ const resolvers = {
           usrColumns,
           { 'post.id': insertedPost.id }
         );
-        console.log({post})
-        console.log('tranformedpost',transformEntity(post, 'post', 'usr', 'author'))
+
         return transformEntity(post, 'post', 'usr', 'author');
       } catch (err) {
-        console.log({err})
+        console.log({ err });
         Sentry.captureException(err);
         return null;
       }
