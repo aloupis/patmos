@@ -35,7 +35,7 @@ services:
       - DATABASE_URL=postgres://postgres:123456@psql:5432/postgres
       - SENTRY_DSN=https://7367430a6fe54c318164d32beb55d7a9@o511333.ingest.sentry.io/5679498
       - NGINX_HOST=http://localhost:3050
-      - ADMIN_HOST=http://localhost:3036
+      - ADMIN_HOST=http://localhost:3060
       - USE_SSL= false
     depends_on:
       - nginx
@@ -48,7 +48,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./ui/admin
     ports:
-      - "3036:3000"
+      - "3060:3000"
     volumes:
       - /app/node_modules
       - ./ui/admin:/app

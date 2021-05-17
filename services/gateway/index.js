@@ -116,8 +116,8 @@ const { typeDefs } = require('./schema');
 const { resolvers } = require('./resolvers');
 
 const context = ({ req }) => {
-  const token = req.cookies.jwt || '';
-  console.log('context',token)
+  // const token = req.cookies.jwt || '';
+  const  token = req.headers.authorization? req.headers.authorization.split(' ').pop().replace(/\"/g, ''):null;
   return { token };
 };
 
