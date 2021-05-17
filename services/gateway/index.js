@@ -69,7 +69,7 @@ console.log('inlogin',{token})
       httpOnly: true,
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
-      sameSite: USE_SSL === 'true' ? 'none' : 'lax',
+      // sameSite: USE_SSL === 'true' ? 'none' : 'lax',
     });
 
     res.status(200).json({

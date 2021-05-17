@@ -1,4 +1,14 @@
-### debugging (HEAD -> master)
+### trying comment out sameSite (HEAD -> master)
+>Mon, 17 May 2021 11:01:33 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### debugging (origin/master)
 >Sun, 16 May 2021 14:48:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### enhance logging (again!) (origin/master)
+### enhance logging (again!)
 >Sun, 16 May 2021 14:28:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
