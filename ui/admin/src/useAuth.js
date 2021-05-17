@@ -38,6 +38,7 @@ export default function useAuth() {
         { withCredentials: true }
       )
       .then(async (res) => {
+        console.log('aaa',{res})
         setUserContext();
       })
       .catch((err) => {

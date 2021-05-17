@@ -1,4 +1,14 @@
-### check with gateway (HEAD -> master)
+### revert and log (HEAD -> master)
+>Mon, 17 May 2021 12:21:53 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### check with gateway (origin/master)
 >Mon, 17 May 2021 12:07:01 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### trying with no https (origin/master)
+### trying with no https
 >Mon, 17 May 2021 11:53:38 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
