@@ -68,7 +68,7 @@ console.log('inlogin',{token},{
   expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
   secure: USE_SSL === 'true',
   sameSite: USE_SSL === 'true' ? 'none' : 'lax',
-  domain: ADMIN_HOST,
+  domain: 'patmos-admin.herokuapp.com',
 })
     // cookie settings
     res.cookie('jwt', token, {
@@ -76,7 +76,7 @@ console.log('inlogin',{token},{
       expires: new Date(date.setTime(date.getTime() + 10 * 60 * 100000)),
       secure: USE_SSL === 'true',
       sameSite: USE_SSL === 'true' ? 'none' : 'lax',
-      domain: ADMIN_HOST,
+      domain: 'patmos-admin.herokuapp.com',
     });
 
     res.status(200).json({
