@@ -18,6 +18,11 @@
         "prettier": "^2.1.1"
     },
     "scripts": {
+        "site": "cd ui/site && npm start",
+        "admin": "cd ui/admin && npm start",
+        "docker": "docker-compose up --build",
+        "services": "concurrently -k -p '[{name}]' -n 'GATEWAY' -c 'bgGreen.bold' 'cd services/gateway && npm run watch'",
+        "reset-infra": "docker-compose down && docker volume prune -f",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     }

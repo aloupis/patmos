@@ -40,7 +40,7 @@ function App() {
       <button
         onClick={async () => {
           const formData = new FormData();
-          formData.append('key', 'images/1');
+          formData.append('key', 'gallery/images');
           const { data } = await axios({
             url: `${url}/delete`,
             method: 'post',

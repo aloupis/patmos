@@ -8,13 +8,13 @@
 
 ## Firing it up
 
-- `docker-compose up --build`
+- `npm run docker`
 
 ## Resetting
 
 ### Reset docker completely incl. volumes
 
-- `docker-compose down && docker volume prune -f`
+- `npm run reset-infra`
 
 ## Notes
 

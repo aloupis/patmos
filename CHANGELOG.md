@@ -1,4 +1,44 @@
-### add path and add token to local storage (HEAD -> master)
+### initial gallery admin implementation (HEAD -> master)
+>Thu, 20 May 2021 21:29:46 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### reverting (origin/master)
+>Mon, 17 May 2021 15:57:16 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### fix linter issues and clean up
+>Mon, 17 May 2021 15:53:26 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### using local storage for graphql auth and change admin portal port
+>Mon, 17 May 2021 14:25:31 +0300
+
+>Author: Manos Aloupis (e.aloupis@covis.de)
+
+>Commiter: Manos Aloupis (e.aloupis@covis.de)
+
+
+
+
+### add path and add token to local storage
 >Mon, 17 May 2021 12:48:13 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +48,7 @@
 
 
 
-### revert and log (origin/master)
+### revert and log
 >Mon, 17 May 2021 12:21:53 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

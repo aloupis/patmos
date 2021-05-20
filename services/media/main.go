@@ -73,7 +73,7 @@ func listFilesHandler(c *gin.Context) {
 		log.Fatal(err)
 	}
 
-	c.JSON(200, string(json_data))
+	c.JSON(200, json_data)
 }
 
 func uploadHandler(c *gin.Context) {
@@ -90,21 +90,36 @@ func uploadHandler(c *gin.Context) {
 	}
 	files := form.File["files"]
 	path := form.Value["path"][0]
-
+	var assets []Asset
 	for _, file := range files {
 		openedFile, openFileErr := file.Open()
 		if openFileErr != nil {
 			c.String(http.StatusInternalServerError, "")
 		}
 
-		_, err := cld.Upload.Upload(ctx, openedFile, uploader.UploadParams{Folder: path})
+		uploaded, err := cld.Upload.Upload(ctx, openedFile, uploader.UploadParams{Folder: path})
 		if err != nil {
 			log.Fatalf("Failed to upload to Cloudinary, %v", err)
 
 		}
-
+		asset := Asset{
+			PublicId:  uploaded.PublicID,
+			Format:    uploaded.Format,
+			Url:       uploaded.SecureURL,
+			CreatedAt: uploaded.CreatedAt,
+			Width:     uploaded.Width,
+			Height:    uploaded.Height,
+			Type:      uploaded.ResourceType,
+		}
+		assets = append(assets, asset)
 	}
-	c.String(http.StatusOK, "OK")
+
+	json_data, err := json.Marshal(assets)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	c.JSON(http.StatusOK, json_data)
 
 }
 
@@ -135,7 +150,7 @@ func main() {
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"GET", "HEAD", "OPTIONS", "POST", "PUT"},
-		AllowHeaders:     []string{"pragma", "authorization", "Access-Control-Allow-Headers", "Origin", "Accept", "X-Requested-With", "Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Access-Control-Allow-Origin"},
+		AllowHeaders:     []string{"sentry-trace", "pragma", "authorization", "Access-Control-Allow-Headers", "Origin", "Accept", "X-Requested-With", "Content-Type", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Access-Control-Allow-Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
