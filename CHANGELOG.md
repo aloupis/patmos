@@ -1,4 +1,14 @@
-### initial gallery admin implementation (HEAD -> master)
+### delete asset functionality (HEAD -> master)
+>Fri, 21 May 2021 18:18:54 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### initial gallery admin implementation (origin/master)
 >Thu, 20 May 2021 21:29:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### reverting (origin/master)
+### reverting
 >Mon, 17 May 2021 15:57:16 +0300
 
 >Author: Manos Aloupis (e.aloupis@covis.de)

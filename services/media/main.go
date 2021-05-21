@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -73,7 +72,7 @@ func listFilesHandler(c *gin.Context) {
 		log.Fatal(err)
 	}
 
-	c.JSON(200, json_data)
+	c.JSON(http.StatusOK, string(json_data))
 }
 
 func uploadHandler(c *gin.Context) {
@@ -119,7 +118,7 @@ func uploadHandler(c *gin.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	c.JSON(http.StatusOK, json_data)
+	c.JSON(http.StatusOK, string(json_data))
 
 }
 
@@ -131,7 +130,6 @@ func deleteHandler(c *gin.Context) {
 	var ctx = context.Background()
 
 	key := c.PostForm("key")
-	fmt.Println(key)
 
 	_, err2 := cld.Admin.DeleteAssetsByPrefix(ctx, admin.DeleteAssetsByPrefixParams{
 		Prefix: api.CldAPIArray{key},
