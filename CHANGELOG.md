@@ -1,4 +1,14 @@
-### delete asset functionality (HEAD -> master)
+### removing trailing slash (HEAD -> master)
+>Fri, 21 May 2021 18:36:39 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### delete asset functionality (origin/master)
 >Fri, 21 May 2021 18:18:54 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### initial gallery admin implementation (origin/master)
+### initial gallery admin implementation
 >Thu, 20 May 2021 21:29:46 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
