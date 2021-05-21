@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'https://patmos-media.herokuapp.com'; // http://localhost:3050/media';
+const url =
+  process.env.REACT_APP_MEDIA || 'https://patmos-nginx.herokuapp.com/media';
 
 export const listAssets = (path) => {
   const formData = new FormData();

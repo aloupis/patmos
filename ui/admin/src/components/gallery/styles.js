@@ -47,7 +47,7 @@ export default (theme) => ({
   },
   removeImage: {
     cursor: 'pointer',
-    display: 'none',
+    display: 'inline',
     position: 'absolute',
     right: '10px',
     borderRadius: '10em',

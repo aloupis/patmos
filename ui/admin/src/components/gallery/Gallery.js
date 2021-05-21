@@ -11,7 +11,6 @@ const useStyles = makeStyles(GalleryStyles);
 
 const Gallery = () => {
   const classes = useStyles();
-
   const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -51,18 +50,21 @@ const Gallery = () => {
       <div className={classes.galleryWrapper}>
         <GalleryUploadArea handleUpload={handleUpload} />
         {loading && <LinearProgress color="secondary" />}
-        <div
-          className={
-            loading ? classes.loadingGalleryContainer : classes.galleryContainer
-          }
-        >
-          {media &&
-            media
+        {media && (
+          <div
+            className={
+              loading
+                ? classes.loadingGalleryContainer
+                : classes.galleryContainer
+            }
+          >
+            {media
               .filter((x) => x.resource_type === 'image')
               .map((x) => (
                 <Asset key={x.public_id} asset={x} onDelete={handleDelete} />
               ))}
-        </div>
+          </div>
+        )}
       </div>
     </PageWrapper>
   );

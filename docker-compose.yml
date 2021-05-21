@@ -56,6 +56,7 @@ services:
       - psql
     environment:
       - REACT_APP_GATEWAY=http://localhost:3050/gateway
+      - REACT_APP_MEDIA=http://localhost:3050/media
     networks:
       - patmos
   site:

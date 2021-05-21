@@ -1,4 +1,14 @@
-### removing trailing slash (HEAD -> master)
+### fixes (HEAD -> master)
+>Fri, 21 May 2021 21:39:17 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### removing trailing slash (origin/master)
 >Fri, 21 May 2021 18:36:39 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### delete asset functionality (origin/master)
+### delete asset functionality
 >Fri, 21 May 2021 18:18:54 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
