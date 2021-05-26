@@ -10,4 +10,14 @@ const postColumns = [
 
 const usrColumns = ['id', 'username', 'email'];
 
-module.exports = { postColumns, usrColumns };
+const categoryColumns = [
+  'id',
+  'name_gr',
+  'name_en',
+  'description_gr',
+  'description_en',
+  'created_at',
+  'updated_at',
+];
+
+module.exports = { postColumns, usrColumns, categoryColumns };

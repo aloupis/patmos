@@ -16,6 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import CategoryIcon from '@material-ui/icons/Category';
 import LayoutStyles from './LayoutStyles';
 
 const useStyles = makeStyles(LayoutStyles);
@@ -59,6 +60,20 @@ const SideNav = ({ drawerIsOpen, closeDrawer }) => {
             <DescriptionIcon />
           </ListItemIcon>
           <ListItemText primary="Posts" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem
+          button
+          to="/categories"
+          key=" Service Categories"
+          component={Link}
+        >
+          <ListItemIcon>
+            <CategoryIcon />
+          </ListItemIcon>
+          <ListItemText primary="Service Categories" />
         </ListItem>
       </List>
       <Divider />

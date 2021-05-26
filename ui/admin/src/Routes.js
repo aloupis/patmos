@@ -6,6 +6,9 @@ import PostsList from './components/posts/PostsList';
 import NewPost from './components/posts/NewPost';
 import EditPost from './components/posts/EditPost';
 import ServicesList from './components/services/ServicesList';
+import CategoriesList from './components/categories/CategoriesList';
+import NewCategory from './components/categories/NewCategory';
+import EditCategory from './components/categories/EditCategory';
 import Gallery from './components/gallery/Gallery';
 import Settings from './components/settings/Settings';
 
@@ -16,6 +19,9 @@ const Routes = () => (
       <Route path="/posts" exact component={PostsList} />
       <Route path="/posts/new" exact component={NewPost} />
       <Route path="/posts/:id" component={EditPost} />
+      <Route path="/categories" exact component={CategoriesList} />
+      <Route path="/categories/new" exact component={NewCategory} />
+      <Route path="/categories/:id" component={EditCategory} />
       <Route path="/services" exact component={ServicesList} />
       <Route path="/gallery" exact component={Gallery} />
       <Route path="/settings" exact component={Settings} />
