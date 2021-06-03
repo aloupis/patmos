@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
 import { Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import PageWrapper from '../../common/PageWrapper';
 import CategoryForm from './CategoryForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
 import { SnackbarContext } from '../../SnackbarContext';
+import AssetContainer from '../../common/gallery/AssetContainer';
 
 import {
   CATEGORY_BY_PK_QUERY,
@@ -72,6 +74,13 @@ const EditCategory = ({ history, match }) => {
           onConfirm={handleDelete}
         />
       </Grid>
+      <div style={{ marginBottom: '15px' }}>
+        <Typography variant="h6">Category Image</Typography>
+      </div>
+      <AssetContainer
+        url={`gallery/images/${match.params.id}`}
+        acceptedFileTypes="image/jpeg,image/png,image/gif"
+      />
       <CategoryForm
         onSave={handleSave}
         category={data.category_by_pk}
