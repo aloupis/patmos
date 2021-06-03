@@ -6,9 +6,10 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const { merge } = require('lodash');
+const { promisify } = require('util');
 
 const app = express();
-const { promisify } = require('util');
 const db = require('./db');
 
 const { SECRET_KEY, HOST, PORT, NGINX_HOST, ADMIN_HOST, USE_SSL } = process.env;
@@ -112,8 +113,11 @@ app.get('/user', async (req, res) => {
   }
 });
 
+const postResolvers = require('./post');
+const categoryResolvers = require('./category');
 const { typeDefs } = require('./schema');
-const { resolvers } = require('./resolvers');
+
+const resolvers = merge(postResolvers, categoryResolvers);
 
 const context = ({ req }) => {
   // const token = req.cookies.jwt || '';
@@ -123,7 +127,12 @@ const context = ({ req }) => {
   return { token };
 };
 
-const server = new ApolloServer({ typeDefs, resolvers, context, cors: false });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context,
+  cors: false,
+});
 server.applyMiddleware({ app, cors: false });
 
 app.listen(PORT, () =>

@@ -1,4 +1,14 @@
-### introducing assets in categories (HEAD -> master)
+### refactor: separate resolvers (HEAD -> master)
+>Thu, 3 Jun 2021 20:39:22 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### introducing assets in categories (origin/master)
 >Thu, 3 Jun 2021 19:50:55 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -28,7 +38,7 @@
 
 
 
-### WIP: service categories initial setup (origin/master)
+### WIP: service categories initial setup
 >Wed, 26 May 2021 19:40:58 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
