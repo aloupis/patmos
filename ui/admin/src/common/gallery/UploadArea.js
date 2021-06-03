@@ -7,7 +7,7 @@ import GalleryStyles from './styles';
 
 const useStyles = makeStyles(GalleryStyles);
 
-const GalleryUploadArea = ({ handleUpload }) => {
+const UploadArea = ({ handleUpload, acceptedFileTypes }) => {
   const classes = useStyles();
 
   const onDrop = useCallback(
@@ -17,7 +17,7 @@ const GalleryUploadArea = ({ handleUpload }) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    // accept: settings.acceptedFileTypes || undefined,
+    accept: acceptedFileTypes || undefined,
   });
 
   return (
@@ -33,8 +33,9 @@ const GalleryUploadArea = ({ handleUpload }) => {
   );
 };
 
-GalleryUploadArea.propTypes = {
+UploadArea.propTypes = {
   handleUpload: PropTypes.func,
+  acceptedFileTypes: PropTypes.string,
 };
 
-export default GalleryUploadArea;
+export default UploadArea;

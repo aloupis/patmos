@@ -1,4 +1,14 @@
-### WIP: service categories initial setup (HEAD -> master)
+### refactor: transform gallery to more generic asset container component (HEAD -> master)
+>Thu, 3 Jun 2021 18:33:23 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### WIP: service categories initial setup (origin/master)
 >Wed, 26 May 2021 19:40:58 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fixes (origin/master)
+### fixes
 >Fri, 21 May 2021 21:39:17 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
