@@ -1,4 +1,14 @@
-### refactor: transform gallery to more generic asset container component (HEAD -> master)
+### extend asset container to handle single files (HEAD -> master)
+>Thu, 3 Jun 2021 19:43:55 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### refactor: transform gallery to more generic asset container component
 >Thu, 3 Jun 2021 18:33:23 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
