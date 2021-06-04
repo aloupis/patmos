@@ -1,4 +1,14 @@
-### refactor: separate resolvers (HEAD -> master)
+### feat: support multiple joins (HEAD -> master)
+>Fri, 4 Jun 2021 19:53:58 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### refactor: separate resolvers (origin/master)
 >Thu, 3 Jun 2021 20:39:22 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### introducing assets in categories (origin/master)
+### introducing assets in categories
 >Thu, 3 Jun 2021 19:50:55 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

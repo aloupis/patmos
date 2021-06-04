@@ -1,6 +1,6 @@
 const { authenticate } = require('../auth');
 const db = require('../db');
-const { postColumns, usrColumns } = require('./model');
+const { postColumns, postRelations, postJoins } = require('./model');
 const { transformEntity } = require('../utils');
 const { Sentry } = require('../sentry');
 
@@ -11,9 +11,7 @@ const resolvers = {
         const posts = await db.selectWithJoin(
           'post',
           postColumns,
-          'author_id',
-          'usr',
-          usrColumns,
+          postJoins,
           null,
           offset,
           limit,
@@ -21,7 +19,7 @@ const resolvers = {
           orderBy && orderBy.direction ? orderBy.direction : 'desc'
         );
         return posts.map((post) =>
-          transformEntity(post, 'post', 'usr', 'author')
+          transformEntity(post, 'post', postRelations)
         );
       } catch (err) {
         Sentry.captureException(err);
@@ -39,16 +37,11 @@ const resolvers = {
     },
     post_by_pk: async (_, { id }) => {
       try {
-        const [post] = await db.selectWithJoin(
-          'post',
-          postColumns,
-          'author_id',
-          'usr',
-          usrColumns,
-          { 'post.id': id }
-        );
+        const [post] = await db.selectWithJoin('post', postColumns, postJoins, {
+          'post.id': id,
+        });
 
-        return transformEntity(post, 'post', 'usr', 'author');
+        return transformEntity(post, 'post', postRelations);
       } catch (err) {
         Sentry.captureException(err);
         return null;
@@ -71,16 +64,11 @@ const resolvers = {
           author_id: user.id,
           created_at: new Date(),
         });
-        const [post] = await db.selectWithJoin(
-          'post',
-          postColumns,
-          'author_id',
-          'usr',
-          usrColumns,
-          { 'post.id': insertedPost.id }
-        );
+        const [post] = await db.selectWithJoin('post', postColumns, postJoins, {
+          'post.id': insertedPost.id,
+        });
 
-        return transformEntity(post, 'post', 'usr', 'author');
+        return transformEntity(post, 'post', postRelations);
       } catch (err) {
         console.log({ err });
         Sentry.captureException(err);
@@ -102,15 +90,10 @@ const resolvers = {
           id
         );
 
-        const [post] = await db.selectWithJoin(
-          'post',
-          postColumns,
-          'author_id',
-          'usr',
-          usrColumns,
-          { 'post.id': id }
-        );
-        return transformEntity(post, 'post', 'usr', 'author');
+        const [post] = await db.selectWithJoin('post', postColumns, postJoins, {
+          'post.id': id,
+        });
+        return transformEntity(post, 'post', postRelations);
       } catch (err) {
         Sentry.captureException(err);
         return null;

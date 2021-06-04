@@ -10,4 +10,15 @@ const categoryColumns = [
 
 const usrColumns = ['id', 'username', 'email'];
 
-module.exports = { categoryColumns, usrColumns };
+const categoryRelations = [{ table: 'usr', field: 'author' }];
+
+const categoryJoins = [
+  { table: 'usr', columns: usrColumns, foreignKey: 'author_id' },
+];
+
+module.exports = {
+  categoryColumns,
+  usrColumns,
+  categoryRelations,
+  categoryJoins,
+};

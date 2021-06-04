@@ -10,4 +10,10 @@ const postColumns = [
 
 const usrColumns = ['id', 'username', 'email'];
 
-module.exports = { postColumns, usrColumns };
+const postRelations = [{ table: 'usr', field: 'author' }];
+
+const postJoins = [
+  { table: 'usr', columns: usrColumns, foreignKey: 'author_id' },
+];
+
+module.exports = { postColumns, usrColumns, postRelations, postJoins };

@@ -1,6 +1,10 @@
 const { authenticate } = require('../auth');
 const db = require('../db');
-const { categoryColumns, usrColumns } = require('./model');
+const {
+  categoryColumns,
+  categoryRelations,
+  categoryJoins,
+} = require('./model');
 const { transformEntity } = require('../utils');
 const { Sentry } = require('../sentry');
 
@@ -11,9 +15,7 @@ const resolvers = {
         const categories = await db.selectWithJoin(
           'category',
           categoryColumns,
-          'author_id',
-          'usr',
-          usrColumns,
+          categoryJoins,
           null,
           offset,
           limit,
@@ -21,7 +23,7 @@ const resolvers = {
           orderBy && orderBy.direction ? orderBy.direction : 'desc'
         );
         return categories.map((category) =>
-          transformEntity(category, 'category', 'usr', 'author')
+          transformEntity(category, 'category', categoryRelations)
         );
       } catch (err) {
         Sentry.captureException(err);
@@ -42,13 +44,11 @@ const resolvers = {
         const [category] = await db.selectWithJoin(
           'category',
           categoryColumns,
-          'author_id',
-          'usr',
-          usrColumns,
+          categoryJoins,
           { 'category.id': id }
         );
 
-        return transformEntity(category, 'category', 'usr', 'author');
+        return transformEntity(category, 'category', categoryRelations);
       } catch (err) {
         Sentry.captureException(err);
         return null;
@@ -74,13 +74,11 @@ const resolvers = {
         const [category] = await db.selectWithJoin(
           'category',
           categoryColumns,
-          'author_id',
-          'usr',
-          usrColumns,
+          categoryJoins,
           { 'category.id': insertedCategory.id }
         );
 
-        return transformEntity(category, 'category', 'usr', 'author');
+        return transformEntity(category, 'category', categoryRelations);
       } catch (err) {
         console.log({ err });
         Sentry.captureException(err);
@@ -105,12 +103,10 @@ const resolvers = {
         const [category] = await db.selectWithJoin(
           'category',
           categoryColumns,
-          'author_id',
-          'usr',
-          usrColumns,
+          categoryJoins,
           { 'category.id': id }
         );
-        return transformEntity(category, 'category', 'usr', 'author');
+        return transformEntity(category, 'category', categoryRelations);
       } catch (err) {
         Sentry.captureException(err);
         return null;

@@ -8,8 +8,11 @@ const pg = require('knex')({
   ssl: USE_SSL === 'true',
 });
 
-const withOrderBy = async (args, orderBy, orderDir) =>
-  orderBy ? args.orderBy(orderBy, orderDir || 'desc') : args;
+const {
+  withOrderBy,
+  constructSelectWithJoins,
+  applyJoinsToQuery,
+} = require('./db-utils');
 
 const select = async (table, args, offset, limit, orderBy, orderDir) =>
   withOrderBy(
@@ -24,9 +27,7 @@ const select = async (table, args, offset, limit, orderBy, orderDir) =>
 const selectWithJoin = async (
   table,
   tableColumns,
-  foreignKey,
-  joinedTable,
-  joinedTableColumns,
+  joins,
   args,
   offset,
   limit,
@@ -34,15 +35,12 @@ const selectWithJoin = async (
   orderDir
 ) =>
   withOrderBy(
-    pg
-      .select([
-        ...tableColumns.map((col) => `${table}.${col} as ${table}.${col} `),
-        ...joinedTableColumns.map(
-          (col) => `${joinedTable}.${col} as ${joinedTable}.${col}`
-        ),
-      ])
-      .from(table)
-      .innerJoin(joinedTable, `${table}.${foreignKey}`, `${joinedTable}.id`)
+    applyJoinsToQuery(
+      pg
+        .select(constructSelectWithJoins(table, tableColumns, joins))
+        .from(table),
+      joins
+    )
       .where(args || true)
       .offset(offset || 0)
       .limit(limit || null),
