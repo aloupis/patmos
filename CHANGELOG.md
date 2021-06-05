@@ -1,4 +1,14 @@
-### add image to edit service (HEAD -> master)
+### add member in db (HEAD -> master)
+>Sat, 5 Jun 2021 15:05:08 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add image to edit service
 >Sat, 5 Jun 2021 15:02:02 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

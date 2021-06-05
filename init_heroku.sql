@@ -48,6 +48,19 @@ CREATE TABLE service(
   FOREIGN KEY (author_id) REFERENCES usr (id), 
   FOREIGN KEY (editor_id) REFERENCES usr (id)
 );
+CREATE TABLE member(
+  id serial PRIMARY KEY, 
+  name_gr VARCHAR(255) NOT NULL, 
+  name_en VARCHAR(255) NOT NULL, 
+  description_gr TEXT, 
+  description_en TEXT,
+  created_at TIMESTAMP NOT NULL, 
+  updated_at TIMESTAMP , 
+  author_id INTEGER NOT NULL, 
+  editor_id INTEGER, 
+  FOREIGN KEY (author_id) REFERENCES usr (id), 
+  FOREIGN KEY (editor_id) REFERENCES usr (id)
+);
 CREATE TABLE subscriber(
    id serial PRIMARY KEY, 
    email VARCHAR(255) NOT NULL
