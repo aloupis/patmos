@@ -25,6 +25,22 @@ const typeDefs = gql`
     description_en: String
     description_gr: String
   }
+  input ServiceInput {
+    name_gr: String!
+    name_en: String!
+    content_gr: String!
+    content_en: String!
+    category_id: Int!
+    price: Float!
+  }
+  input ServiceSet {
+    name_gr: String
+    name_en: String
+    content_gr: String
+    content_en: String
+    category_id: Int
+    price: Float
+  }
   type User {
     id: ID!
     username: String!
@@ -56,21 +72,18 @@ const typeDefs = gql`
     author: User
     editor: User
   }
-  type File {
-    id: ID!
-    name: String!
-    type: String!
-    url: String!
-    uploaded_by: User!
-    uploaded_at: String!
-  }
   type Service {
     id: ID!
     name_gr: String!
     name_en: String!
     content_gr: String
     content_en: String
-    price: Float!
+    price: Float
+    category: Category
+    created_at: String!
+    updated_at: String
+    author: User
+    editor: User
   }
   type MutationResult {
     success: Boolean!
@@ -83,10 +96,9 @@ const typeDefs = gql`
     categories(offset: Int!, limit: Int!, orderBy: OrderBy): [Category]
     category_by_pk(id: Int!): Category
     categories_count: Int!
-    files: [File]
-    services: [Service]
-    file(id: ID!): File
-    service(id: ID!): Service
+    services(offset: Int!, limit: Int!, orderBy: OrderBy): [Service]
+    service_by_pk(id: Int!): Service
+    services_count: Int!
   }
   type Mutation {
     insert_post(input: PostInput!): Post!
@@ -95,6 +107,9 @@ const typeDefs = gql`
     insert_category(input: CategoryInput!): Category!
     update_category(id: Int!, set: CategorySet!): Category!
     delete_category(id: Int!): MutationResult!
+    insert_service(input: ServiceInput!): Service!
+    update_service(id: Int!, set: ServiceSet!): Service!
+    delete_service(id: Int!): MutationResult!
   }
 `;
 

@@ -38,12 +38,12 @@ CREATE TABLE service(
   content_gr TEXT, 
   content_en TEXT, 
   price DECIMAL,
-  category INTEGER NOT NULL,
+  category_id INTEGER NOT NULL,
   created_at TIMESTAMP NOT NULL, 
   updated_at TIMESTAMP , 
   author_id INTEGER NOT NULL, 
   editor_id INTEGER, 
-  FOREIGN KEY (category) REFERENCES category (id),
+  FOREIGN KEY (category_id) REFERENCES category (id),
   FOREIGN KEY (author_id) REFERENCES usr (id), 
   FOREIGN KEY (editor_id) REFERENCES usr (id)
 );

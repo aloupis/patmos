@@ -115,9 +115,10 @@ app.get('/user', async (req, res) => {
 
 const postResolvers = require('./post');
 const categoryResolvers = require('./category');
+const serviceResolvers = require('./service');
 const { typeDefs } = require('./schema');
 
-const resolvers = merge(postResolvers, categoryResolvers);
+const resolvers = merge(postResolvers, categoryResolvers, serviceResolvers);
 
 const context = ({ req }) => {
   // const token = req.cookies.jwt || '';
