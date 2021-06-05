@@ -168,7 +168,7 @@ const ServiceForm = ({ service, onSave, onError, history }) => {
         </Grid>
       </Grid>
 
-      <div style={{ marginTop: '100px' }}>
+      <div style={{ marginTop: '50px' }}>
         <Divider />
         <ActionFormButtons>
           <Box flexGrow={1} />

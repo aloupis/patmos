@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import PageWrapper from '../../common/PageWrapper';
 import ServiceForm from './ServiceForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
 import { SnackbarContext } from '../../SnackbarContext';
+import AssetContainer from '../../common/gallery/AssetContainer';
 
 import {
   SERVICE_BY_PK_QUERY,
@@ -74,6 +76,14 @@ const EditService = ({ history, match }) => {
           onConfirm={handleDelete}
         />
       </Grid>
+      <div style={{ marginBottom: '15px' }}>
+        <Typography variant="h6">Image</Typography>
+      </div>
+      <AssetContainer
+        url={`services/${match.params.id}`}
+        acceptedFileTypes="image/jpeg,image/png,image/gif"
+      />
+      <div style={{ marginBottom: '10px' }} />
       <ServiceForm
         onSave={handleSave}
         service={data.service_by_pk}

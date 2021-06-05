@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from '../../common/PageWrapper';
 import CategoryForm from './CategoryForm';
@@ -75,12 +75,13 @@ const EditCategory = ({ history, match }) => {
         />
       </Grid>
       <div style={{ marginBottom: '15px' }}>
-        <Typography variant="h6">Category Image</Typography>
+        <Typography variant="h6">Image</Typography>
       </div>
       <AssetContainer
-        url={`gallery/images/${match.params.id}`}
+        url={`categories/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
       />
+      <div style={{ marginBottom: '10px' }} />
       <CategoryForm
         onSave={handleSave}
         category={data.category_by_pk}
