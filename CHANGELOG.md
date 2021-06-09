@@ -1,4 +1,14 @@
-### feat: members (HEAD -> master)
+### fix: price on new service (HEAD -> master)
+>Wed, 9 Jun 2021 22:14:25 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### feat: members (origin/master)
 >Wed, 9 Jun 2021 21:40:38 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add member in db (origin/master)
+### add member in db
 >Sat, 5 Jun 2021 15:05:08 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
