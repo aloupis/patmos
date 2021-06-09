@@ -1,4 +1,14 @@
-### add member in db (HEAD -> master)
+### feat: members (HEAD -> master)
+>Wed, 9 Jun 2021 21:40:38 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add member in db (origin/master)
 >Sat, 5 Jun 2021 15:05:08 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -28,7 +38,7 @@
 
 
 
-### feat: support multiple joins (origin/master)
+### feat: support multiple joins
 >Fri, 4 Jun 2021 19:53:58 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

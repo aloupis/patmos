@@ -11,6 +11,9 @@ import EditService from './components/services/EditService';
 import CategoriesList from './components/categories/CategoriesList';
 import NewCategory from './components/categories/NewCategory';
 import EditCategory from './components/categories/EditCategory';
+import MembersList from './components/members/MembersList';
+import NewMember from './components/members/NewMember';
+import EditMember from './components/members/EditMember';
 import Gallery from './components/gallery/Gallery';
 import Settings from './components/settings/Settings';
 
@@ -24,6 +27,9 @@ const Routes = () => (
       <Route path="/categories" exact component={CategoriesList} />
       <Route path="/categories/new" exact component={NewCategory} />
       <Route path="/categories/:id" component={EditCategory} />
+      <Route path="/members" exact component={MembersList} />
+      <Route path="/members/new" exact component={NewMember} />
+      <Route path="/members/:id" component={EditMember} />
       <Route path="/services" exact component={ServicesList} />
       <Route path="/services/new" exact component={NewService} />
       <Route path="/services/:id" component={EditService} />

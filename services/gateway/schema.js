@@ -41,6 +41,18 @@ const typeDefs = gql`
     category_id: Int
     price: Float
   }
+  input MemberInput {
+    name_en: String!
+    name_gr: String!
+    description_en: String!
+    description_gr: String!
+  }
+  input MemberSet {
+    name_en: String
+    name_gr: String
+    description_en: String
+    description_gr: String
+  }
   type User {
     id: ID!
     username: String!
@@ -62,6 +74,17 @@ const typeDefs = gql`
     editor: User
   }
   type Category {
+    id: ID!
+    name_gr: String!
+    name_en: String!
+    description_gr: String!
+    description_en: String!
+    created_at: String!
+    updated_at: String
+    author: User
+    editor: User
+  }
+  type Member {
     id: ID!
     name_gr: String!
     name_en: String!
@@ -96,6 +119,9 @@ const typeDefs = gql`
     categories(offset: Int!, limit: Int!, orderBy: OrderBy): [Category]
     category_by_pk(id: Int!): Category
     categories_count: Int!
+    members(offset: Int!, limit: Int!, orderBy: OrderBy): [Member]
+    member_by_pk(id: Int!): Member
+    members_count: Int!
     services(offset: Int!, limit: Int!, orderBy: OrderBy): [Service]
     service_by_pk(id: Int!): Service
     services_count: Int!
@@ -107,6 +133,9 @@ const typeDefs = gql`
     insert_category(input: CategoryInput!): Category!
     update_category(id: Int!, set: CategorySet!): Category!
     delete_category(id: Int!): MutationResult!
+    insert_member(input: MemberInput!): Member!
+    update_member(id: Int!, set: MemberSet!): Member!
+    delete_member(id: Int!): MutationResult!
     insert_service(input: ServiceInput!): Service!
     update_service(id: Int!, set: ServiceSet!): Service!
     delete_service(id: Int!): MutationResult!
