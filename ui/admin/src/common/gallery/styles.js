@@ -73,4 +73,12 @@ export default (theme) => ({
     top: '-10px',
     right: '-11px',
   },
+  assetPreviewContainer: {
+    margin: theme.spacing(2, 0),
+    padding: theme.spacing(1),
+  },
+  loadingAssetPreviewContainer: {
+    padding: theme.spacing(1),
+    opacity: '0.5',
+  },
 });

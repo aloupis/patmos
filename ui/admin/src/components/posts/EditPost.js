@@ -67,20 +67,25 @@ const EditPost = ({ history, match }) => {
 
   return (
     <PageWrapper title="Edit Post" maxWidth="lg" goBackBtn="/posts">
-      <Grid container direction="row" justify="flex-end" alignItems="baseline">
+      <Grid
+        container
+        direction="row"
+        justify="flex-end"
+        alignItems="baseline"
+        style={{ marginBottom: '10px' }}
+      >
         <DeleteConfirmationButton
           component="fab"
           size="medium"
           onConfirm={handleDelete}
         />
       </Grid>
-      <div style={{ marginBottom: '15px' }}>
-        <Typography variant="h6">Preview Image</Typography>
-      </div>
+
       <AssetContainer
-        url={`categories/${match.params.id}`}
+        url={`posts/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
       />
+
       <PostForm onSave={handleSave} post={data.post_by_pk} history={history} />
     </PageWrapper>
   );
