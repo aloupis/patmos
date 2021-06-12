@@ -1,4 +1,14 @@
-### fix: price on new service (HEAD -> master)
+### add preview image to post (HEAD -> master)
+>Sat, 12 Jun 2021 15:24:15 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix: price on new service (origin/master)
 >Wed, 9 Jun 2021 22:14:25 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### feat: members (origin/master)
+### feat: members
 >Wed, 9 Jun 2021 21:40:38 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

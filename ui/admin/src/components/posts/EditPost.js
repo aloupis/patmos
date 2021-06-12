@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
+import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 import PageWrapper from '../../common/PageWrapper';
 import PostForm from './PostForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
+import AssetContainer from '../../common/gallery/AssetContainer';
 import { SnackbarContext } from '../../SnackbarContext';
 
 import {
@@ -72,6 +74,13 @@ const EditPost = ({ history, match }) => {
           onConfirm={handleDelete}
         />
       </Grid>
+      <div style={{ marginBottom: '15px' }}>
+        <Typography variant="h6">Preview Image</Typography>
+      </div>
+      <AssetContainer
+        url={`categories/${match.params.id}`}
+        acceptedFileTypes="image/jpeg,image/png,image/gif"
+      />
       <PostForm onSave={handleSave} post={data.post_by_pk} history={history} />
     </PageWrapper>
   );
