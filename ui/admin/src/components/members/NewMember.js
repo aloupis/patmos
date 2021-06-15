@@ -25,6 +25,8 @@ const NewMember = (props) => {
             description_en: member.description_en,
             name_gr: member.name_gr,
             description_gr: member.description_gr,
+            summary_en: member.summary_en,
+            summary_gr: member.summary_gr,
           },
         },
       });

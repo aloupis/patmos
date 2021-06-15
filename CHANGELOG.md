@@ -1,4 +1,14 @@
-### add preview image to post (HEAD -> master)
+### introducing summary and image public id (HEAD -> master)
+>Tue, 15 Jun 2021 20:40:32 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add preview image to post (origin/master, site-init)
 >Sat, 12 Jun 2021 16:03:27 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -18,7 +28,7 @@
 
 
 
-### fix: price on new service (origin/master)
+### fix: price on new service
 >Wed, 9 Jun 2021 22:14:25 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

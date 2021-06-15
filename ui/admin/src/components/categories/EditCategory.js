@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
 import Grid from '@material-ui/core/Grid';
@@ -20,6 +20,8 @@ const EditCategory = ({ history, match }) => {
   const { data, loading, error } = useQuery(CATEGORY_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
+  const [imagePublicId, setImagePublicId] = useState('');
+
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateCategory] = useMutation(UPDATE_CATEGORY_MUTATION);
@@ -33,6 +35,9 @@ const EditCategory = ({ history, match }) => {
             description_en: category.description_en,
             name_gr: category.name_gr,
             description_gr: category.description_gr,
+            image_public_id: imagePublicId,
+            summary_en: category.summary_en,
+            summary_gr: category.summary_gr,
           },
         },
         refetchQueries: [`CATEGORIES_QUERY`],
@@ -80,6 +85,7 @@ const EditCategory = ({ history, match }) => {
       <AssetContainer
         url={`categories/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
+        updateEntity={setImagePublicId}
       />
       <div style={{ marginBottom: '10px' }} />
       <CategoryForm

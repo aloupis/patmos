@@ -27,6 +27,8 @@ const NewService = (props) => {
             content_gr: service.content_gr,
             category_id: +service.category_id,
             price: +service.price,
+            summary_en: service.summary_en,
+            summary_gr: service.summary_gr,
           },
         },
       });

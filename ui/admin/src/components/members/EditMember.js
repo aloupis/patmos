@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
 import Grid from '@material-ui/core/Grid';
@@ -20,6 +20,8 @@ const EditMember = ({ history, match }) => {
   const { data, loading, error } = useQuery(MEMBER_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
+  const [imagePublicId, setImagePublicId] = useState('');
+
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateMember] = useMutation(UPDATE_MEMBER_MUTATION);
@@ -33,6 +35,9 @@ const EditMember = ({ history, match }) => {
             description_en: member.description_en,
             name_gr: member.name_gr,
             description_gr: member.description_gr,
+            image_public_id: imagePublicId,
+            summary_en: member.summary_en,
+            summary_gr: member.summary_gr,
           },
         },
         refetchQueries: [`MEMBERS_QUERY`],
@@ -80,6 +85,7 @@ const EditMember = ({ history, match }) => {
       <AssetContainer
         url={`members/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
+        updateEntity={setImagePublicId}
       />
       <div style={{ marginBottom: '10px' }} />
       <MemberForm

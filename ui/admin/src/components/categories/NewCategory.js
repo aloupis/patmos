@@ -25,6 +25,8 @@ const NewCategory = (props) => {
             description_en: category.description_en,
             name_gr: category.name_gr,
             description_gr: category.description_gr,
+            summary_en: category.summary_en,
+            summary_gr: category.summary_gr,
           },
         },
       });

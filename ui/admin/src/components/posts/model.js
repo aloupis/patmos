@@ -6,6 +6,8 @@ const POSTS_QUERY = gql`
       id
       title_en
       title_gr
+      summary_en
+      summary_gr
       created_at
       updated_at
       author {
@@ -23,6 +25,8 @@ const CREATE_POST_MUTATION = gql`
       id
       title_en
       title_gr
+      summary_en
+      summary_gr
       created_at
       updated_at
       author {
@@ -39,6 +43,8 @@ const UPDATE_POST_MUTATION = gql`
       id
       title_en
       title_gr
+      summary_en
+      summary_gr
       created_at
       updated_at
       author {
@@ -56,6 +62,8 @@ const POST_BY_PK_QUERY = gql`
       title_en
       content_en
       title_gr
+      summary_en
+      summary_gr
       content_gr
       created_at
       updated_at

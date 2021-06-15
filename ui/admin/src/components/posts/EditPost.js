@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
-import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 import PageWrapper from '../../common/PageWrapper';
 import PostForm from './PostForm';
@@ -20,6 +19,8 @@ const EditPost = ({ history, match }) => {
   const { data, loading, error } = useQuery(POST_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
+  const [imagePublicId, setImagePublicId] = useState('');
+
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updatePost] = useMutation(UPDATE_POST_MUTATION);
@@ -33,6 +34,9 @@ const EditPost = ({ history, match }) => {
             content_en: post.content_en,
             title_gr: post.title_gr,
             content_gr: post.content_gr,
+            image_public_id: imagePublicId,
+            summary_en: post.summary_en,
+            summary_gr: post.summary_gr,
           },
         },
         refetchQueries: [`POSTS_QUERY`],
@@ -84,6 +88,7 @@ const EditPost = ({ history, match }) => {
       <AssetContainer
         url={`posts/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
+        updateEntity={setImagePublicId}
       />
 
       <PostForm onSave={handleSave} post={data.post_by_pk} history={history} />

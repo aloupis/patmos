@@ -17,9 +17,9 @@ const ReactQuill = React.lazy(() => import('react-quill'));
 
 const useStyles = makeStyles((theme) => ({
   quill: {
-    marginTop: theme.spacing(1),
     height: '200px',
   },
+  control: { marginBottom: theme.spacing(2) },
 }));
 
 const formats = [
@@ -62,12 +62,16 @@ const PostForm = ({ post, onSave, onError, history }) => {
           title_gr: post.title_gr,
           content_en: post.content_en,
           content_gr: post.content_gr,
+          summary_en: post.summary_en,
+          summary_gr: post.summary_gr,
         }
       : {
           title_en: '',
           title_gr: '',
           content_en: '',
           content_gr: '',
+          summary_en: '',
+          summary_gr: '',
         },
   });
 
@@ -83,18 +87,29 @@ const PostForm = ({ post, onSave, onError, history }) => {
           <div style={{ marginBottom: '15px' }}>
             <Typography variant="h6">English</Typography>
           </div>
-
           <TextField
             id="title_en"
             name="title_en"
             label="Title"
             variant="outlined"
+            className={classes.control}
             onChange={handleChange}
             required
             fullWidth
             value={values.title_en || ''}
           />
-
+          <TextField
+            id="summary_en"
+            name="summary_en"
+            label="Summary"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            value={values.summary_en || ''}
+          />
           <div>
             <ReactQuill
               id="content_en"
@@ -112,18 +127,29 @@ const PostForm = ({ post, onSave, onError, history }) => {
           <div style={{ marginBottom: '15px' }}>
             <Typography variant="h6">Greek</Typography>
           </div>
-
           <TextField
             id="title_gr"
             name="title_gr"
             label="Title"
             variant="outlined"
+            className={classes.control}
             onChange={handleChange}
             fullWidth
             required
             value={values.title_gr || ''}
           />
-
+          <TextField
+            id="summary_gr"
+            name="summary_gr"
+            label="Summary"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            value={values.summary_gr || ''}
+          />
           <div>
             <ReactQuill
               id="content_gr"

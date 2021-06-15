@@ -12,7 +12,12 @@ import AssetPreview from './AssetPreview';
 
 const useStyles = makeStyles(GalleryStyles);
 
-const AssetContainer = ({ url, allowMultipleAssets, acceptedFileTypes }) => {
+const AssetContainer = ({
+  url,
+  allowMultipleAssets,
+  acceptedFileTypes,
+  updateEntity,
+}) => {
   const classes = useStyles();
   const [assets, setAssets] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,6 +37,7 @@ const AssetContainer = ({ url, allowMultipleAssets, acceptedFileTypes }) => {
       setAssets((prev) => {
         setLoading(false);
         if (shouldReplace) {
+          updateEntity(JSON.parse(data)[0].public_id);
           return JSON.parse(data);
         }
         return prev?.length > 0
@@ -103,6 +109,7 @@ AssetContainer.propTypes = {
   url: PropTypes.string,
   allowMultipleAssets: PropTypes.bool,
   acceptedFileTypes: PropTypes.string,
+  updateEntity: PropTypes.func,
 };
 
 export default AssetContainer;

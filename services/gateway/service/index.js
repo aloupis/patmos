@@ -57,8 +57,16 @@ const resolvers = {
     insert_service: async (_, { input }, { token }) => {
       try {
         // eslint-disable-next-line camelcase
-        const { name_gr, name_en, content_gr, content_en, category_id, price } =
-          input;
+        const {
+          name_gr,
+          name_en,
+          content_gr,
+          content_en,
+          category_id,
+          price,
+          summary_gr,
+          summary_en,
+        } = input;
         const userId = authenticate(token);
         const [user] = await db.select('usr', { id: +userId });
 
@@ -67,6 +75,8 @@ const resolvers = {
           name_en,
           content_gr,
           content_en,
+          summary_gr,
+          summary_en,
           author_id: user.id,
           category_id,
           price,

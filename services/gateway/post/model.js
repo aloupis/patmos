@@ -4,6 +4,9 @@ const postColumns = [
   'title_en',
   'content_gr',
   'content_en',
+  'image_public_id',
+  'summary_gr',
+  'summary_en',
   'created_at',
   'updated_at',
 ];

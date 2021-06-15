@@ -6,24 +6,34 @@ const typeDefs = gql`
     title_gr: String!
     content_en: String!
     content_gr: String!
+    summary_en: String
+    summary_gr: String
   }
   input PostSet {
     title_en: String
     title_gr: String
     content_en: String
     content_gr: String
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
   }
   input CategoryInput {
     name_en: String!
     name_gr: String!
     description_en: String!
     description_gr: String!
+    summary_en: String
+    summary_gr: String
   }
   input CategorySet {
     name_en: String
     name_gr: String
     description_en: String
     description_gr: String
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
   }
   input ServiceInput {
     name_gr: String!
@@ -32,6 +42,8 @@ const typeDefs = gql`
     content_en: String!
     category_id: Int!
     price: Float!
+    summary_en: String
+    summary_gr: String
   }
   input ServiceSet {
     name_gr: String
@@ -40,18 +52,26 @@ const typeDefs = gql`
     content_en: String
     category_id: Int
     price: Float
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
   }
   input MemberInput {
     name_en: String!
     name_gr: String!
     description_en: String!
     description_gr: String!
+    summary_en: String
+    summary_gr: String
   }
   input MemberSet {
     name_en: String
     name_gr: String
     description_en: String
     description_gr: String
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
   }
   type User {
     id: ID!
@@ -68,6 +88,9 @@ const typeDefs = gql`
     title_en: String!
     content_gr: String!
     content_en: String!
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
     created_at: String!
     updated_at: String
     author: User
@@ -79,6 +102,9 @@ const typeDefs = gql`
     name_en: String!
     description_gr: String!
     description_en: String!
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
     created_at: String!
     updated_at: String
     author: User
@@ -90,6 +116,9 @@ const typeDefs = gql`
     name_en: String!
     description_gr: String!
     description_en: String!
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
     created_at: String!
     updated_at: String
     author: User
@@ -103,6 +132,9 @@ const typeDefs = gql`
     content_en: String
     price: Float
     category: Category
+    image_public_id: String
+    summary_en: String
+    summary_gr: String
     created_at: String!
     updated_at: String
     author: User

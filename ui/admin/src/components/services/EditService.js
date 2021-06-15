@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
 import Grid from '@material-ui/core/Grid';
@@ -20,6 +20,8 @@ const EditService = ({ history, match }) => {
   const { data, loading, error } = useQuery(SERVICE_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
+  const [imagePublicId, setImagePublicId] = useState('');
+
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateService] = useMutation(UPDATE_SERVICE_MUTATION);
@@ -35,6 +37,9 @@ const EditService = ({ history, match }) => {
             content_gr: service.content_gr,
             category_id: +service.category_id,
             price: +service.price,
+            image_public_id: imagePublicId,
+            summary_en: service.summary_en,
+            summary_gr: service.summary_gr,
           },
         },
         refetchQueries: [`SERVICES_QUERY`],
@@ -82,6 +87,7 @@ const EditService = ({ history, match }) => {
       <AssetContainer
         url={`services/${match.params.id}`}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
+        updateEntity={setImagePublicId}
       />
       <div style={{ marginBottom: '10px' }} />
       <ServiceForm

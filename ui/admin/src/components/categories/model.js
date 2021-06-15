@@ -6,6 +6,8 @@ const CATEGORIES_QUERY = gql`
       id
       name_en
       name_gr
+      summary_en
+      summary_gr
       created_at
       updated_at
       author {
@@ -57,6 +59,8 @@ const CATEGORY_BY_PK_QUERY = gql`
       description_en
       name_gr
       description_gr
+      summary_en
+      summary_gr
       created_at
       updated_at
       author {

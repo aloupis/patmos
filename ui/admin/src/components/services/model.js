@@ -11,6 +11,8 @@ const SERVICES_QUERY = gql`
         name_en
         name_gr
       }
+      summary_en
+      summary_gr
       price
       created_at
       updated_at
@@ -75,6 +77,8 @@ const SERVICE_BY_PK_QUERY = gql`
       content_en
       name_gr
       content_gr
+      summary_en
+      summary_gr
       category {
         id
         name_en

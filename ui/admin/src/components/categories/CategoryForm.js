@@ -17,9 +17,9 @@ const ReactQuill = React.lazy(() => import('react-quill'));
 
 const useStyles = makeStyles((theme) => ({
   quill: {
-    marginTop: theme.spacing(1),
     height: '200px',
   },
+  control: { marginBottom: theme.spacing(2) },
 }));
 
 const formats = [
@@ -62,12 +62,16 @@ const CategoryForm = ({ category, onSave, onError, history }) => {
           name_gr: category.name_gr,
           description_en: category.description_en,
           description_gr: category.description_gr,
+          summary_en: category.summary_en,
+          summary_gr: category.summary_gr,
         }
       : {
           name_en: '',
           name_gr: '',
           description_en: '',
           description_gr: '',
+          summary_en: '',
+          summary_gr: '',
         },
   });
 
@@ -83,18 +87,29 @@ const CategoryForm = ({ category, onSave, onError, history }) => {
           <div style={{ marginBottom: '15px' }}>
             <Typography variant="h6">English</Typography>
           </div>
-
           <TextField
             id="name_en"
             name="name_en"
             label="name"
             variant="outlined"
+            className={classes.control}
             onChange={handleChange}
             required
             fullWidth
             value={values.name_en || ''}
           />
-
+          <TextField
+            id="summary_en"
+            name="summary_en"
+            label="Summary"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            value={values.summary_en || ''}
+          />
           <div>
             <ReactQuill
               id="description_en"
@@ -118,12 +133,24 @@ const CategoryForm = ({ category, onSave, onError, history }) => {
             name="name_gr"
             label="name"
             variant="outlined"
+            className={classes.control}
             onChange={handleChange}
             fullWidth
             required
             value={values.name_gr || ''}
           />
-
+          <TextField
+            id="summary_gr"
+            name="summary_gr"
+            label="Summary"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            value={values.summary_gr || ''}
+          />
           <div>
             <ReactQuill
               id="description_gr"

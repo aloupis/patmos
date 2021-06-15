@@ -25,6 +25,8 @@ const NewPost = (props) => {
             content_en: post.content_en,
             title_gr: post.title_gr,
             content_gr: post.content_gr,
+            summary_en: post.summary_en,
+            summary_gr: post.summary_gr,
           },
         },
       });
