@@ -39,12 +39,12 @@ const MembersList = () => {
     },
     {
       systemName: 'name_en',
-      displayName: 'English Name',
+      displayName: 'Name',
       type: 'string',
     },
     {
-      systemName: 'name_gr',
-      displayName: 'Greek Name',
+      systemName: 'position_en',
+      displayName: 'Position',
       type: 'string',
     },
     {

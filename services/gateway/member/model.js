@@ -7,6 +7,8 @@ const memberColumns = [
   'image_public_id',
   'summary_gr',
   'summary_en',
+  'position_gr',
+  'position_en',
   'created_at',
   'updated_at',
 ];

@@ -8,6 +8,8 @@ const MEMBERS_QUERY = gql`
       name_gr
       summary_en
       summary_gr
+      position_en
+      position_gr
       created_at
       updated_at
       author {
@@ -61,6 +63,8 @@ const MEMBER_BY_PK_QUERY = gql`
       description_gr
       summary_en
       summary_gr
+      position_en
+      position_gr
       created_at
       updated_at
       author {

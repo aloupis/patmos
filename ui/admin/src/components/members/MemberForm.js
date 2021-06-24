@@ -64,6 +64,8 @@ const MemberForm = ({ member, onSave, onError, history }) => {
           description_gr: member.description_gr,
           summary_en: member.summary_en,
           summary_gr: member.summary_gr,
+          position_en: member.position_en,
+          position_gr: member.position_gr,
         }
       : {
           name_en: '',
@@ -72,6 +74,8 @@ const MemberForm = ({ member, onSave, onError, history }) => {
           description_gr: '',
           summary_en: '',
           summary_gr: '',
+          position_en: '',
+          position_gr: '',
         },
   });
 
@@ -99,6 +103,16 @@ const MemberForm = ({ member, onSave, onError, history }) => {
             value={values.name_en || ''}
           />
           <TextField
+            id="position_en"
+            name="position_en"
+            label="Position"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            value={values.position_en || ''}
+          />
+          <TextField
             id="summary_en"
             name="summary_en"
             label="Summary"
@@ -110,6 +124,7 @@ const MemberForm = ({ member, onSave, onError, history }) => {
             rows={4}
             value={values.summary_en || ''}
           />
+
           <div>
             <ReactQuill
               id="description_en"
@@ -137,6 +152,16 @@ const MemberForm = ({ member, onSave, onError, history }) => {
             fullWidth
             required
             value={values.name_gr || ''}
+          />
+          <TextField
+            id="position_gr"
+            name="position_gr"
+            label="Position"
+            variant="outlined"
+            className={classes.control}
+            onChange={handleChange}
+            fullWidth
+            value={values.position_en || ''}
           />
           <TextField
             id="summary_gr"

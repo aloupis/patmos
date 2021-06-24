@@ -63,6 +63,8 @@ const typeDefs = gql`
     description_gr: String!
     summary_en: String
     summary_gr: String
+    position_en: String
+    position_gr: String
   }
   input MemberSet {
     name_en: String
@@ -72,6 +74,8 @@ const typeDefs = gql`
     image_public_id: String
     summary_en: String
     summary_gr: String
+    position_en: String
+    position_gr: String
   }
   type User {
     id: ID!
@@ -119,6 +123,8 @@ const typeDefs = gql`
     image_public_id: String
     summary_en: String
     summary_gr: String
+    position_en: String
+    position_gr: String
     created_at: String!
     updated_at: String
     author: User

@@ -1,4 +1,14 @@
-### introducing summary and image public id (HEAD -> master)
+### adding position to member (HEAD -> master)
+>Thu, 24 Jun 2021 20:52:33 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### introducing summary and image public id (origin/master, site-init)
 >Tue, 15 Jun 2021 20:40:32 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add preview image to post (origin/master, site-init)
+### add preview image to post
 >Sat, 12 Jun 2021 16:03:27 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

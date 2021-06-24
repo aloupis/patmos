@@ -27,6 +27,8 @@ const NewMember = (props) => {
             description_gr: member.description_gr,
             summary_en: member.summary_en,
             summary_gr: member.summary_gr,
+            position_en: member.position_en,
+            position_gr: member.position_gr,
           },
         },
       });

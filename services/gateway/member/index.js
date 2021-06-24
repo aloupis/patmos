@@ -62,6 +62,8 @@ const resolvers = {
           description_en,
           summary_gr,
           summary_en,
+          position_gr,
+          position_en,
         } = input;
         const userId = authenticate(token);
         const [user] = await db.select('usr', { id: +userId });
@@ -73,6 +75,8 @@ const resolvers = {
           description_en,
           summary_gr,
           summary_en,
+          position_gr,
+          position_en,
           author_id: user.id,
           created_at: new Date(),
         });

@@ -64,6 +64,8 @@ CREATE TABLE member(
   description_en TEXT,
   summary_gr VARCHAR(255),
   summary_en VARCHAR(255),
+  position_gr VARCHAR(255),
+  position_en VARCHAR(255),
   image_public_id VARCHAR(255),
   created_at TIMESTAMP NOT NULL, 
   updated_at TIMESTAMP , 
