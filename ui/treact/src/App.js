@@ -114,6 +114,7 @@ import Blog from "components/patmos/Blog.js";
 import Member from "components/patmos/Member.js"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PhotoGallery from "components/patmos/PhotoGallery";
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
@@ -137,6 +138,7 @@ export default function App() {
           <Blog />
         </Route>
         <Route path="/members/:id"><Member/></Route>
+        <Route path="/photo-gallery"><PhotoGallery url="gallery/images"/></Route>
         <Route path="/">
           <Hero />
         </Route>

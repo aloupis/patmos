@@ -80,8 +80,36 @@ const MEMBER_BY_PK_QUERY = gql`
 `;
 
 
+const SERVICES_QUERY = gql`
+  query SERVICES_QUERY($offset: Int!, $limit: Int!, $orderBy: OrderBy) {
+    services(offset: $offset, limit: $limit, orderBy: $orderBy) {
+      id
+      name_en
+      name_gr
+      category {
+        id
+        name_en
+        name_gr
+      }
+      image_public_id
+      summary_en
+      summary_gr
+      price
+      created_at
+      updated_at
+      author {
+        id
+        username
+      }
+    }
+  }
+`;
+
+
+
 export {
   POSTS_QUERY,
   MEMBERS_QUERY,
-  MEMBER_BY_PK_QUERY
+  MEMBER_BY_PK_QUERY,
+  SERVICES_QUERY
 };

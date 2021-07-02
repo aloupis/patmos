@@ -6,6 +6,7 @@ import Footer from "components/footers/FiveColumnWithInputForm.js";
 
 import Header, { NavLink, NavLinks, PrimaryLink as PrimaryLinkBase, LogoLink, NavToggle, DesktopNavLinks } from "../headers/light.js";
 import MeetTheTeam from './common/MeetTheTeam'
+import OurServices from './common/OurServices'
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none w-full`}
@@ -49,7 +50,7 @@ export default () => {
       <NavLink href="#">
         Services
       </NavLink>
-      <NavLink href="#">
+      <NavLink href="/photo-gallery">
         Gallery
       </NavLink>
     </NavLinks>
@@ -67,6 +68,7 @@ export default () => {
           <PrimaryAction>Our Services</PrimaryAction>
         </Content>
       </HeroContainer>
+      <OurServices/>
       <MeetTheTeam/> 
       <Footer />
     </Container>
