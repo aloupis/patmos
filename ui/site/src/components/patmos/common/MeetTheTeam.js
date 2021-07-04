@@ -103,7 +103,7 @@ export default () => {
             {members.map((member, index) => (
               <Testimonial key={index}>
                 <ImageContainer>
-                  <img src={`h${baseCloudinaryUrl}${member.image_public_id}`} alt={member.name_en} />
+                  <img src={`${baseCloudinaryUrl}${member.image_public_id}`} alt={member.name_en} />
                 </ImageContainer>
                 <TextContainer>
                   <QuoteContainer>

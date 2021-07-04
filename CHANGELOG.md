@@ -1,4 +1,14 @@
-### config cloudinary base url (HEAD -> master)
+### fix typo (HEAD -> master)
+>Sun, 4 Jul 2021 21:02:30 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### config cloudinary base url (origin/master)
 >Sun, 4 Jul 2021 20:29:20 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### temp changes in cloudnary url (origin/master)
+### temp changes in cloudnary url
 >Sun, 4 Jul 2021 20:07:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
