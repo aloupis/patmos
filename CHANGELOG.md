@@ -1,4 +1,14 @@
-### logging in gateway service (HEAD -> master)
+### removing console log (HEAD -> master)
+>Sun, 4 Jul 2021 19:57:29 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### logging in gateway service
 >Sun, 4 Jul 2021 19:52:54 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

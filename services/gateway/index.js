@@ -19,7 +19,6 @@ const ALLOWED_DOMAINS = [NGINX_HOST, ADMIN_HOST];
 app.use(
   cors({
     origin(origin, callback) {
-      console.log({ origin, ALLOWED_DOMAINS });
       // bypass the requests with no origin (like curl requests, mobile apps, etc )
       if (!origin) return callback(null, true);
       if (!ALLOWED_DOMAINS.includes(origin)) {
