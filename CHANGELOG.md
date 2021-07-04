@@ -1,4 +1,14 @@
-### introducing photo gallery and our services section (HEAD -> site-init)
+### initial version of site (HEAD -> site-init)
+>Sun, 4 Jul 2021 18:29:58 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### introducing photo gallery and our services section (origin/site-init)
 >Fri, 2 Jul 2021 20:13:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### WIP: initial setup (origin/site-init)
+### WIP: initial setup
 >Thu, 24 Jun 2021 21:56:40 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

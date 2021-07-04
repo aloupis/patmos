@@ -1,0 +1,9 @@
+FROM node:alpine
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm install
+RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install twin.macro
+COPY . ./
+EXPOSE 3000
+CMD ["npm", "run", "start"]

@@ -76,8 +76,8 @@ export default () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  const member = data.member_by_pk
-  const members = data.members || [];
+  const member = data && data.member_by_pk
+  const members = data && data.members || [];
   console.log({member,members})
 
   return (

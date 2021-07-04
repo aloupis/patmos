@@ -85,7 +85,7 @@ export default () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  const members = data.members || [];
+  const members = data && data.members || [];
 
   return (
     <Container>

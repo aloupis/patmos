@@ -72,7 +72,7 @@ const headingText = "Blog Posts"
   if (loading) {
     return <div>Loading...</div>;
   }
-  const posts = data.posts || [];
+  const posts = data && data.posts || [];
 
   return (
     <AnimationRevealPage>
