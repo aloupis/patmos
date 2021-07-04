@@ -1,4 +1,14 @@
-### fix typo (HEAD -> master)
+### introducing minimal footer (HEAD -> master)
+>Sun, 4 Jul 2021 21:23:09 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix typo (origin/master)
 >Sun, 4 Jul 2021 21:02:30 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### config cloudinary base url (origin/master)
+### config cloudinary base url
 >Sun, 4 Jul 2021 20:29:20 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
