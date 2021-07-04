@@ -1,4 +1,34 @@
-### adding position to member (HEAD -> master)
+### initial version of site (HEAD -> site-init)
+>Sun, 4 Jul 2021 18:29:58 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### introducing photo gallery and our services section (origin/site-init)
+>Fri, 2 Jul 2021 20:13:49 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### WIP: initial setup
+>Thu, 24 Jun 2021 21:56:40 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### adding position to member (origin/master, master)
 >Thu, 24 Jun 2021 20:52:33 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +38,7 @@
 
 
 
-### introducing summary and image public id (origin/master, site-init)
+### introducing summary and image public id
 >Tue, 15 Jun 2021 20:40:32 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
