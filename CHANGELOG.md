@@ -1,4 +1,14 @@
-### fix gateway url for site and cleaning up (HEAD -> master)
+### logging in gateway service (HEAD -> master)
+>Sun, 4 Jul 2021 19:52:54 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix gateway url for site and cleaning up (origin/master)
 >Sun, 4 Jul 2021 19:34:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
