@@ -113,7 +113,7 @@ export default () => {
                   <Title>{m.name_en}</Title>
                   <AuthorName>{m.position_en}</AuthorName>
                 </PostTextContainer>
-                <Image imageSrc={`https://res.cloudinary.com/devaloupis/image/upload/v1623773439/${m.image_public_id}`} />
+                <Image imageSrc={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${m.image_public_id}`} />
               </Post>
               ))}
             </PostsContainer>

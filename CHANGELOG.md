@@ -1,4 +1,14 @@
-### removing console log (HEAD -> master)
+### temp changes in cloudnary url (HEAD -> master)
+>Sun, 4 Jul 2021 20:07:05 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### removing console log
 >Sun, 4 Jul 2021 19:57:29 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

@@ -135,7 +135,7 @@ export default () => {
             {tabs[tabKey].map((card, index) => (
               <CardContainer key={index}>
                 <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
-                  <CardImageContainer imageSrc={`https://res.cloudinary.com/devaloupis/image/upload/v1623773439/${card.image_public_id}`}>
+                  <CardImageContainer imageSrc={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${card.image_public_id}`}>
                     <CardHoverOverlay
                       variants={{
                         hover: {

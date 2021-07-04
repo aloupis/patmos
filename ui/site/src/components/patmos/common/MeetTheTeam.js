@@ -99,7 +99,7 @@ export default () => {
             {members.map((member, index) => (
               <Testimonial key={index}>
                 <ImageContainer>
-                  <img src={`https://res.cloudinary.com/devaloupis/image/upload/v1623773439/${member.image_public_id}`} alt={member.name_en} />
+                  <img src={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${member.image_public_id}`} alt={member.name_en} />
                 </ImageContainer>
                 <TextContainer>
                   <QuoteContainer>
