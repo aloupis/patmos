@@ -51,6 +51,10 @@ const Description = tw.div``;
 const ButtonContainer = tw.div`flex justify-center`;
 const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
 
+const baseCloudinaryUrl =
+  process.env.REACT_APP_CLOUDINARY_BASE_URL  || 'https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/';
+
+
 export default () => {
 const headingText = "Blog Posts"
 
@@ -86,7 +90,7 @@ const headingText = "Blog Posts"
             {posts.slice(0, visible).map((post, index) => (
               <PostContainer key={index} featured={post.featured}>
                 <Post className="group" as="a" href={post.url}>
-                  <Image imageSrc={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${post.image_public_id}`} />
+                  <Image imageSrc={`${baseCloudinaryUrl}${post.image_public_id}`} />
                   <Info>
                     <Category>{post.category}</Category>
                     <CreationDate>{format(

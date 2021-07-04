@@ -60,6 +60,10 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
+const baseCloudinaryUrl =
+  process.env.REACT_APP_CLOUDINARY_BASE_URL  || 'https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/';
+
+
 export default () => {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
@@ -135,7 +139,7 @@ export default () => {
             {tabs[tabKey].map((card, index) => (
               <CardContainer key={index}>
                 <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
-                  <CardImageContainer imageSrc={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${card.image_public_id}`}>
+                  <CardImageContainer imageSrc={`${baseCloudinaryUrl}${card.image_public_id}`}>
                     <CardHoverOverlay
                       variants={{
                         hover: {

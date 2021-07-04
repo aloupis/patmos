@@ -1,4 +1,14 @@
-### temp changes in cloudnary url (HEAD -> master)
+### config cloudinary base url (HEAD -> master)
+>Sun, 4 Jul 2021 20:29:20 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### temp changes in cloudnary url (origin/master)
 >Sun, 4 Jul 2021 20:07:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -28,7 +38,7 @@
 
 
 
-### fix gateway url for site and cleaning up (origin/master)
+### fix gateway url for site and cleaning up
 >Sun, 4 Jul 2021 19:34:49 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

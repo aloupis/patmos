@@ -51,6 +51,10 @@ const RecentPostsContainer = styled.div`
 `;
 const PostTextContainer = tw.div``
 
+const baseCloudinaryUrl =
+  process.env.REACT_APP_CLOUDINARY_BASE_URL  || 'https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/';
+
+
 export default () => {
   const { id} = useParams();
   // This setting is for animating the post background image on hover
@@ -113,7 +117,7 @@ export default () => {
                   <Title>{m.name_en}</Title>
                   <AuthorName>{m.position_en}</AuthorName>
                 </PostTextContainer>
-                <Image imageSrc={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${m.image_public_id}`} />
+                <Image imageSrc={`${baseCloudinaryUrl}${m.image_public_id}`} />
               </Post>
               ))}
             </PostsContainer>

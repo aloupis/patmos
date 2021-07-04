@@ -72,6 +72,10 @@ const DecoratorBlob2 = tw(
   SvgDecoratorBlob2
 )`absolute w-32 bottom-0 right-0 -z-10 text-pink-500 opacity-15 transform translate-x-2/3 translate-y-8`;
 
+
+const baseCloudinaryUrl =
+  process.env.REACT_APP_CLOUDINARY_BASE_URL  || 'https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/';
+
 export default () => {
 
   const { data, loading, error } = useQuery(MEMBERS_QUERY, {
@@ -99,7 +103,7 @@ export default () => {
             {members.map((member, index) => (
               <Testimonial key={index}>
                 <ImageContainer>
-                  <img src={`https://res.cloudinary.com/patmos-watersports/image/upload/v1625418099/${member.image_public_id}`} alt={member.name_en} />
+                  <img src={`h${baseCloudinaryUrl}${member.image_public_id}`} alt={member.name_en} />
                 </ImageContainer>
                 <TextContainer>
                   <QuoteContainer>
