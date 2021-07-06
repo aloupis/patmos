@@ -79,6 +79,21 @@ CREATE TABLE subscriber(
    id serial PRIMARY KEY, 
    email VARCHAR(255) NOT NULL
 );
+CREATE TABLE settings(
+  id serial PRIMARY KEY, 
+  about_us_title_gr VARCHAR(255) NOT NULL, 
+  about_us_title_en VARCHAR(255) NOT NULL,
+  about_us_content_gr TEXT, 
+  about_us_content_en TEXT, 
+  about_us_image_public_id VARCHAR(255)
+);
+
+INSERT INTO settings(about_us_title_gr,about_us_title_en,about_us_content_gr,about_us_content_en)
+VALUES
+  (
+    '','','',''
+  );
+
 INSERT INTO usr(username, email, password) 
 VALUES 
   (
@@ -86,7 +101,7 @@ VALUES
     '$2b$10$ahs7h0hNH8ffAVg6PwgovO3AVzn1izNFHn.su9gcJnUWUzb2Rcb2W' -- = ssseeeecrreeet
   );
 
-  INSERT INTO usr(username, email, password) 
+INSERT INTO usr(username, email, password) 
 VALUES 
   (
     'chupacabra', 'chupacabra026@gmail.com', 

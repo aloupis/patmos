@@ -117,13 +117,15 @@ const postResolvers = require('./post');
 const categoryResolvers = require('./category');
 const serviceResolvers = require('./service');
 const memberResolvers = require('./member');
+const settingsResolvers = require('./settings');
 const { typeDefs } = require('./schema');
 
 const resolvers = merge(
   postResolvers,
   categoryResolvers,
   serviceResolvers,
-  memberResolvers
+  memberResolvers,
+  settingsResolvers
 );
 
 const context = ({ req }) => {

@@ -9,10 +9,13 @@ import { Container, ContentWithPaddingXl } from "components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro";
-import Header from "components/headers/light.js";
+import Header from "./common/Header";
 import Footer from "./common/Footer";
 import { SectionHeading } from "components/misc/Headings";
 import { PrimaryButton } from "components/misc/Buttons";
+import Newsletter from "./common/Newsletter";
+import OurServices from "./common/OurServices";
+
 
 const HeadingRow = tw.div`flex`;
 const Heading = tw(SectionHeading)`text-gray-900`;
@@ -111,6 +114,8 @@ const headingText = "Blog Posts"
           )}
         </ContentWithPaddingXl>
       </Container>
+      <Newsletter/>
+      <OurServices/>
       <Footer />
     </AnimationRevealPage>
   );

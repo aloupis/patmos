@@ -45,6 +45,13 @@ const typeDefs = gql`
     summary_en: String
     summary_gr: String
   }
+  input SettingsSet {
+    about_us_title_gr: String
+    about_us_title_en: String
+    about_us_content_gr: String
+    about_us_content_en: String
+    about_us_image_public_id: String
+  }
   input ServiceSet {
     name_gr: String
     name_en: String
@@ -146,6 +153,13 @@ const typeDefs = gql`
     author: User
     editor: User
   }
+  type Settings {
+    about_us_title_gr: String
+    about_us_title_en: String
+    about_us_content_gr: String
+    about_us_content_en: String
+    about_us_image_public_id: String
+  }
   type MutationResult {
     success: Boolean!
     message: String
@@ -163,6 +177,7 @@ const typeDefs = gql`
     services(offset: Int!, limit: Int!, orderBy: OrderBy): [Service]
     service_by_pk(id: Int!): Service
     services_count: Int!
+    settings: Settings!
   }
   type Mutation {
     insert_post(input: PostInput!): Post!
@@ -177,6 +192,7 @@ const typeDefs = gql`
     insert_service(input: ServiceInput!): Service!
     update_service(id: Int!, set: ServiceSet!): Service!
     delete_service(id: Int!): MutationResult!
+    update_settings(set: SettingsSet!): Settings!
   }
 `;
 

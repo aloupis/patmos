@@ -1,4 +1,24 @@
-### introducing minimal footer (HEAD -> master)
+### introducing settings, about us page and other fixes (HEAD -> master)
+>Tue, 6 Jul 2021 21:43:00 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### Create manula.yml (origin/master)
+>Mon, 5 Jul 2021 09:56:05 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: GitHub (noreply@github.com)
+
+
+
+
+### introducing minimal footer
 >Sun, 4 Jul 2021 21:23:09 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +28,7 @@
 
 
 
-### fix typo (origin/master)
+### fix typo
 >Sun, 4 Jul 2021 21:02:30 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

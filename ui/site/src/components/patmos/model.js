@@ -106,10 +106,24 @@ const SERVICES_QUERY = gql`
 `;
 
 
+const SETTINGS_QUERY = gql`
+  query SETTINGS_QUERY {
+    settings {
+      about_us_title_gr
+      about_us_title_en
+      about_us_content_gr
+      about_us_content_en
+      about_us_image_public_id
+    }
+  }
+`;
+
+
 
 export {
   POSTS_QUERY,
   MEMBERS_QUERY,
   MEMBER_BY_PK_QUERY,
-  SERVICES_QUERY
+  SERVICES_QUERY,
+  SETTINGS_QUERY
 };

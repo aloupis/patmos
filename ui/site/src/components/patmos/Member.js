@@ -11,8 +11,10 @@ import { motion } from "framer-motion";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading } from "components/misc/Headings.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
-import Header from "components/headers/light.js";
+import Header from "./common/Header";
 import Footer from "./common/Footer";
+import Newsletter from "./common/Newsletter";
+import OurServices from "./common/OurServices";
 const Row = tw.div`flex flex-col lg:flex-row -mb-10`;
 const Heading = tw(SectionHeading)`text-left lg:text-4xl xl:text-5xl`;
 
@@ -125,6 +127,8 @@ export default () => {
         </Row>
         
       </ContentWithPaddingXl>
+      <Newsletter/>      
+      <OurServices/>
       <Footer/>
     </Container>
   );

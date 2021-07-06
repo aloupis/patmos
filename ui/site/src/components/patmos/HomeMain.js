@@ -6,6 +6,7 @@ import Footer from "./common/Footer";
 import Header, { NavLink, NavLinks, PrimaryLink as PrimaryLinkBase, LogoLink, NavToggle, DesktopNavLinks } from "../headers/light.js";
 import MeetTheTeam from './common/MeetTheTeam'
 import OurServices from './common/OurServices'
+import Newsletter from "./common/Newsletter";
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none w-full`}
@@ -40,7 +41,7 @@ const PrimaryAction = tw.button`rounded-full px-8 py-3 mt-10 text-sm sm:text-bas
 export default () => {
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="#">
+      <NavLink href="/about-us">
         About
       </NavLink>
       <NavLink href="/blog">
@@ -68,6 +69,7 @@ export default () => {
         </Content>
       </HeroContainer>
       <OurServices/>
+      <Newsletter/>
       <MeetTheTeam/> 
       <Footer />
     </Container>
