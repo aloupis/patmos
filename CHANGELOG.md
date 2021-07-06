@@ -1,4 +1,14 @@
-### introducing settings, about us page and other fixes (HEAD -> master)
+### fix our services section issue (HEAD -> master)
+>Tue, 6 Jul 2021 22:26:41 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### introducing settings, about us page and other fixes (origin/master)
 >Tue, 6 Jul 2021 21:43:00 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### Create manula.yml (origin/master)
+### Create manula.yml
 >Mon, 5 Jul 2021 09:56:05 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

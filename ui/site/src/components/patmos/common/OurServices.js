@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from '@apollo/client';
 
@@ -76,7 +76,6 @@ export default () => {
       offset: 0,
       limit: 10,
     },
-    fetchPolicy: 'cache-and-network',
   });
   
 
@@ -99,6 +98,12 @@ export default () => {
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
 
+
+useEffect(()=>{
+  if(!activeTab && tabsKeys&& tabsKeys.length>0){
+    setActiveTab(tabsKeys[0])
+  }
+},[activeTab,tabsKeys])
 
   if (loading) {
     return <div>Loading...</div>;
