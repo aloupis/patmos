@@ -8,8 +8,8 @@ import CategoryForm from './CategoryForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
 import { SnackbarContext } from '../../SnackbarContext';
-import AssetContainer from '../../common/gallery/AssetContainer';
-
+import AssetContainer from '../../common/media/asset/AssetContainer';
+import { deleteAsset } from '../../services/asset';
 import {
   CATEGORY_BY_PK_QUERY,
   UPDATE_CATEGORY_MUTATION,
@@ -20,7 +20,9 @@ const EditCategory = ({ history, match }) => {
   const { data, loading, error } = useQuery(CATEGORY_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
-  const [imagePublicId, setImagePublicId] = useState('');
+  const [imagePublicId, setImagePublicId] = useState(
+    data?.category_by_pk?.image_public_id || ''
+  );
 
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
@@ -53,6 +55,12 @@ const EditCategory = ({ history, match }) => {
   const handleDelete = async () => {
     try {
       const res = await deleteCategory({ variables: { id: +match.params.id } });
+      if (data?.category_by_pk?.image_public_id) {
+        const assetRes = await deleteAsset(data.category_by_pk.image_public_id);
+        if (assetRes.status !== 200) {
+          showGenericErrorMessage();
+        }
+      }
       if (res?.data?.delete_category?.success) {
         showMessage('Category has been successfully deleted!');
       } else {
@@ -84,6 +92,7 @@ const EditCategory = ({ history, match }) => {
       </div>
       <AssetContainer
         url={`categories/${match.params.id}`}
+        publicId={data.category_by_pk.image_public_id || ''}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
         updateEntity={setImagePublicId}
       />

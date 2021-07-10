@@ -140,6 +140,38 @@ func deleteHandler(c *gin.Context) {
 	c.String(http.StatusOK, "OK")
 }
 
+func assetHandler(c *gin.Context) {
+	var cld, err = cloudinary.New()
+	if err != nil {
+		log.Fatalf("Failed to initialize Cloudinary, %v", err)
+	}
+	var ctx = context.Background()
+
+	publicId := c.PostForm("publicId")
+	resp, err := cld.Admin.Asset(ctx, admin.AssetParams{PublicID: publicId})
+
+	if err != nil {
+		log.Fatalf("Error ingetting asset, %v", err)
+	}
+
+	asset := Asset{
+		PublicId:  resp.PublicID,
+		Format:    resp.Format,
+		Url:       resp.SecureURL,
+		CreatedAt: resp.CreatedAt,
+		Width:     resp.Width,
+		Height:    resp.Height,
+		Type:      resp.ResourceType,
+	}
+
+	json_data, marshall_err := json.Marshal(asset)
+
+	if marshall_err != nil {
+		log.Fatal(marshall_err)
+	}
+	c.JSON(http.StatusOK, string(json_data))
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	os.Setenv("CLOUDINARY_URL", os.Getenv("CLOUDINARY_URL"))
@@ -174,5 +206,6 @@ func main() {
 	r.POST("/files", listFilesHandler)
 	r.PUT("/upload", uploadHandler)
 	r.POST("/delete", deleteHandler)
+	r.POST("/asset", assetHandler)
 	r.Run(":" + port)
 }

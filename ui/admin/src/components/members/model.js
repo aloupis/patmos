@@ -45,6 +45,7 @@ const UPDATE_MEMBER_MUTATION = gql`
       name_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username
@@ -67,6 +68,7 @@ const MEMBER_BY_PK_QUERY = gql`
       position_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username

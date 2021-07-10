@@ -6,8 +6,9 @@ import PageWrapper from '../../common/PageWrapper';
 import PostForm from './PostForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
-import AssetContainer from '../../common/gallery/AssetContainer';
+import AssetContainer from '../../common/media/asset/AssetContainer';
 import { SnackbarContext } from '../../SnackbarContext';
+import { deleteAsset } from '../../services/asset';
 
 import {
   POST_BY_PK_QUERY,
@@ -19,7 +20,10 @@ const EditPost = ({ history, match }) => {
   const { data, loading, error } = useQuery(POST_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
-  const [imagePublicId, setImagePublicId] = useState('');
+
+  const [imagePublicId, setImagePublicId] = useState(
+    data?.post_by_pk?.image_public_id || ''
+  );
 
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
@@ -52,6 +56,12 @@ const EditPost = ({ history, match }) => {
   const handleDelete = async () => {
     try {
       const res = await deletePost({ variables: { id: +match.params.id } });
+      if (data?.post_by_pk?.image_public_id) {
+        const assetRes = await deleteAsset(data.post_by_pk.image_public_id);
+        if (assetRes.status !== 200) {
+          showGenericErrorMessage();
+        }
+      }
       if (res?.data?.delete_post?.success) {
         showMessage('Post has been successfully deleted!');
       } else {
@@ -87,6 +97,7 @@ const EditPost = ({ history, match }) => {
 
       <AssetContainer
         url={`posts/${match.params.id}`}
+        publicId={data.post_by_pk.image_public_id || ''}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
         updateEntity={setImagePublicId}
       />

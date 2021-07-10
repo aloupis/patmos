@@ -1,10 +1,10 @@
 import React from 'react';
-import AssetContainer from '../../common/gallery/AssetContainer';
+import GalleryContainer from '../../common/media/gallery/GalleryContainer';
 import PageWrapper from '../../common/PageWrapper';
 
 const Gallery = () => (
   <PageWrapper title="Gallery">
-    <AssetContainer
+    <GalleryContainer
       url="gallery/images"
       allowMultipleAssets
       acceptedFileTypes="image/jpeg,image/png,image/gif"

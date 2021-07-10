@@ -43,6 +43,7 @@ const UPDATE_CATEGORY_MUTATION = gql`
       name_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username
@@ -63,6 +64,7 @@ const CATEGORY_BY_PK_QUERY = gql`
       summary_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username

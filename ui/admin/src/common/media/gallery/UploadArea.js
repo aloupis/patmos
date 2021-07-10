@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone';
 import TouchAppIcon from '@material-ui/icons/TouchAppOutlined';
 import { makeStyles } from '@material-ui/core';
-import GalleryStyles from './styles';
+import GalleryStyles from '../common/styles';
 
 const useStyles = makeStyles(GalleryStyles);
 

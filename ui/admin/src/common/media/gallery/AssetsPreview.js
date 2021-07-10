@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AssetPreview = ({ classes, loading, assets, handleDelete }) =>
+const AssetsPreview = ({ classes, loading, assets, handleDelete }) =>
   assets ? (
     <div
       className={
@@ -26,11 +26,11 @@ const AssetPreview = ({ classes, loading, assets, handleDelete }) =>
     </div>
   ) : null;
 
-AssetPreview.propTypes = {
+AssetsPreview.propTypes = {
   classes: PropTypes.object,
   assets: PropTypes.array,
   loading: PropTypes.bool,
   handleDelete: PropTypes.func,
 };
 
-export default AssetPreview;
+export default AssetsPreview;

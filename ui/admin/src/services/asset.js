@@ -35,3 +35,13 @@ export const deleteAsset = async (publicId) => {
     data: formData,
   });
 };
+
+export const getAsset = (publicId) => {
+  const formData = new FormData();
+  formData.append('publicId', publicId);
+  return axios({
+    url: `${url}/asset`,
+    method: 'post',
+    data: formData,
+  });
+};

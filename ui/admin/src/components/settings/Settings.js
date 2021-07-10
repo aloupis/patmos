@@ -1,20 +1,19 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useQuery, useMutation } from '@apollo/client';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import PageWrapper from '../../common/PageWrapper';
 import SettingsForm from './SettingsForm';
 import Loading from '../../common/Loading';
 import { SnackbarContext } from '../../SnackbarContext';
-import AssetContainer from '../../common/gallery/AssetContainer';
-
+import AssetContainer from '../../common/media/asset/AssetContainer';
 import { SETTINGS_QUERY, UPDATE_SETTINGS_MUTATION } from './model';
 
 const Settings = ({ history }) => {
   const { data, loading, error } = useQuery(SETTINGS_QUERY);
-  const [imagePublicId, setImagePublicId] = useState('');
-
+  const [imagePublicId, setImagePublicId] = useState(
+    data?.settings?.image_public_id || ''
+  );
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateSettings] = useMutation(UPDATE_SETTINGS_MUTATION);
@@ -51,6 +50,7 @@ const Settings = ({ history }) => {
       </div>
       <AssetContainer
         url="about-us"
+        publicId={data.settings.image_public_id || ''}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
         updateEntity={setImagePublicId}
       />

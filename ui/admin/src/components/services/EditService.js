@@ -8,8 +8,8 @@ import ServiceForm from './ServiceForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
 import { SnackbarContext } from '../../SnackbarContext';
-import AssetContainer from '../../common/gallery/AssetContainer';
-
+import AssetContainer from '../../common/media/asset/AssetContainer';
+import { deleteAsset } from '../../services/asset';
 import {
   SERVICE_BY_PK_QUERY,
   UPDATE_SERVICE_MUTATION,
@@ -20,8 +20,9 @@ const EditService = ({ history, match }) => {
   const { data, loading, error } = useQuery(SERVICE_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
-  const [imagePublicId, setImagePublicId] = useState('');
-
+  const [imagePublicId, setImagePublicId] = useState(
+    data?.service_by_pk?.image_public_id || ''
+  );
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateService] = useMutation(UPDATE_SERVICE_MUTATION);
@@ -55,6 +56,12 @@ const EditService = ({ history, match }) => {
   const handleDelete = async () => {
     try {
       const res = await deleteService({ variables: { id: +match.params.id } });
+      if (data?.service_by_pk?.image_public_id) {
+        const assetRes = await deleteAsset(data.service_by_pk.image_public_id);
+        if (assetRes.status !== 200) {
+          showGenericErrorMessage();
+        }
+      }
       if (res?.data?.delete_service?.success) {
         showMessage('Service has been successfully deleted!');
       } else {
@@ -86,6 +93,7 @@ const EditService = ({ history, match }) => {
       </div>
       <AssetContainer
         url={`services/${match.params.id}`}
+        publicId={data.service_by_pk.image_public_id || ''}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
         updateEntity={setImagePublicId}
       />

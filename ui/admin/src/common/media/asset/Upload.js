@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { deleteAsset } from '../../services/asset';
+import { deleteAsset } from '../../../services/asset';
 
-const SingleAssetUpload = ({ url, handleUpload, acceptedFileTypes }) => (
+const Upload = ({ url, handleUpload, acceptedFileTypes }) => (
   <input
     id="file"
     type="file"
@@ -14,10 +14,10 @@ const SingleAssetUpload = ({ url, handleUpload, acceptedFileTypes }) => (
     accept={acceptedFileTypes}
   />
 );
-SingleAssetUpload.propTypes = {
+Upload.propTypes = {
   url: PropTypes.string,
   handleUpload: PropTypes.func,
   acceptedFileTypes: PropTypes.string,
 };
 
-export default SingleAssetUpload;
+export default Upload;

@@ -8,7 +8,8 @@ import MemberForm from './MemberForm';
 import Loading from '../../common/Loading';
 import DeleteConfirmationButton from '../../common/DeleteConfirmationButton';
 import { SnackbarContext } from '../../SnackbarContext';
-import AssetContainer from '../../common/gallery/AssetContainer';
+import AssetContainer from '../../common/media/asset/AssetContainer';
+import { deleteAsset } from '../../services/asset';
 
 import {
   MEMBER_BY_PK_QUERY,
@@ -20,8 +21,9 @@ const EditMember = ({ history, match }) => {
   const { data, loading, error } = useQuery(MEMBER_BY_PK_QUERY, {
     variables: { id: +match.params.id },
   });
-  const [imagePublicId, setImagePublicId] = useState('');
-
+  const [imagePublicId, setImagePublicId] = useState(
+    data?.member_by_pk?.image_public_id || ''
+  );
   const { showMessage, showGenericErrorMessage } = useContext(SnackbarContext);
 
   const [updateMember] = useMutation(UPDATE_MEMBER_MUTATION);
@@ -55,6 +57,12 @@ const EditMember = ({ history, match }) => {
   const handleDelete = async () => {
     try {
       const res = await deleteMember({ variables: { id: +match.params.id } });
+      if (data?.member_by_pk?.image_public_id) {
+        const assetRes = await deleteAsset(data.member_by_pk.image_public_id);
+        if (assetRes.status !== 200) {
+          showGenericErrorMessage();
+        }
+      }
       if (res?.data?.delete_member?.success) {
         showMessage('Member has been successfully deleted!');
       } else {
@@ -86,6 +94,7 @@ const EditMember = ({ history, match }) => {
       </div>
       <AssetContainer
         url={`members/${match.params.id}`}
+        publicId={data.member_by_pk.image_public_id || ''}
         acceptedFileTypes="image/jpeg,image/png,image/gif"
         updateEntity={setImagePublicId}
       />

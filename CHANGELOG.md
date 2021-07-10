@@ -1,4 +1,14 @@
-### fix our services section issue (HEAD -> master)
+### refactor: separate gallery from asset logic (HEAD -> master)
+>Sat, 10 Jul 2021 16:25:59 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### fix our services section issue (origin/master)
 >Tue, 6 Jul 2021 22:26:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### introducing settings, about us page and other fixes (origin/master)
+### introducing settings, about us page and other fixes
 >Tue, 6 Jul 2021 21:43:00 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

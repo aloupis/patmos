@@ -61,6 +61,7 @@ const UPDATE_SERVICE_MUTATION = gql`
       price
       created_at
       updated_at
+      image_public_id
       author {
         id
         username
@@ -87,6 +88,7 @@ const SERVICE_BY_PK_QUERY = gql`
       price
       created_at
       updated_at
+      image_public_id
       author {
         id
         username

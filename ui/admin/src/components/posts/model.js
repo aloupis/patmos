@@ -47,6 +47,7 @@ const UPDATE_POST_MUTATION = gql`
       summary_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username
@@ -67,6 +68,7 @@ const POST_BY_PK_QUERY = gql`
       content_gr
       created_at
       updated_at
+      image_public_id
       author {
         id
         username
