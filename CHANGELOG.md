@@ -1,4 +1,14 @@
-### removing nginx references in production (HEAD -> master)
+### removing travis config yaml (HEAD -> master)
+>Mon, 12 Jul 2021 19:05:57 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### removing nginx references in production
 >Mon, 12 Jul 2021 19:05:36 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
