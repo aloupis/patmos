@@ -1,4 +1,14 @@
-### minor changes (HEAD -> master)
+### change site name in footer (HEAD -> master)
+>Mon, 12 Jul 2021 20:28:43 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### minor changes (origin/master)
 >Mon, 12 Jul 2021 20:16:33 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### add site url to allowed domains (origin/master)
+### add site url to allowed domains
 >Mon, 12 Jul 2021 19:19:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
