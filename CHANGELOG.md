@@ -1,4 +1,14 @@
-### removing travis config yaml (HEAD -> master)
+### add site url to allowed domains (HEAD -> master)
+>Mon, 12 Jul 2021 19:19:44 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### removing travis config yaml (origin/master)
 >Mon, 12 Jul 2021 19:05:57 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -18,7 +28,7 @@
 
 
 
-### refactor: separate gallery from asset logic (origin/master)
+### refactor: separate gallery from asset logic
 >Sat, 10 Jul 2021 16:25:59 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
