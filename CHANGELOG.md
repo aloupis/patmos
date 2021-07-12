@@ -1,4 +1,14 @@
-### add site url to allowed domains (HEAD -> master)
+### minor changes (HEAD -> master)
+>Mon, 12 Jul 2021 20:16:33 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### add site url to allowed domains (origin/master)
 >Mon, 12 Jul 2021 19:19:44 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### removing travis config yaml (origin/master)
+### removing travis config yaml
 >Mon, 12 Jul 2021 19:05:57 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)

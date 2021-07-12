@@ -63,7 +63,7 @@ export default () => {
         <StyledHeader links={navLinks} />
         <Content>
           <Heading>
-              Patmos Watersports
+              Kampos Beach
           </Heading>
           <PrimaryAction>Our Services</PrimaryAction>
         </Content>
