@@ -1,4 +1,14 @@
-### refactor: separate gallery from asset logic (HEAD -> master)
+### removing nginx references in production (HEAD -> master)
+>Mon, 12 Jul 2021 19:05:36 +0300
+
+>Author: aloupis (manos.aloupis@gmail.com)
+
+>Commiter: aloupis (manos.aloupis@gmail.com)
+
+
+
+
+### refactor: separate gallery from asset logic (origin/master)
 >Sat, 10 Jul 2021 16:25:59 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
@@ -8,7 +18,7 @@
 
 
 
-### fix our services section issue (origin/master)
+### fix our services section issue
 >Tue, 6 Jul 2021 22:26:41 +0300
 
 >Author: aloupis (manos.aloupis@gmail.com)
